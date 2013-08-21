@@ -5,6 +5,36 @@ import GL11._
 import input._
 import math._
 
+object Camera{
+  var angle = 0.0f
+  var rotation = 0.0f
+  var posX = 0.0f
+  var posY = 0.0f
+  var posZ = -20.0f
+  
+  def setPos(x:Float,y:Float,z:Float){
+  	posX = x;
+  	posY = y;
+  	posZ = z;
+  	
+  }
+
+  def update{
+  	import Keyboard._
+    if(isKeyDown(KEY_J))
+      rotation -= 0.2f
+    if(isKeyDown(KEY_L))
+      rotation += 0.2f
+  }
+
+  def apply{
+    glLoadIdentity
+    glTranslatef(posX,posY,posZ)
+    glRotatef(-70,1,0,0)
+    glRotatef(rotation,0,0,1)
+  }
+}
+
 class EasyLWJGL{
 	val GAME_TITLE = "My Game"
 	val FRAMERATE = 60
@@ -30,6 +60,7 @@ class EasyLWJGL{
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_LIGHTING)
 		glEnable(GL_LIGHT0)	
+		adjustcam
 	}
 
 	def main(args:Array[String]){
@@ -55,6 +86,14 @@ class EasyLWJGL{
 		Display.destroy
 	}
 
+	def adjustcam{
+	    val v = width.toFloat / height.toFloat
+	    
+	    glMatrixMode(GL_PROJECTION)
+	    glLoadIdentity
+	    glFrustum(-v,v,-1,1,5,100)
+	    glMatrixMode(GL_MODELVIEW)
+	}
 
 	def setup{}
 
