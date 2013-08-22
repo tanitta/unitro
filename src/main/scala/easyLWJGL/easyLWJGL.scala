@@ -7,10 +7,11 @@ import math._
 
 object Camera{
   var angle = 0.0f
-  var rotation = 0.0f
+  var rotationX = 0.0f
+  var rotationY = 0.0f
   var posX = 0.0f
   var posY = 0.0f
-  var posZ = -20.0f
+  var posZ = -15.0f
   
   def setPos(x:Float,y:Float,z:Float){
   	posX = x;
@@ -22,22 +23,26 @@ object Camera{
   def update{
   	import Keyboard._
     if(isKeyDown(KEY_J))
-      rotation -= 0.2f
+      rotationY -= 0.8f
     if(isKeyDown(KEY_L))
-      rotation += 0.2f
+      rotationY += 0.8f
+    if(isKeyDown(KEY_I))
+      rotationX -= 0.8f
+    if(isKeyDown(KEY_K))
+      rotationX += 0.8f
   }
 
   def apply{
     glLoadIdentity
     glTranslatef(posX,posY,posZ)
-    glRotatef(-70,1,0,0)
-    glRotatef(rotation,0,0,1)
+    glRotatef(rotationX,1,0,0)
+    glRotatef(rotationY,0,0,1)
   }
 }
 
 class EasyLWJGL{
 	val GAME_TITLE = "My Game"
-	val FRAMERATE = 60
+	val FRAMERATE = 30
 	val width = 640
 	val height = 480
 
