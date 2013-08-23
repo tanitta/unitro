@@ -1,7 +1,5 @@
 package trit.unitro
 
-
-
 class BaseCell{
   var isBeing = true
   var mass = 0.0f
