@@ -29,13 +29,30 @@ object Mtx{
 		Mtx.soil(2)(2)(1).mass = 10.0f
 		
 		Mtx.soil(2)(1)(0).mass = 10.0f	
-			
-			
 		
-			
-			
-			
-			
+		
+		Mtx.soil(5)(1)(5).mass = 10.0f
+		Mtx.soil(5)(1)(5).eneN = 100.0f		
+					
+		Mtx.soil(5)(2)(5).mass = 10.0f		
+		Mtx.soil(5)(3)(5).mass = 10.0f
+		Mtx.soil(5)(4)(5).mass = 10.0f		
+		Mtx.soil(5)(5)(5).mass = 10.0f		
+		Mtx.soil(5)(6)(5).mass = 10.0f		
+		Mtx.soil(5)(7)(5).mass = 10.0f
+		Mtx.soil(5)(8)(5).mass = 10.0f		
+		Mtx.soil(5)(9)(5).mass = 10.0f
+		Mtx.soil(5)(7)(5).eneN = 100.0f		
+				
+				
+				
 			
 	}
+	
+	def isVoid(a:Int,b:Int,c:Int) = {
+  		if(a < 0 || a > Env.Zone.sizX-1){true}
+  		if(b < 0 || b > Env.Zone.sizY-1){true}
+  		if(c < 0 || c > Env.Zone.sizZ-1){true}
+  		false
+  	}
 }
