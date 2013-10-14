@@ -6,6 +6,8 @@ class SoilCell extends BaseCell {
 	
 }
 
+
+
 class SoilSolver {
 	val co1 = 0.01f//拡散速度
 	
