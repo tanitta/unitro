@@ -1,7 +1,9 @@
 lib/
 target/
 project/
-*.[log]
+*.log
+*.sublime-workspace
+*.sublime-project
 
 
 #################
