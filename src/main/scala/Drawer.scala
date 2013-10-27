@@ -9,8 +9,7 @@ import processing.core._
 
 import trit.unitro._
 
-class Camera(p:PApplet){
-	var ps = p
+class Camera(var ps:PApplet){
 	var fov = 0.5f
 	
 	var rotate = 0.0
@@ -36,13 +35,12 @@ class Camera(p:PApplet){
 		ps.camera( x.toFloat , 15.0f, z.toFloat, // 視点X, 視点Y, 視点Z
 		bx+Env.Zone.sizX/2.0f, by+Env.Zone.sizY/2.0f, bz+Env.Zone.sizZ/2.0f, // 中心点X, 中心点Y, 中心点Z
 		0.0f, -1.0f, 0.0f); // 天地X, 天地Y, 天地Z
- 		ps.perspective(fov, -ps.width/ps.height, 0.01f, 400.00f)
+ 		ps.perspective(fov, Env.General.sizScreenX.toFloat/Env.General.sizScreenY.toFloat, 0.01f, 400.00f)
 		
 	}	
 }	
 
-class Drawer(p:PApplet){
-	var ps = p
+class Drawer(var ps:PApplet){
 	//parent = p
 	
 	
@@ -108,7 +106,7 @@ class Drawer(p:PApplet){
 							ps.translate(i,j,k)
 							ps.stroke(33,Mtx.soil(i)(j)(k).eneN,20)
 							//ps.noStroke
-							ps.box(1)
+							ps.box(Mtx.soil(i)(j)(k).eneN/25f)
 						ps.popMatrix()
 					}
 				}
