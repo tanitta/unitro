@@ -1,7 +1,7 @@
 package trit.unitro
 
 import trit.unitro._
-
+import scala.math._
 class SoilCell extends BaseCell {
 	
 }
@@ -10,8 +10,12 @@ class SoilCell extends BaseCell {
 
 class SoilSolver {
 	val co1 = 0.01f//拡散速度
-	
+	var count = 0.0
 	def solve{
+		count += 0.01
+		Mtx.soil(2)(2)(2).eneN = sin(count).toFloat*100+100
+		Mtx.soil(5)(6)(6).eneN = -sin(count+0.1).toFloat*100-100
+		
 		//Mtx.soil(4)(4)(4).mass = 10.0f
 		//養分の拡散
 		for( i <- 1 to Env.Zone.sizX-2) {

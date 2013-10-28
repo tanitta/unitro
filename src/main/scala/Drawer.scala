@@ -40,6 +40,8 @@ class Camera(var ps:PApplet){
 	}	
 }	
 
+import scala.math._
+
 class Drawer(var ps:PApplet){
 	//parent = p
 	
@@ -106,7 +108,7 @@ class Drawer(var ps:PApplet){
 							ps.translate(i,j,k)
 							ps.stroke(33,Mtx.soil(i)(j)(k).eneN,20)
 							//ps.noStroke
-							ps.box(Mtx.soil(i)(j)(k).eneN/25f)
+							ps.box(pow(Mtx.soil(i)(j)(k).eneN,1.0/3.0).toFloat/2f)
 						ps.popMatrix()
 					}
 				}
