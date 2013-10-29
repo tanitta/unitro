@@ -19,8 +19,8 @@ object Mtx{
 			}
 		} 
 		
-		for( i <- 2 to 6) {
-			for( j <- 2 to 6) {
+		for( i <- 1 to 6) {
+			for( j <- 1 to 6) {
 				for( k <- 2 to 9) {
 
 					soil(i)(j)(k).mass = 10.0f

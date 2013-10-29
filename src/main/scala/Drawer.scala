@@ -103,7 +103,7 @@ class Drawer(var ps:PApplet){
 					// point(3)(0),point(3)(1),point(3)(2)
 					// )
 					if(Mtx.soil(i)(j)(k).mass>0){ 
-						ps.fill(33,Mtx.soil(i)(j)(k).eneN,100)
+						ps.fill(10,Mtx.soil(i)(j)(k).eneN*5,100)
 						ps.pushMatrix()
 							ps.translate(i,j,k)
 							ps.stroke(33,Mtx.soil(i)(j)(k).eneN,20)
