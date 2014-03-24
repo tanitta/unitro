@@ -1,6 +1,11 @@
-lib/
-target/
-project/
+trunk/
+trunk/
+trunk/
+
+bin/
+obj/
+
+/.gitattributes
 *.log
 *.sublime-workspace
 *.sublime-project
