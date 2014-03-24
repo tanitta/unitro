@@ -6,8 +6,8 @@ object Mtx{
 	var soil = Array.ofDim[SoilCell](Env.Zone.sizX,Env.Zone.sizY,Env.Zone.sizZ)
 	var soilB = Array.ofDim[SoilCell](Env.Zone.sizX,Env.Zone.sizY,Env.Zone.sizZ)
 
-	var water = Array.ofDim[SoilCell](Env.Zone.sizX,Env.Zone.sizY,Env.Zone.sizZ)
-	var waterB = Array.ofDim[SoilCell](Env.Zone.sizX,Env.Zone.sizY,Env.Zone.sizZ)
+	var water = Array.ofDim[WaterCell](Env.Zone.sizX,Env.Zone.sizY,Env.Zone.sizZ)
+	var waterB = Array.ofDim[WaterCell](Env.Zone.sizX,Env.Zone.sizY,Env.Zone.sizZ)
 		
 	
 	
@@ -39,8 +39,8 @@ object Mtx{
 		for( i <- 0 to Env.Zone.sizX-1) {
 			for( j <- 0 to Env.Zone.sizY-1) {
 				for( k <- 0 to Env.Zone.sizZ-1) {
-					water(i)(j)(k) = new waterCell
-					waterB(i)(j)(k) = new waterCell
+					water(i)(j)(k) = new WaterCell
+					waterB(i)(j)(k) = new WaterCell
 					
 				}
 			}

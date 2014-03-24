@@ -12,6 +12,6 @@ class PlantSolver {
 		
 	}
 	def update{
-		Mtx.plant.copyToArray(Mtx.waterB)
+		//Mtx.plant.copyToArray(Mtx.waterB)
 	}
 }
