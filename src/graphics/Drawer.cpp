@@ -5,8 +5,21 @@ namespace graphics{
 	Drawer::~Drawer(){};
 	void Drawer::setup(){
 		ofSetWindowTitle("unitro");
+		
+		viewport.x = 0;
+		viewport.y = 0;
+		viewport.width = 1024;
+		viewport.height = 800;
 	};
 	void Drawer::update(){};
-	void Drawer::draw(){};
+	void Drawer::draw(){
+		ofPushView();
+			ofViewport(viewport);
+			ofSetupScreen();
+
+		
+		ofPopView();
+		
+	};
 }
 }

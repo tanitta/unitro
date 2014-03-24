@@ -9,6 +9,7 @@ namespace graphics{
 		void setup();
 		void update();
 		void draw();
+		ofRectangle viewport;
 		
 	};
 }
