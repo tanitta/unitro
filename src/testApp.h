@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-
+#include "graphics/Drawer.h"
 class testApp : public ofBaseApp{
 
 	public:
@@ -19,4 +19,5 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
+		unitro::graphics::Drawer drawer;
 };
