@@ -1,9 +1,20 @@
 #include "testApp.h"
+
+
 #include "map"
 //--------------------------------------------------------------
 void testApp::setup(){
 	ofSetFrameRate(60);
 	drawer.setup();
+	matrixManager.initMatrix(10, 10, 10);
+	matrixManager.matrixNext[5][5][5].water = 10.0;
+	
+	unitro::data::Cell* hoge;
+	// hoge = matrixManager.GetCellHandle(5,5,5);
+	// cout<<"hoge.water = "<<matrixManager.GetCellHandle(5,5,5)->water<<"\n";
+	// hoge.[5][5][5].air = 1.0;
+	cout<<"GetCurrentMatrixHandle"<<sizeof(matrixManager.GetCurrentMatrixHandle())<<"\n";
+	
 	
 	// std::map<string,double> mapint;
 	// mapint["hoge"] = 1;

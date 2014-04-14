@@ -7,8 +7,11 @@ namespace data{
 	
 	class MatrixManager{
 	public:
-		MatrixManager(int x, int y, int z);
+		MatrixManager();
 		~MatrixManager();
+		
+		void initMatrix(int x, int y, int z);
+		void delMatrix();
 		int size_x;
 		int size_y;
 		int size_z;
@@ -16,8 +19,14 @@ namespace data{
 		void ReadData();
 		void WriteData();
 		
-		Cell ***matrixNext;
+		
+		Cell*** GetCurrentMatrixHandle();
+		Cell*** GetNextMatrixHandle();
+		Cell* GetCellHandle(int x, int y, int z);
+		
 		Cell ***matrixCurrent;
+		Cell ***matrixNext;
+		
 	private:
 		void initCellArray3(Cell ***matrix);
 		void delCellArray3(Cell ***matrix);

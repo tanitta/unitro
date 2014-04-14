@@ -10,6 +10,7 @@ namespace graphics{
 		void update();
 		void draw();
 		ofRectangle viewport;	
+		ofEasyCam mainCam;
 	};
 }
 }

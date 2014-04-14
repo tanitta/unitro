@@ -1,29 +1,52 @@
 #include "MatrixManager.h"
 namespace unitro{
 namespace data{
-	MatrixManager::MatrixManager(int x, int y, int z){
+	MatrixManager::MatrixManager(){
+		
+	};
+	MatrixManager::~MatrixManager(){
+		//matrix destruct
+		// delCellArray3(matrixCurrent);
+		// delCellArray3(matrixNext);
+	};
+	void MatrixManager::initMatrix(int x, int y, int z){
 		size_x = x;
 		size_y = y;
 		size_z = z;
 		
 		//matrix construct
-		initCellArray3(matrixCurrent);
-		initCellArray3(matrixNext);
+		// initCellArray3(matrixCurrent);
+		// initCellArray3(matrixNext);
+		matrixCurrent = new Cell**[size_x];
+		for (int i = 0; i < size_x; ++i) {
+		    matrixCurrent[i] = new Cell*[size_y];
+		    for (int j = 0; j < size_y; ++j) {
+		        matrixCurrent[i][j] = new Cell[size_z];
+		    }
+		}
+		
+		matrixNext = new Cell**[size_x];
+		for (int i = 0; i < size_x; ++i) {
+		    matrixNext[i] = new Cell*[size_y];
+		    for (int j = 0; j < size_y; ++j) {
+		        matrixNext[i][j] = new Cell[size_z];
+		    }
+		}
 	};
-	MatrixManager::~MatrixManager(){
-		//matrix destruct
-		delCellArray3(matrixCurrent);
-		delCellArray3(matrixNext);
+	
+	Cell*** MatrixManager::GetCurrentMatrixHandle(){
+		return matrixCurrent;
+	};
+	
+	Cell*** MatrixManager::GetNextMatrixHandle(){
+		return matrixNext;
+	};
+	
+	Cell* MatrixManager::GetCellHandle(int x, int y, int z){
+		return &matrixNext[x][y][z];
 	};
 	
 	void MatrixManager::initCellArray3(Cell ***matrix){
-		matrix = new Cell**[size_x];
-		for (int i = 0; i < size_x; ++i) {
-		    matrix[i] = new Cell*[size_y];
-		    for (int j = 0; j < size_y; ++j) {
-		        matrix[i][j] = new Cell[size_z];
-		    }
-		}
 	};
 	
 	void MatrixManager::delCellArray3(Cell ***matrix){
