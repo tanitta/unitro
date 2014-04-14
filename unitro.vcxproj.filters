@@ -55,6 +55,15 @@
     <ClCompile Include="src\graphics\Drawer.cpp">
       <Filter>src\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="src\data\Cell.cpp">
+      <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\data\MatrixManager.cpp">
+      <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\network\Network.cpp">
+      <Filter>src\network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -89,6 +98,12 @@
     </Filter>
     <Filter Include="src\graphics">
       <UniqueIdentifier>{e7a28311-4a74-4600-872e-7a35e596258e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\data">
+      <UniqueIdentifier>{a8d0864d-c0e8-4d38-a4e7-d093182357be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\network">
+      <UniqueIdentifier>{3767f85e-2a94-4d86-bc16-3b1f2c1e6c3b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +160,15 @@
     </ClInclude>
     <ClInclude Include="src\graphics\Drawer.h">
       <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data\Cell.h">
+      <Filter>src\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data\MatrixManager.h">
+      <Filter>src\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\Network.h">
+      <Filter>src\network</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

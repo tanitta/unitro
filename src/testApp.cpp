@@ -1,14 +1,35 @@
 #include "testApp.h"
-
+#include "map"
 //--------------------------------------------------------------
 void testApp::setup(){
 	ofSetFrameRate(60);
 	drawer.setup();
+	
+	// std::map<string,double> mapint;
+	// mapint["hoge"] = 1;
+	// mapint["moge"] = 1;
+	// mapint["hogea"] = 1;
+	// mapint["mogea"] = 1;
+	// mapint["hogeb"] = 1;
+	// mapint["mogeb"] = 1;
+	// // cout<<sizeof(longarray)<<"\n";
+	// cout<<"char"<<sizeof(char)<<"\n";
+	// cout<<"int"<<sizeof(int)<<"\n";
+	// cout<<"float"<<sizeof(float)<<"\n";
+	// cout<<"double"<<sizeof(double)<<"\n";
+	// cout<<"mapint"<<sizeof(mapint)<<"\n";
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
 	drawer.update();
+	
+	// for (int i = 0; i < 5*1000*1000*20; ++i)
+	// {
+	// 	longarray[i] = 0;
+	// }
+	
+	
 }
 
 //--------------------------------------------------------------

@@ -20,4 +20,5 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		unitro::graphics::Drawer drawer;
+		// char longarray[5*1000*1000*20];
 };
