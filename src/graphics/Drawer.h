@@ -1,4 +1,5 @@
 #include "ofMain.h"
+
 namespace unitro{
 namespace graphics{
 	class Drawer
@@ -9,6 +10,9 @@ namespace graphics{
 		void setup();
 		void update();
 		void draw();
+		
+		
+		
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
 	};

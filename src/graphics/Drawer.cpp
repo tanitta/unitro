@@ -22,7 +22,8 @@ namespace graphics{
 			ofSetupScreen();
 			
 			mainCam.begin();
-			ofDrawGrid(10.0f,10.0f,true,true,true,true); 
+				ofDrawBox(5,5,5,1);
+				ofDrawGrid(10.0f,10.0f,true,true,true,true); 
 			mainCam.end();
 		ofPopView();
 	};

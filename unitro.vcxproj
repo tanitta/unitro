@@ -90,8 +90,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Core.cpp" />
     <ClCompile Include="src\data\Cell.cpp" />
     <ClCompile Include="src\data\MatrixManager.cpp" />
+    <ClCompile Include="src\graphics\CellDrawer.cpp" />
     <ClCompile Include="src\graphics\Drawer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\network\Network.cpp" />
@@ -113,8 +115,10 @@
     <ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core.h" />
     <ClInclude Include="src\data\Cell.h" />
     <ClInclude Include="src\data\MatrixManager.h" />
+    <ClInclude Include="src\graphics\CellDrawer.h" />
     <ClInclude Include="src\graphics\Drawer.h" />
     <ClInclude Include="src\network\Network.h" />
     <ClInclude Include="src\testApp.h" />
