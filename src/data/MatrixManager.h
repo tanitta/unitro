@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Cell.h"
 namespace unitro{
 namespace data{
@@ -6,9 +8,18 @@ namespace data{
 	// };
 	
 	class MatrixManager{
-	public:
+	private:
 		MatrixManager();
+		MatrixManager(const MatrixManager& r){};
 		~MatrixManager();
+		
+		void initCellArray3(Cell ***matrix);
+		void delCellArray3(Cell ***matrix);
+	public:
+		static MatrixManager* getInstance(){
+			static MatrixManager inst;
+			return &inst;
+		}
 		
 		void initMatrix(int x, int y, int z);
 		void delMatrix();
@@ -26,10 +37,6 @@ namespace data{
 		
 		Cell ***matrixCurrent;
 		Cell ***matrixNext;
-		
-	private:
-		void initCellArray3(Cell ***matrix);
-		void delCellArray3(Cell ***matrix);
 	};	
 }
 }

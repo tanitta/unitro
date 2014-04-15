@@ -1,8 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "data/MatrixManager.h"
-#include "graphics/Drawer.h"
+#include "Core.h"
 class testApp : public ofBaseApp{
 
 	public:
@@ -20,8 +19,8 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-
-		unitro::data::MatrixManager matrixManager;
-		unitro::graphics::Drawer drawer;
-		// char longarray[5*1000*1000*20];
+		unitro::Core core;
+		
+		// unitro::data::MatrixManager matrixManager;
+		// unitro::graphics::Drawer drawer;
 };

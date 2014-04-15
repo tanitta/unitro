@@ -1,5 +1,7 @@
-#include "ofMain.h"
+#pragma once
 
+#include "ofMain.h"
+#include "CellDrawer.h"
 namespace unitro{
 namespace graphics{
 	class Drawer
@@ -15,6 +17,7 @@ namespace graphics{
 		
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
+		CellDrawer cellDrawer;
 	};
 }
 }
