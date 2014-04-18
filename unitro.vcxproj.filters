@@ -70,6 +70,9 @@
     <ClCompile Include="src\Core.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\VirtualClass.cpp">
+      <Filter>src\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -110,6 +113,9 @@
     </Filter>
     <Filter Include="src\network">
       <UniqueIdentifier>{3767f85e-2a94-4d86-bc16-3b1f2c1e6c3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\test">
+      <UniqueIdentifier>{f96a0cb3-47fb-4acf-baf9-335f493da6ac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="src\Core.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\VirtualClass.h">
+      <Filter>src\test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

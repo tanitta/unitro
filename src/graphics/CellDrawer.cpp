@@ -16,7 +16,7 @@ namespace graphics{
 			{
 				for (int k = 0; k < mM->size_z; ++k)
 				{
-					ofDrawBox(i,j,k,1);
+					//ofDrawBox(i,j,k,1);
 				}	
 			}	
 		}

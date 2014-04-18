@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "data/MatrixManager.h"
 #include "graphics/Drawer.h"
+#include "test/VirtualClass.h"
 
 namespace unitro{
 	class Core
@@ -17,5 +18,7 @@ namespace unitro{
 		
 		// unitro::data::MatrixManager matrixManager;
 		unitro::graphics::Drawer drawer;
+		
+		unitro::test::VirtualClass* hoge[10];
 	};
 }

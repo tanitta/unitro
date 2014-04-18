@@ -5,6 +5,11 @@ namespace data{
 	public:
 		Cell();
 		~Cell();
+		
+		static void setup(){};
+		static void update(){};
+		static void draw(){};
+		
 		double soil;
 		double water;
 		double temp;

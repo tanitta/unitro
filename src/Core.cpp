@@ -7,10 +7,20 @@ namespace unitro{
 	void Core::setup(){
 		ofSetFrameRate(60);
 		drawer.setup();
-		data::MatrixManager::getInstance()->initMatrix(10, 10, 10);
+		data::MatrixManager::getInstance()->initMatrix(100, 100, 100);
 		data::MatrixManager::getInstance()->matrixNext[5][5][5].water = 10.0;
 		cout<<"water"<<data::MatrixManager::getInstance()->matrixNext[5][5][5].water<<"\n";
 		
+		for (int i = 0; i < 10; ++i)
+		{
+			hoge[i] = new unitro::test::HogeClass1;
+		}
+		hoge[0]->test();
+		hoge[0]->test();
+		
+		hoge[0] = new unitro::test::HogeClass2;
+		hoge[0]->test();
+		hoge[9]->test();
 		// unitro::data::Cell* hoge;
 		// hoge = matrixManager.GetCellHandle(5,5,5);
 		// hoge.[5][5][5].air = 1.0;
