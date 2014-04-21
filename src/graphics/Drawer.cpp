@@ -6,6 +6,9 @@ namespace graphics{
 	Drawer::~Drawer(){};
 	void Drawer::setup(){
 		ofSetWindowTitle("unitro");
+		ofEnableDepthTest();
+		ofEnableAntiAliasing();
+		
 		viewport.x = 0;
 		viewport.y = 0;
 		viewport.width = 1024;
@@ -13,6 +16,14 @@ namespace graphics{
 		mainCam.setDistance(10);
 		mainCam.setNearClip(0.01);
 		ofBackground(127);
+		
+		light.enable();
+		light.setSpotlight();
+		light.setPosition(10.0, 10.0, 10.0);
+		light.setAmbientColor(ofFloatColor(0.5,0.5,0.5,1.0));
+		light.setDiffuseColor(ofFloatColor(0.5,0.5,0.5));
+		light.setSpecularColor(ofFloatColor(1.0,1.0,1.0));
+		
 	};
 	void Drawer::update(){};
 	void Drawer::draw(){

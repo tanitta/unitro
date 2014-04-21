@@ -13,7 +13,7 @@ namespace graphics{
 		void update();
 		void draw();
 		
-		
+		ofLight light;
 		
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
