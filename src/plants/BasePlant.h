@@ -9,12 +9,9 @@ namespace plants{
 		BasePlant(){};
 		~BasePlant(){};
 		
-		virtual static void setup(){};
-		virtual static void update(){};
-		virtual static void draw(){};
-		
-		virtual string name;
-		
+		virtual void setup(){};
+		virtual void update(){};
+		virtual void draw(){};
 	};
 }
 }

@@ -1,3 +1,5 @@
+#include "../plants/BasePlant.h"
+#include "../items/BaseItem.h"
 namespace unitro{
 namespace data{
 	class Cell
@@ -17,6 +19,9 @@ namespace data{
 		double nutP;
 		double nutN;
 		double brightness;
+		
+		unitro::plants::BasePlant plant;
+		unitro::items::BaseItem item;
 	};
 }	
 }

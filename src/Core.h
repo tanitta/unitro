@@ -19,6 +19,6 @@ namespace unitro{
 		// unitro::data::MatrixManager matrixManager;
 		unitro::graphics::Drawer drawer;
 		
-		unitro::test::VirtualClass* hoge[10];
+		// unitro::test::VirtualClass* hoge[10];
 	};
 }

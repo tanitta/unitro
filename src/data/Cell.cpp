@@ -11,5 +11,9 @@ namespace data{
 		brightness = 0.0;
 	};
 	Cell::~Cell(){};
+	
+	void Cell::setup(){};
+	void Cell::update(){};
+	void Cell::draw(){};
 }
 }
