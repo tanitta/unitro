@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "../data/MatrixManager.h"
+#include "../data/Cell.h"
 namespace unitro{
 namespace graphics{
 	class CellDrawer

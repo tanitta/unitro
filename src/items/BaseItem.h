@@ -6,8 +6,8 @@ namespace items{
 	class BaseItem
 	{
 	public:
-		BaseItem();
-		~BaseItem();
+		BaseItem(){};
+		~BaseItem(){};
 		
 		virtual void setup(){};
 		virtual void update(){};

@@ -8,8 +8,11 @@ namespace unitro{
 		ofSetFrameRate(60);
 		drawer.setup();
 		data::MatrixManager::getInstance()->initMatrix(100, 100, 100);
-		data::MatrixManager::getInstance()->matrixNext[5][5][5].water = 10.0;
-		cout<<"water"<<data::MatrixManager::getInstance()->matrixNext[5][5][5].water<<"\n";
+		data::MatrixManager::getInstance()->matrixNext[5][5][5].soil = 1;
+		data::MatrixManager::getInstance()->matrixNext[5][4][5].soil = 0.7;
+		data::MatrixManager::getInstance()->matrixNext[5][4][4].soil = 0.5;
+		
+		// cout<<"water"<<data::MatrixManager::getInstance()->matrixNext[5][5][5].water<<"\n";
 		
 		// for (int i = 0; i < 10; ++i)
 		// {

@@ -12,8 +12,14 @@ namespace data{
 	};
 	Cell::~Cell(){};
 	
+	void Cell::SetHandle(Cell* p){
+		// pCell = p;
+	};
+	
 	void Cell::setup(){};
 	void Cell::update(){};
-	void Cell::draw(){};
+	void Cell::draw(Cell* p){
+		ofDrawBox(0,0,0,p->soil);
+	};
 }
 }

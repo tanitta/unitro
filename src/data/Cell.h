@@ -1,3 +1,5 @@
+#pragma once
+
 #include "../plants/BasePlant.h"
 #include "../items/BaseItem.h"
 namespace unitro{
@@ -8,9 +10,10 @@ namespace data{
 		Cell();
 		~Cell();
 		
-		static void setup(){};
-		static void update(){};
-		static void draw(){};
+		static void SetHandle(Cell* p);
+		static void setup();
+		static void update();
+		static void draw(Cell* p);
 		
 		double soil;
 		double water;
@@ -22,6 +25,8 @@ namespace data{
 		
 		unitro::plants::BasePlant plant;
 		unitro::items::BaseItem item;
+	private:
+		static Cell* pCell;
 	};
 }	
 }
