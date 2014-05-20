@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\testApp.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -52,27 +49,6 @@
     <ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlparser.cpp">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\Drawer.cpp">
-      <Filter>src\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\data\Cell.cpp">
-      <Filter>src\data</Filter>
-    </ClCompile>
-    <ClCompile Include="src\data\MatrixManager.cpp">
-      <Filter>src\data</Filter>
-    </ClCompile>
-    <ClCompile Include="src\network\Network.cpp">
-      <Filter>src\network</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics\CellDrawer.cpp">
-      <Filter>src\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\test\VirtualClass.cpp">
-      <Filter>src\test</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -116,6 +92,12 @@
     </Filter>
     <Filter Include="src\test">
       <UniqueIdentifier>{f96a0cb3-47fb-4acf-baf9-335f493da6ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\items">
+      <UniqueIdentifier>{1138b9cd-fb86-4220-9275-c9dac3dcae3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\plants">
+      <UniqueIdentifier>{beb52fb8-838a-461d-a482-e597bad99835}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -170,26 +152,35 @@
     <ClInclude Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.h">
       <Filter>addons\ofxXmlSettings\libs</Filter>
     </ClInclude>
-    <ClInclude Include="src\graphics\Drawer.h">
-      <Filter>src\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\data\Cell.h">
-      <Filter>src\data</Filter>
-    </ClInclude>
-    <ClInclude Include="src\data\MatrixManager.h">
-      <Filter>src\data</Filter>
-    </ClInclude>
-    <ClInclude Include="src\network\Network.h">
-      <Filter>src\network</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\CellDrawer.h">
-      <Filter>src\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Core.h">
+    <ClInclude Include="src\Core.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\test\VirtualClass.h">
+    <ClInclude Include="src\data\Cell.hpp">
+      <Filter>src\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data\MatrixManager.hpp">
+      <Filter>src\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\CellDrawer.hpp">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Drawer.hpp">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\network\Network.hpp">
+      <Filter>src\network</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\VirtualClass.hpp">
       <Filter>src\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\items\BaseItem.hpp">
+      <Filter>src\items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plants\BasePlant.hpp">
+      <Filter>src\plants</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plants\Wheat.hpp">
+      <Filter>src\plants</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
