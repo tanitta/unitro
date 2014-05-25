@@ -1,15 +1,22 @@
 #pragma once
 
 #include "ofMain.h"
-#include "CellDrawer.hpp"
+#include "boost/multi_array.hpp"
+
 namespace unitro{
 namespace graphics{
 	class Drawer
 	{
 	public:
+		typedef boost::multi_array<data::Cell, 3> mat3;
+		ofVec3f matrixSize;
+		ofLight light;		
+		ofRectangle viewport;	
+		ofEasyCam mainCam;
+		
 		Drawer(){};
 		~Drawer(){};
-		void setup(){
+		void setup(mat3& mat){
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofEnableDepthTest();
 			ofEnableAntiAliasing();
@@ -28,27 +35,41 @@ namespace graphics{
 			light.setAmbientColor(ofFloatColor(0.5,0.5,0.5,1.0));
 			light.setDiffuseColor(ofFloatColor(0.5,0.5,0.5));
 			light.setSpecularColor(ofFloatColor(1.0,1.0,1.0));
+			
+			matrixSize.x = mat.size();
+			matrixSize.y = mat[0].size();
+			matrixSize.z = mat[0][0].size();
 		};
 		void update(){};
-		void draw(){
+		void draw(mat3& mat){
 			ofPushView();
 			
 			ofViewport(viewport);
 			ofSetupScreen();
 			
 			mainCam.begin();
-				// ofDrawBox(5,5,5,1);
 				ofDrawGrid(10.0f,10.0f,true,true,true,true); 
-				// cellDrawer.draw();
+				
+				for (int i = 1; i < matrixSize.x-1; ++i){for (int j = 1; j < matrixSize.y-1; ++j){for (int k = 1; k < matrixSize.z-1; ++k){
+						if (mat[i][j][k].soil!=0){
+							if(!(mat[i-1][j][k].soil!=0&&
+								mat[i+1][j][k].soil!=0&&
+								mat[i][j-1][k].soil!=0&&
+								mat[i][j+1][k].soil!=0&&
+								mat[i][j][k-1].soil!=0&&
+								mat[i][j][k+1].soil!=0)
+							){
+								ofPushMatrix();
+									ofTranslate(i,j,k);
+									unitro::data::Cell::draw(mat[i][j][k]);
+								ofPopMatrix();
+							}
+						}
+				}}};
 			mainCam.end();
 			ofPopView();
 		};
 		
-		ofLight light;
-		
-		ofRectangle viewport;	
-		ofEasyCam mainCam;
-		// CellDrawer cellDrawer;
 	};
 }
 }

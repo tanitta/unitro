@@ -1,6 +1,5 @@
 #pragma once
 
-#include "data/MatrixManager.hpp"
 #include "data/Cell.hpp"
 #include "boost/multi_array.hpp"
 #include "ofMain.h"
@@ -15,14 +14,16 @@ namespace unitro{
 		Solver(){};
 		~Solver(){};
 		
-		void SetSize(ofVec3f mSize){
-			matrixSize = mSize;
-		}
 		void setup(mat3& cMat, mat3& nMat){
-			nMat[5][5][5].soil = 10;
-			nMat[4][5][5].soil = 10;
-			nMat[5][5][4].soil = 10;
-			nMat[4][5][4].soil = 10;
+			matrixSize.x = cMat.size();
+			matrixSize.y = cMat[0].size();
+			matrixSize.z = cMat[0][0].size();
+			
+			nMat[5][5][5].soil = 1;
+			nMat[4][5][5].soil = 1;
+			nMat[5][5][4].soil = 1;
+			nMat[4][5][4].soil = 1;
+			
 		};
 		
 		void update(mat3& cMat, mat3& nMat){

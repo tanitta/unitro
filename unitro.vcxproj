@@ -114,8 +114,6 @@
   <ItemGroup>
     <ClInclude Include="src\Core.hpp" />
     <ClInclude Include="src\data\Cell.hpp" />
-    <ClInclude Include="src\data\MatrixManager.hpp" />
-    <ClInclude Include="src\graphics\CellDrawer.hpp" />
     <ClInclude Include="src\graphics\Drawer.hpp" />
     <ClInclude Include="src\items\BaseItem.hpp" />
     <ClInclude Include="src\network\Network.hpp" />

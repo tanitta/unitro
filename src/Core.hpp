@@ -1,10 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
-#include "data/MatrixManager.hpp"
 #include "data/Cell.hpp"
 #include "graphics/Drawer.hpp"
-#include "test/VirtualClass.hpp"
 #include "boost/multi_array.hpp"
 #include "solver.hpp"
 namespace unitro{
@@ -25,16 +23,14 @@ namespace unitro{
 			nextLocalMatrix.resize(boost::extents[matrixSize.x][matrixSize.y][matrixSize.z]);
 			
 			ofSetFrameRate(60);
-			drawer.setup();
-			solver.SetSize(matrixSize);
+			drawer.setup(nextLocalMatrix);
 			solver.setup(currentLocalMatrix,nextLocalMatrix);
 		};
 		void update(){
-			drawer.update();
 			solver.update(currentLocalMatrix,nextLocalMatrix);
 		};
 		void draw(){
-			drawer.draw();
+			drawer.draw(nextLocalMatrix);
 			solver.draw(currentLocalMatrix,nextLocalMatrix);
 		};
 		
