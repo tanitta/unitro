@@ -182,6 +182,9 @@
     <ClInclude Include="src\plants\Wheat.hpp">
       <Filter>src\plants</Filter>
     </ClInclude>
+    <ClInclude Include="src\solver.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

@@ -121,6 +121,7 @@
     <ClInclude Include="src\network\Network.hpp" />
     <ClInclude Include="src\plants\BasePlant.hpp" />
     <ClInclude Include="src\plants\Wheat.hpp" />
+    <ClInclude Include="src\solver.hpp" />
     <ClInclude Include="src\testApp.h" />
     <ClInclude Include="..\..\..\addons\ofx3DModelLoader\src\3DS\model3DS.h" />
     <ClInclude Include="..\..\..\addons\ofx3DModelLoader\src\3DS\texture3DS.h" />
