@@ -1,7 +1,10 @@
 #pragma once
 
+#include "ofMain.h"
 #include "../plants/BasePlant.hpp"
 #include "../items/BaseItem.hpp"
+
+
 namespace unitro{
 namespace data{
 	class Cell
@@ -14,6 +17,8 @@ namespace data{
 		double nutP;
 		double nutN;
 		double brightness;
+		unitro::plants::BasePlant plant;
+		unitro::items::BaseItem item;
 		
 		Cell():
 			soil(0.0),
@@ -25,19 +30,18 @@ namespace data{
 			brightness(0.0)
 		{};
 		
-		~Cell(){
-			
-		};
+		~Cell(){};
+		static void SetNearCell(){};
 		
 		static void setup(){};
+		
 		static void update(){};
-		static void draw(Cell& c){
+		
+		static void draw(Cell& c, ofVec3f& nearCell){
 			ofDrawBox(0,0,0,c.soil);
 		};
 		
 		
-		unitro::plants::BasePlant plant;
-		unitro::items::BaseItem item;
 	};
 }	
 }

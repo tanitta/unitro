@@ -33,10 +33,5 @@ namespace unitro{
 			drawer.draw(nextLocalMatrix);
 			solver.draw(currentLocalMatrix,nextLocalMatrix);
 		};
-		
-		// unitro::data::MatrixManager matrixManager;
-		
-		// unitro::test::VirtualClass* hoge[10];
-		
 	};
 }

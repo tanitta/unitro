@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "boost/multi_array.hpp"
 
+
 namespace unitro{
 namespace graphics{
 	class Drawer
@@ -13,8 +14,11 @@ namespace graphics{
 		ofLight light;		
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
+		ofVec3f nearCell;
+		
 		
 		Drawer(){};
+		
 		~Drawer(){};
 		void setup(mat3& mat){
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
@@ -40,10 +44,10 @@ namespace graphics{
 			matrixSize.y = mat[0].size();
 			matrixSize.z = mat[0][0].size();
 		};
+		
 		void update(){};
+		
 		void draw(mat3& mat){
-			ofPushView();
-			
 			ofViewport(viewport);
 			ofSetupScreen();
 			
@@ -59,15 +63,25 @@ namespace graphics{
 								mat[i][j][k-1].soil!=0&&
 								mat[i][j][k+1].soil!=0)
 							){
+								nearCell.x = 0;
+								nearCell.y = 0;
+								nearCell.z = 0;
+								if (mat[i][j][k].soil<1){
+									if(mat[i-1][j][k].soil!=0)nearCell.x--;
+									if(mat[i+1][j][k].soil!=0)nearCell.x++;
+									if(mat[i][j-1][k].soil!=0)nearCell.y--;
+									if(mat[i][j+1][k].soil!=0)nearCell.y++;
+									if(mat[i][j][k-1].soil!=0)nearCell.z--;
+									if(mat[i][j][k+1].soil!=0)nearCell.z++;
+								}
 								ofPushMatrix();
 									ofTranslate(i,j,k);
-									unitro::data::Cell::draw(mat[i][j][k]);
+									unitro::data::Cell::draw(mat[i][j][k],nearCell);
 								ofPopMatrix();
 							}
 						}
 				}}};
 			mainCam.end();
-			ofPopView();
 		};
 		
 	};
