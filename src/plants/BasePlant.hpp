@@ -9,14 +9,14 @@ namespace plants{
 	{
 	public:
 		//index:locus
-		boost::array<int,10> gene;
+		// boost::array<int,10> gene;
 		
 		BasePlant(){};
 		~BasePlant(){};
 		
-		virtual void setup(){};
-		virtual void update(){};
-		virtual void draw(){};
+		// static void setup(){};
+		// static void update(){};
+		// static void draw(){};
 	};
 }
 }

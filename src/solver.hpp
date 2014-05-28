@@ -1,6 +1,7 @@
 #pragma once
 
 #include "data/Cell.hpp"
+#include "plants/Wheat.hpp"
 #include "boost/multi_array.hpp"
 #include "ofMain.h"
 
@@ -20,6 +21,9 @@ namespace unitro{
 			matrixSize.z = cMat[0][0].size();
 			
 			nMat[5][5][5].soil = 1;
+			// delete nMat[5][5][5].plant;
+			// nMat[5][5][5].plant = dynamic_cast<unitro::plants::Wheat>(&nMat[5][5][5].plant);
+			
 			nMat[4][5][5].soil = 1;
 			nMat[5][5][4].soil = 1;
 			nMat[4][5][4].soil = 1;

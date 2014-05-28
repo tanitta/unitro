@@ -28,7 +28,9 @@ namespace data{
 			nutP(0.0),
 			nutN(0.0),
 			brightness(0.0)
-		{};
+		{
+			
+		};
 		
 		~Cell(){};
 		static void SetNearCell(){};
