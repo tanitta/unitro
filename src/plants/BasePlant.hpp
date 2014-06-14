@@ -14,9 +14,9 @@ namespace plants{
 		BasePlant(){};
 		~BasePlant(){};
 		
-		// static void setup(){};
-		// static void update(){};
-		// static void draw(){};
+		virtual void setup(){};
+		virtual void update(){};
+		virtual void draw(){};
 	};
 }
 }

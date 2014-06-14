@@ -43,6 +43,7 @@ namespace graphics{
 			matrixSize.x = mat.size();
 			matrixSize.y = mat[0].size();
 			matrixSize.z = mat[0][0].size();
+			
 		};
 		
 		void update(){};
@@ -76,7 +77,7 @@ namespace graphics{
 								}
 								ofPushMatrix();
 									ofTranslate(i,j,k);
-									unitro::data::Cell::draw(mat[i][j][k],nearCell);
+									// unitro::data::Cell::draw(mat[i][j][k],nearCell);
 								ofPopMatrix();
 							}
 						}

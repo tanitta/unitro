@@ -8,8 +8,8 @@ namespace plants{
 			Wheat(){};
 			~Wheat(){};
 			
-			// static void setup(){};
-			// static void update(){};
-			// static void draw(){};
+			void setup(){};
+			void update(){};
+			void draw(){};
 		};	
 }}

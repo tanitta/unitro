@@ -179,6 +179,9 @@
     <ClInclude Include="src\solver.hpp">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\plants\VoidPlant.hpp">
+      <Filter>src\plants</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

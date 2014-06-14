@@ -118,6 +118,7 @@
     <ClInclude Include="src\items\BaseItem.hpp" />
     <ClInclude Include="src\network\Network.hpp" />
     <ClInclude Include="src\plants\BasePlant.hpp" />
+    <ClInclude Include="src\plants\VoidPlant.hpp" />
     <ClInclude Include="src\plants\Wheat.hpp" />
     <ClInclude Include="src\solver.hpp" />
     <ClInclude Include="src\testApp.h" />

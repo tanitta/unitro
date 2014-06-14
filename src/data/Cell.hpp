@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "../plants/BasePlant.hpp"
+#include "../plants/VoidPlant.hpp"
+
 #include "../items/BaseItem.hpp"
 
 
@@ -17,7 +19,7 @@ namespace data{
 		double nutP;
 		double nutN;
 		double brightness;
-		unitro::plants::BasePlant plant;
+		unitro::plants::VoidPlant plant;
 		unitro::items::BaseItem item;
 		
 		Cell():
@@ -33,13 +35,13 @@ namespace data{
 		};
 		
 		~Cell(){};
-		static void SetNearCell(){};
+		void SetNearCell(){};
 		
-		static void setup(){};
+		void setup(){};
 		
-		static void update(){};
+		void update(){};
 		
-		static void draw(Cell& c, ofVec3f& nearCell){
+		void draw(Cell& c, ofVec3f& nearCell){
 			ofDrawBox(0,0,0,c.soil);
 		};
 		
