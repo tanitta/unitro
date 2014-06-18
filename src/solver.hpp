@@ -21,9 +21,8 @@ namespace unitro{
 			matrixSize.z = cMat[0][0].size();
 			
 			nMat[5][5][5].soil = 1;
-			// delete nMat[5][5][5].plant;
-			// unitro::plants::Wheat obj;// = new unitro::plants::Wheat();
-			// nMat[5][5][5].plant = obj;
+			
+			nMat[5][5][5].plant = new unitro::plants::Wheat;
 			
 			nMat[4][5][5].soil = 1;
 			nMat[5][5][4].soil = 1;

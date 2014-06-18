@@ -2,14 +2,14 @@
 #include "BasePlant.hpp"
 namespace unitro{
 namespace plants{
-	class VoidPlant :unitro::plants::BasePlant
+	class VoidPlant : public unitro::plants::BasePlant
 		{
 		public:
 			VoidPlant(){};
 			~VoidPlant(){};
 			
-			// static void setup(){};
-			// static void update(){};
-			// static void draw(){};
+			void setup(){};
+			void update(){};
+			void draw(){};
 		};	
 }}

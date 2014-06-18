@@ -12,7 +12,7 @@ namespace plants{
 		// boost::array<int,10> gene;
 		
 		BasePlant(){};
-		~BasePlant(){};
+		virtual ~BasePlant(){};
 		
 		virtual void setup(){};
 		virtual void update(){};

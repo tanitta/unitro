@@ -19,8 +19,8 @@ namespace data{
 		double nutP;
 		double nutN;
 		double brightness;
-		unitro::plants::VoidPlant plant;
-		unitro::items::BaseItem item;
+		unitro::plants::BasePlant* plant;
+		unitro::items::BaseItem* item;
 		
 		Cell():
 			soil(0.0),
