@@ -41,8 +41,8 @@ namespace data{
 		
 		void update(){};
 		
-		void draw(Cell& c, ofVec3f& nearCell){
-			ofDrawBox(0,0,0,c.soil);
+		void draw(ofVec3f& nearCell){
+			ofDrawBox(0,0,0,soil);
 		};
 		
 		

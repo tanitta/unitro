@@ -77,7 +77,7 @@ namespace graphics{
 								}
 								ofPushMatrix();
 									ofTranslate(i,j,k);
-									// unitro::data::Cell::draw(mat[i][j][k],nearCell);
+									mat[i][j][k].draw(nearCell);
 								ofPopMatrix();
 							}
 						}
