@@ -43,7 +43,9 @@ namespace data{
 		
 		void draw(ofVec3f& nearCell){
 			// ofDrawBox(0,0,0,soil);
-
+			ofColor c;
+			c.setHsb(0,0,255);
+			ofSetColor(c);
 			int lockedAxis = 0;
 			if (nearCell.x == 2)lockedAxis += 1;
 			if (nearCell.y == 2)lockedAxis += 1;
