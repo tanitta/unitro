@@ -85,29 +85,6 @@ namespace graphics{
 						ofTranslate(i,j,k);
 						mat[i][j][k].draw(nearCell);
 					ofPopMatrix();
-					
-						// if (mat[i][j][k].soil!=0){
-						// 	if(!(mat[i-1][j][k].soil!=0&&
-						// 		mat[i+1][j][k].soil!=0&&
-						// 		mat[i][j-1][k].soil!=0&&
-						// 		mat[i][j+1][k].soil!=0&&
-						// 		mat[i][j][k-1].soil!=0&&
-						// 		mat[i][j][k+1].soil!=0)
-						// 	){
-						// 		nearCell.x = 0;
-						// 		nearCell.y = 0;
-						// 		nearCell.z = 0;
-						// 		if (mat[i][j][k].soil<1){
-						// 			if(mat[i-1][j][k].soil!=0)nearCell.x--;
-						// 			if(mat[i+1][j][k].soil!=0)nearCell.x++;
-						// 			if(mat[i][j-1][k].soil!=0)nearCell.y--;
-						// 			if(mat[i][j+1][k].soil!=0)nearCell.y++;
-						// 			if(mat[i][j][k-1].soil!=0)nearCell.z--;
-						// 			if(mat[i][j][k+1].soil!=0)nearCell.z++;
-						// 		}
-						
-						// 	}
-						// }
 				}}};
 			mainCam.end();
 		};
