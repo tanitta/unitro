@@ -1,11 +1,16 @@
 #pragma once
 #include "BasePlant.hpp"
+#include "ofx3DModelLoader.h"
 namespace unitro{
 namespace plants{
 	class Wheat : public unitro::plants::BasePlant
 		{
 		public:
-			Wheat(){};
+			static ofx3DModelLoader modelObj;
+			
+			Wheat(){
+				modelObj.loadModel("modelSample.3ds", 1 );
+			};
 			~Wheat(){};
 			
 			void setup(){};
