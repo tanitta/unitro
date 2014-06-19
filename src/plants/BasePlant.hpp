@@ -5,8 +5,7 @@
 
 namespace unitro{
 namespace plants{
-	class BasePlant
-	{
+	class BasePlant{
 	public:
 		//index:locus
 		// boost::array<int,10> gene;
