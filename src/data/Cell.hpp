@@ -41,13 +41,14 @@ namespace data{
 		
 		void update(){};
 		
-		void drawPlant(){
-			plant->draw();
+		void drawPlant(double shift){
+			ofPushMatrix();
+				ofTranslate(0,shift,0);
+				plant->draw();
+			ofPopMatrix();
 		};
 		
 		void draw(ofVec3f& nearCell){
-			// ofDrawBox(0,0,0,soil);
-			drawPlant();
 			ofColor c;
 			c.setHsb(0,0,255);
 			ofSetColor(c);
@@ -67,9 +68,9 @@ namespace data{
 					ofPushMatrix();
 						ofTranslate(nearCell.x*d,nearCell.y*d,nearCell.z*d);
 						ofDrawBox(l, l, l);
-						drawPlant();
+						drawPlant(l*0.5);
 					ofPopMatrix();
-					// break;
+					
 				}
 				case 1:{
 					l = (float)pow(soil, 1.0/2.0);
@@ -79,26 +80,29 @@ namespace data{
 						ofPushMatrix();
 							ofTranslate(0,nearCell.y*d,nearCell.z*d);
 							ofDrawBox(1, l, l);
-							drawPlant();
+							drawPlant(l*0.5);
 						ofPopMatrix();
+						
 					}
 					if (nearCell.y == 2){
 						//translate
 						ofPushMatrix();
 							ofTranslate(nearCell.x*d,0,nearCell.z*d);
 							ofDrawBox(l, 1, l);
-							drawPlant();
+							drawPlant(0.5);
 						ofPopMatrix();
+						
 					}
 					if (nearCell.z == 2){
 						//translate
 						ofPushMatrix();
 							ofTranslate(nearCell.x*d,nearCell.y*d,0);
 							ofDrawBox(l, l, 1);
-							drawPlant();
+							drawPlant(l*0.5);
 						ofPopMatrix();
+						
 					}
-					// break;
+					break;
 				}
 				case 2:{
 					l = (float)soil;
@@ -108,15 +112,17 @@ namespace data{
 							ofPushMatrix();
 								ofTranslate(0,0,nearCell.z*d);
 								ofBox(1, 1, l);
-								drawPlant();
-							ofPopMatrix();		
+								drawPlant(0.5);
+							ofPopMatrix();
+							
 						}
 						if(nearCell.z == 2){
 							ofPushMatrix();
 								ofTranslate(0,nearCell.y*d,0);
 								ofBox(1, l, 1);
-								drawPlant();
+								drawPlant(l*0.5);
 							ofPopMatrix();
+							
 						}
 						
 					}
@@ -124,9 +130,11 @@ namespace data{
 						ofPushMatrix();
 							ofTranslate(nearCell.x*d,0,0);
 							ofBox(l, 1, 1);
-							drawPlant();
+							drawPlant(0.5);
 						ofPopMatrix();
+						
 					}
+					break;
 				}
 			}
 		};

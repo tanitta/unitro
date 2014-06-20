@@ -30,8 +30,11 @@ namespace unitro{
 			solver.update(currentLocalMatrix,nextLocalMatrix);
 		};
 		void draw(){
-			drawer.draw(nextLocalMatrix);
-			solver.draw(currentLocalMatrix,nextLocalMatrix);
+			ofPushMatrix();
+				ofScale(4,4,4);
+				drawer.draw(nextLocalMatrix);
+				solver.draw(currentLocalMatrix,nextLocalMatrix);
+			ofPopMatrix();
 		};
 	};
 }

@@ -7,17 +7,21 @@ namespace plants{
 	public:
 		static ofx3DModelLoader modelObj;
 
+		double size;
 		Butterbur(){
 			modelObj.loadModel("Butterbur/Body.3ds", 1 );
+			size = ofRandom(0.5, 2);
 		};
 		~Butterbur(){};
 		
 		void setup(){};
 		void update(){};
 		void draw(){
-			modelObj.setPosition(0,0.5,0);
-			modelObj.setScale(1);
-			modelObj.draw();
+			ofPushMatrix();
+				ofRotate((size-0.5)*360.0, 0, 1, 0);
+				modelObj.setScale(size,size,size);
+				modelObj.draw();
+			ofPopMatrix();
 			
 		};
 	};	
