@@ -8,12 +8,17 @@ namespace plants{
 		static ofx3DModelLoader modelObj;
 
 		Butterbur(){
-			modelObj.loadModel("modelSample.3ds", 1 );
+			modelObj.loadModel("Butterbur/Body.3ds", 1 );
 		};
 		~Butterbur(){};
 		
 		void setup(){};
 		void update(){};
-		void draw(){};
+		void draw(){
+			modelObj.setPosition(0,0.5,0);
+			modelObj.setScale(1);
+			modelObj.draw();
+			
+		};
 	};	
 }}

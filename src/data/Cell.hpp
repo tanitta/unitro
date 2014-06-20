@@ -31,7 +31,7 @@ namespace data{
 			nutN(0.0),
 			brightness(0.0)
 		{
-			
+			plant = new unitro::plants::BasePlant;
 		};
 		
 		~Cell(){};
@@ -41,8 +41,13 @@ namespace data{
 		
 		void update(){};
 		
+		void drawPlant(){
+			plant->draw();
+		};
+		
 		void draw(ofVec3f& nearCell){
 			// ofDrawBox(0,0,0,soil);
+			drawPlant();
 			ofColor c;
 			c.setHsb(0,0,255);
 			ofSetColor(c);
@@ -50,27 +55,31 @@ namespace data{
 			if (nearCell.x == 2)lockedAxis += 1;
 			if (nearCell.y == 2)lockedAxis += 1;
 			if (nearCell.z == 2)lockedAxis += 1;
-
+			
+			float l;
+			float d;
+			
 			switch(lockedAxis){
 				case 0:{
-					float l = (float)pow(soil, 1.0/3.0);
-					float d = 0.5f - l*0.5f;
+					l = (float)pow(soil, 1.0/3.0);
+					d = 0.5f - l*0.5f;
 					//translate
 					ofPushMatrix();
 						ofTranslate(nearCell.x*d,nearCell.y*d,nearCell.z*d);
-						// ofDrawBox(0,0,0,soil);
 						ofDrawBox(l, l, l);
+						drawPlant();
 					ofPopMatrix();
 					// break;
 				}
 				case 1:{
-					float l = (float)pow(soil, 1.0/2.0);
-					float d = 0.5f - l*0.5f;
+					l = (float)pow(soil, 1.0/2.0);
+					d = 0.5f - l*0.5f;
 					if (nearCell.x == 2){
 						//translate
 						ofPushMatrix();
 							ofTranslate(0,nearCell.y*d,nearCell.z*d);
 							ofDrawBox(1, l, l);
+							drawPlant();
 						ofPopMatrix();
 					}
 					if (nearCell.y == 2){
@@ -78,6 +87,7 @@ namespace data{
 						ofPushMatrix();
 							ofTranslate(nearCell.x*d,0,nearCell.z*d);
 							ofDrawBox(l, 1, l);
+							drawPlant();
 						ofPopMatrix();
 					}
 					if (nearCell.z == 2){
@@ -85,24 +95,27 @@ namespace data{
 						ofPushMatrix();
 							ofTranslate(nearCell.x*d,nearCell.y*d,0);
 							ofDrawBox(l, l, 1);
+							drawPlant();
 						ofPopMatrix();
 					}
 					// break;
 				}
 				case 2:{
-					float l = (float)soil;
-					float d = 0.5f - l*0.5f;
+					l = (float)soil;
+					d = 0.5f - l*0.5f;
 					if (nearCell.x == 2){
 						if(nearCell.y == 2){
 							ofPushMatrix();
 								ofTranslate(0,0,nearCell.z*d);
 								ofBox(1, 1, l);
+								drawPlant();
 							ofPopMatrix();		
 						}
 						if(nearCell.z == 2){
 							ofPushMatrix();
 								ofTranslate(0,nearCell.y*d,0);
 								ofBox(1, l, 1);
+								drawPlant();
 							ofPopMatrix();
 						}
 						
@@ -111,10 +124,9 @@ namespace data{
 						ofPushMatrix();
 							ofTranslate(nearCell.x*d,0,0);
 							ofBox(l, 1, 1);
+							drawPlant();
 						ofPopMatrix();
 					}
-
-					break;
 				}
 			}
 		};

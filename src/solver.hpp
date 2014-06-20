@@ -2,6 +2,7 @@
 
 #include "data/Cell.hpp"
 #include "plants/Wheat.hpp"
+#include "plants/Butterbur.hpp"
 #include "boost/multi_array.hpp"
 #include "ofMain.h"
 
@@ -21,19 +22,19 @@ namespace unitro{
 			matrixSize.z = cMat[0][0].size();
 			
 			nMat[5][5][5].soil = 1;
-			nMat[4][5][5].soil = 0.5;
-			nMat[5][5][4].soil = 0.6;
-			nMat[4][5][4].soil = 0.2;
+			// nMat[4][5][5].soil = 0.5;
+			// nMat[5][5][4].soil = 0.6;
+			// nMat[4][5][4].soil = 0.2;
 
-			nMat[5][4][5].soil = 1*0.6;
-			nMat[4][4][5].soil = 0.5*0.6;
-			nMat[5][4][4].soil = 0.6*0.6;
-			nMat[4][4][4].soil = 0.2*0.6;
+			// nMat[5][4][5].soil = 1*0.6;
+			// nMat[4][4][5].soil = 0.5*0.6;
+			// nMat[5][4][4].soil = 0.6*0.6;
+			// nMat[4][4][4].soil = 0.2*0.6;
 			
-			nMat[5][6][4].soil = 0.6*0.6;
-			nMat[5][7][4].soil = 0.6*0.6;
+			// nMat[5][6][4].soil = 0.6*0.6;
+			// nMat[5][7][4].soil = 0.6*0.6;
 
-			nMat[5][5][5].plant = new unitro::plants::Wheat;
+			nMat[5][5][5].plant = new unitro::plants::Butterbur;
 		};
 		
 		void update(mat3& cMat, mat3& nMat){
