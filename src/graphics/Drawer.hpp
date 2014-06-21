@@ -9,7 +9,6 @@ namespace graphics{
 	class Drawer
 	{
 	public:
-		typedef boost::multi_array<data::Cell, 3> mat3;
 		ofVec3f matrixSize;
 		ofLight light;		
 		ofRectangle viewport;	

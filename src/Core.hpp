@@ -43,8 +43,7 @@ namespace unitro{
 		};
 		void draw(){
 			ofPushMatrix();
-				// ofScale(4,4,4);
-				drawer.draw(nextLocalMatrix);
+				drawer.draw();
 			ofPopMatrix();
 		};
 		
