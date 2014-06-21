@@ -25,16 +25,16 @@ namespace unitro{
 		void setup(){
 			ofSetFrameRate(unitro::env::General::frameRate);
 			drawer.setup();
-			// solver.setup();
-			// solver.startThread(true,false);
+			solver.setup();
+			solver.startThread(true,false);
 		};
 		void update(){
 			if (counter >= 10*60-1)
 			{
 				if (!solver.isThreadRunning()){
 					cout<<"thread is end"<<endl;
-					// solver.stopThread();
-					// solver.startThread(true,false);
+					solver.stopThread();
+					solver.startThread(true,false);
 					counter = 0;
 				}
 			}else{
@@ -48,7 +48,7 @@ namespace unitro{
 		};
 		
 		void exit(){
-			// solver.stopThread();
+			solver.stopThread();
 		};
 	};
 }

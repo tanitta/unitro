@@ -5,27 +5,37 @@
 #include "plants/Butterbur.hpp"
 #include "boost/multi_array.hpp"
 #include "ofMain.h"
+#include "data/Matrix.hpp"
+#include "Env.h"
 namespace unitro{
 int foo = 3;
-	typedef boost::multi_array<data::Cell, 3> mat3;
+	// typedef boost::multi_array<data::Cell, 3> mat3;
 	class Solver : public ofThread
 	{
 	public:
-		ofVec3f matrixSize;
-		mat3* cM;
-		mat3* nM;
 		int a;
 		bool isSleep;
-		Solver():a(0),isSleep(false){};
+		
+		ofVec3f &matrixSize;
+		unitro::data::untMat3 &nMat;
+		unitro::data::untMat3 &cMat;
+		
+		Solver():
+			a(0),
+			isSleep(false),
+			nMat(unitro::data::nextLocalMatrix),
+			cMat(unitro::data::currentLocalMatrix),
+			matrixSize(unitro::env::General::matrixSize)
+		{
+				
+		};
 		~Solver(){};
-		void setup(mat3& cMat, mat3& nMat){
+		void setup(){
 			cout<<"!!!!"<<unitro::foo<<"!!!!"<<endl;
-			cM = &cMat;
-			nM = &nMat;
-			
-			matrixSize.x = cMat.size();
-			matrixSize.y = cMat[0].size();
-			matrixSize.z = cMat[0][0].size();
+
+			// matrixSize.x = cMat.size();
+			// matrixSize.y = cMat[0].size();
+			// matrixSize.z = cMat[0][0].size();
 			
 			nMat[5][5][5].soil = 1.0;
 			nMat[4][5][5].soil = 0.5;
@@ -52,7 +62,7 @@ int foo = 3;
 			nMat[5][5][5].plant = new unitro::plants::Butterbur;
 		};
 		
-		void update(mat3& cMat, mat3& nMat){
+		void update(){
 			cMat = nMat;
 			for (int i = 0; i < matrixSize.x; ++i){for (int j = 0; j < matrixSize.y; ++j){for (int k = 0; k < matrixSize.z; ++k){
 				
@@ -60,15 +70,13 @@ int foo = 3;
 		};
 		
 		void threadedFunction(){
-			mat3 &nMat = *nM;
-			mat3 &cMat = *cM;
 			// while(isThreadRunning()){
-				update(cMat,nMat);
+				update();
 				a += 1;
 			// }
 		}
 		
-		void draw(mat3& cMat, mat3& nMat){
+		void draw(){
 			cout<<"solver:"<<a<<endl;
 		};
 	};

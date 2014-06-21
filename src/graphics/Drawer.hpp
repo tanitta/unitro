@@ -9,14 +9,19 @@ namespace graphics{
 	class Drawer
 	{
 	public:
-		ofVec3f matrixSize;
 		ofLight light;		
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
 		ofVec3f nearCell;
 		unitro::data::untMat3 &mat;
 		
-		Drawer():mat(unitro::data::currentLocalMatrix){};
+		ofVec3f &matrixSize;
+		Drawer():
+			mat(unitro::data::currentLocalMatrix),
+			matrixSize(unitro::env::General::matrixSize)
+		{
+			
+		};
 		
 		~Drawer(){};
 		void setup(){
@@ -38,9 +43,6 @@ namespace graphics{
 			light.setAmbientColor(ofFloatColor(0.5,0.5,0.5,1.0));
 			light.setDiffuseColor(ofFloatColor(0.5,0.5,0.5));
 			light.setSpecularColor(ofFloatColor(1.0,1.0,1.0));
-			
-			matrixSize = unitro::env::General::matrixSize;
-			
 		};
 		
 		void update(){};
