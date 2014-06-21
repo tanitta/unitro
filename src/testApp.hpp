@@ -5,14 +5,18 @@
 class testApp : public ofBaseApp{
 
 	public:
+		int a;
 		void setup(){
 			core.setup();
+			a = 0;
 		};
 		void update(){
 			core.update();
+			a += 1;
 		};
 		void draw(){
 			core.draw();
+			cout<<"main : "<<a<<endl;
 		};
 
 		void keyPressed(int key){};
@@ -24,7 +28,9 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h){};
 		void dragEvent(ofDragInfo dragInfo){};
 		void gotMessage(ofMessage msg){};
-
+		void exit(){
+			core.exit();
+		};
 		unitro::Core core;
 		
 		// unitro::data::MatrixManager matrixManager;

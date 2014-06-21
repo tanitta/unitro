@@ -6,15 +6,22 @@ namespace plants{
 	class Butterbur : public unitro::plants::BasePlant{
 	public:
 		static ofx3DModelLoader modelObj;
-
+		double nutP;
+		double nutMax;
 		double size;
-		Butterbur(){
+		Butterbur():nutP(0.0),nutMax(2.5){
 			modelObj.loadModel("Butterbur/Body.3ds", 1 );
 			size = ofRandom(0.5, 2);
 		};
 		~Butterbur(){};
 		
-		void setup(){};
+		void setup(){
+			if(nutP >= nutMax){
+				
+			}else{
+				nutP = 0;
+			}
+		};
 		void update(){};
 		void draw(){
 			ofPushMatrix();
