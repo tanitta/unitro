@@ -1,11 +1,11 @@
 #pragma once
 
 #include "data/Cell.hpp"
+#include "data/Matrix.hpp"
 #include "plants/Wheat.hpp"
 #include "plants/Butterbur.hpp"
 #include "boost/multi_array.hpp"
 #include "ofMain.h"
-#include "data/Matrix.hpp"
 #include "Env.h"
 namespace unitro{
 	class Solver : public ofThread
@@ -48,7 +48,7 @@ namespace unitro{
 		void update(){
 			cMat = nMat;
 			for (int i = 0; i < matrixSize.x; ++i){for (int j = 0; j < matrixSize.y; ++j){for (int k = 0; k < matrixSize.z; ++k){
-				
+				nMat[i][j][k].plant->update(ofVec3f(i,j,k));
 			}}};
 		};
 		

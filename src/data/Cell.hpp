@@ -39,7 +39,9 @@ namespace data{
 		
 		void setup(){};
 		
-		void update(){};
+		void update(){
+			// plant->draw();
+		};
 		
 		void drawPlant(double shift){
 			ofPushMatrix();

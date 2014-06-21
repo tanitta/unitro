@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "boost/array.hpp"
-
+// #include "../data/Matrix.hpp"
 namespace unitro{
 namespace plants{
 	class BasePlant{
@@ -14,7 +14,7 @@ namespace plants{
 		virtual ~BasePlant(){};
 		
 		virtual void setup(){};
-		virtual void update(){};
+		virtual void update(ofVec3f pos){};
 		virtual void draw(){};
 	};
 }

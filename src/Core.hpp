@@ -2,11 +2,11 @@
 
 #include "ofMain.h"
 #include "data/Cell.hpp"
+#include "data/Matrix.hpp"
 #include "graphics/Drawer.hpp"
 #include "boost/multi_array.hpp"
 #include "Solver.hpp"
 #include "Env.h"
-#include "data/Matrix.hpp"
 namespace unitro{
 	class Core
 	{
@@ -14,6 +14,8 @@ namespace unitro{
 		unitro::graphics::Drawer drawer;
 		unitro::Solver solver;
 		int counter;
+		// data::untMat3 data::currentLocalMatrix;
+		// data::untMat3 data::nextLocalMatrix;
 		Core():counter(0){
 			unitro::data::currentLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 			unitro::data::nextLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
