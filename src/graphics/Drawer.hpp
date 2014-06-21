@@ -39,9 +39,7 @@ namespace graphics{
 			light.setDiffuseColor(ofFloatColor(0.5,0.5,0.5));
 			light.setSpecularColor(ofFloatColor(1.0,1.0,1.0));
 			
-			matrixSize.x = mat.size();
-			matrixSize.y = mat[0].size();
-			matrixSize.z = mat[0][0].size();
+			matrixSize = unitro::env::General::matrixSize;
 			
 		};
 		
