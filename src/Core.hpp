@@ -5,6 +5,7 @@
 #include "graphics/Drawer.hpp"
 #include "boost/multi_array.hpp"
 #include "solver.hpp"
+#include "Env.h"
 namespace unitro{
 	class Core
 	{

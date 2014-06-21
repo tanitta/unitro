@@ -1,3 +1,5 @@
+#pragma once
+#include "ofMain.h"
 namespace unitro{
 namespace env{
 	class General
@@ -5,7 +7,8 @@ namespace env{
 	private:
 		General(void){};
 	public:
-		
+		static double frameRate;
+		static ofVec3f matrixSize;
 	};
 }
 }
