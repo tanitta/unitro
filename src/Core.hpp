@@ -11,8 +11,6 @@ namespace unitro{
 	class Core
 	{
 	public:
-		boost::multi_array<data::Cell, 3> currentLocalMatrix;
-		boost::multi_array<data::Cell, 3> nextLocalMatrix;
 		unitro::graphics::Drawer drawer;
 		unitro::Solver solver;
 		int counter;
@@ -20,6 +18,7 @@ namespace unitro{
 			unitro::data::currentLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 			unitro::data::nextLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 		};
+		
 		~Core(){};
 		
 		void setup(){
