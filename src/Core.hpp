@@ -10,18 +10,18 @@ namespace unitro{
 	class Core
 	{
 	public:
-		ofVec3f matrixSize;
+		// ofVec3f unitro::env::General::matrixSize;
 		boost::multi_array<data::Cell, 3> currentLocalMatrix;
 		boost::multi_array<data::Cell, 3> nextLocalMatrix;
 		unitro::graphics::Drawer drawer;
 		unitro::Solver solver;
 		int counter;
-		Core():counter(0),matrixSize(ofVec3f(10,10,10)){};
+		Core():counter(0){};
 		~Core(){};
 		
 		void setup(){
-			currentLocalMatrix.resize(boost::extents[matrixSize.x][matrixSize.y][matrixSize.z]);
-			nextLocalMatrix.resize(boost::extents[matrixSize.x][matrixSize.y][matrixSize.z]);
+			currentLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
+			nextLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 			
 			ofSetFrameRate(60);
 			drawer.setup(nextLocalMatrix);
