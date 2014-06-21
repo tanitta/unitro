@@ -30,7 +30,7 @@ namespace unitro{
 			solver.startThread(true,false);
 		};
 		void update(){
-			if (counter >= 10*60-1)
+			if (counter >= 1*unitro::env::General::frameRate-1)
 			{
 				if (!solver.isThreadRunning()){
 					cout<<"thread is end"<<endl;
@@ -45,6 +45,7 @@ namespace unitro{
 		void draw(){
 			ofPushMatrix();
 				drawer.draw();
+				solver.draw();
 			ofPopMatrix();
 		};
 		

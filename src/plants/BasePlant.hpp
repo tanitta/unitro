@@ -9,7 +9,7 @@ namespace plants{
 	public:
 		//index:locus
 		// boost::array<int,10> gene;
-		
+		double nutP;
 		BasePlant(){};
 		virtual ~BasePlant(){};
 		

@@ -16,7 +16,7 @@ class testApp : public ofBaseApp{
 		};
 		void draw(){
 			core.draw();
-			cout<<"main : "<<a<<endl;
+			// cout<<"main : "<<a<<endl;
 		};
 
 		void keyPressed(int key){};

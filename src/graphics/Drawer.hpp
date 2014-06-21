@@ -17,7 +17,7 @@ namespace graphics{
 		
 		ofVec3f &matrixSize;
 		Drawer():
-			mat(unitro::data::currentLocalMatrix),
+			mat(unitro::data::nextLocalMatrix),
 			matrixSize(unitro::env::General::matrixSize)
 		{
 			

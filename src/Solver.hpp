@@ -30,6 +30,7 @@ namespace unitro{
 		~Solver(){};
 		void setup(){
 			nMat[5][5][5].soil = 1.0;
+			nMat[5][5][5].nutP = 10.0;
 			nMat[4][5][5].soil = 0.5;
 			nMat[5][5][4].soil = 0.6;
 			nMat[4][5][4].soil = 1.0;
@@ -43,12 +44,13 @@ namespace unitro{
 			nMat[5][5][6].soil = 0.1;
 
 			nMat[5][5][5].plant = new unitro::plants::Butterbur;
+			// cMat[5][5][5].plant = new unitro::plants::Butterbur;
 		};
 		
 		void update(){
 			cMat = nMat;
 			for (int i = 0; i < matrixSize.x; ++i){for (int j = 0; j < matrixSize.y; ++j){for (int k = 0; k < matrixSize.z; ++k){
-				cMat[i][j][k].plant->update(ofVec3f(i,j,k));
+				nMat[i][j][k].plant->update(ofVec3f(i,j,k));
 			}}};
 		};
 		
@@ -59,6 +61,8 @@ namespace unitro{
 		
 		void draw(){
 			cout<<"solver:"<<a<<endl;
+			cout<<"nutP-Cell : "<<nMat[5][5][5].nutP<<endl;
+			
 		};
 	};
 }

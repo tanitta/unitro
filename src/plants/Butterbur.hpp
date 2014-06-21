@@ -12,7 +12,7 @@ namespace plants{
 		double size;
 		
 		Butterbur():
-			nutP(0.0),
+			nutP(0.1),
 			nutMax(2.5)
 		{
 			modelObj.loadModel("Butterbur/Body.3ds", 1 );
@@ -24,12 +24,12 @@ namespace plants{
 		};
 		
 		void grow(ofVec3f pos){
-			unitro::data::untMat3 cMat = unitro::data::currentLocalMatrix;
-			unitro::data::untMat3 nMat = unitro::data::nextLocalMatrix;
+			unitro::data::untMat3 &cMat = unitro::data::currentLocalMatrix;
+			unitro::data::untMat3 &nMat = unitro::data::nextLocalMatrix;
 			
 			if(cMat[pos.x][pos.y][pos.z].soil>0.0){
-				// nMat[pos.x][pos.y][pos.z].nutP = cMat[pos.x][pos.y][pos.z].nutP - 0.1;
-				// nMat[pos.x][pos.y][pos.z].plant->nutP = cMat[pos.x][pos.y][pos.z].plant->nutP + 0.1;
+				nMat[pos.x][pos.y][pos.z].nutP = cMat[pos.x][pos.y][pos.z].nutP - 0.1;
+				nMat[pos.x][pos.y][pos.z].plant->nutP = cMat[pos.x][pos.y][pos.z].plant->nutP + 0.1;
 			}
 		};
 		
@@ -41,8 +41,9 @@ namespace plants{
 		};
 		void draw(){
 			ofPushMatrix();
+				cout<<"nutP-Plan : "<<nutP<<endl;
 				ofRotate((size-0.5)*360.0, 0, 1, 0);
-				modelObj.setScale(size,size,size);
+				modelObj.setScale(nutP,nutP,nutP);
 				modelObj.draw();
 			ofPopMatrix();
 			
