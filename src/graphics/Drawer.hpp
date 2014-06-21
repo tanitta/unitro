@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "boost/multi_array.hpp"
-
+#include "data/Matrix.hpp"
 
 namespace unitro{
 namespace graphics{
@@ -20,7 +20,7 @@ namespace graphics{
 		Drawer(){};
 		
 		~Drawer(){};
-		void setup(mat3& mat){
+		void setup(){
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofEnableDepthTest();
 			ofEnableAntiAliasing();

@@ -1,8 +1,13 @@
+#pragma once
 #include "boost/multi_array.hpp"
-##include "../Env.h"
+#include "Cell.hpp"
+#include "../Env.h"
 namespace unitro{
 namespace data{
-	boost::multi_array<data::Cell, 3> currentLocalMatrix;
-	boost::multi_array<data::Cell, 3> nextLocalMatrix;
+	typedef boost::multi_array<data::Cell, 3> untMat3;
+	untMat3 currentLocalMatrix;
+	untMat3 nextLocalMatrix;
+	// currentLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
+	// nextLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 }
 }

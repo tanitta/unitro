@@ -11,7 +11,6 @@ namespace unitro{
 	class Core
 	{
 	public:
-		// ofVec3f Punitro::env::General::matrixSize;
 		boost::multi_array<data::Cell, 3> currentLocalMatrix;
 		boost::multi_array<data::Cell, 3> nextLocalMatrix;
 		unitro::graphics::Drawer drawer;
