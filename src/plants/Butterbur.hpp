@@ -10,11 +10,11 @@ namespace plants{
 		double nutP;
 		double nutMax;
 		double size;
-		unitro::data::untMat3 &cMat;
+		
 		Butterbur():
 			nutP(0.0),
-			nutMax(2.5),
-			cMat(unitro::data::currentLocalMatrix){
+			nutMax(2.5)
+		{
 			modelObj.loadModel("Butterbur/Body.3ds", 1 );
 			size = ofRandom(0.5, 2);
 		};
@@ -22,11 +22,21 @@ namespace plants{
 		
 		void setup(){
 		};
+		
+		void grow(ofVec3f pos){
+			unitro::data::untMat3 cMat = unitro::data::currentLocalMatrix;
+			unitro::data::untMat3 nMat = unitro::data::nextLocalMatrix;
+			
+			if(cMat[pos.x][pos.y][pos.z].soil>0.0){
+				// nMat[pos.x][pos.y][pos.z].nutP = cMat[pos.x][pos.y][pos.z].nutP - 0.1;
+				// nMat[pos.x][pos.y][pos.z].plant->nutP = cMat[pos.x][pos.y][pos.z].plant->nutP + 0.1;
+			}
+		};
+		
 		void update(ofVec3f pos){
 			if(nutP >= nutMax){
-				
 			}else{
-				nutP = 0;
+				grow(pos);
 			}
 		};
 		void draw(){

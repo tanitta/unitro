@@ -48,7 +48,7 @@ namespace unitro{
 		void update(){
 			cMat = nMat;
 			for (int i = 0; i < matrixSize.x; ++i){for (int j = 0; j < matrixSize.y; ++j){for (int k = 0; k < matrixSize.z; ++k){
-				nMat[i][j][k].plant->update(ofVec3f(i,j,k));
+				cMat[i][j][k].plant->update(ofVec3f(i,j,k));
 			}}};
 		};
 		
