@@ -48,7 +48,7 @@ namespace graphics{
 		
 		void update(){};
 		
-		void draw(mat3& mat){
+		void draw(){
 			ofViewport(viewport);
 			ofSetupScreen();
 			
