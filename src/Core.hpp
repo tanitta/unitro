@@ -24,7 +24,7 @@ namespace unitro{
 		
 		void setup(){
 			ofSetFrameRate(unitro::env::General::frameRate);
-			// drawer.setup();
+			drawer.setup();
 			// solver.setup();
 			// solver.startThread(true,false);
 		};

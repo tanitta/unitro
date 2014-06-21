@@ -15,9 +15,9 @@ namespace graphics{
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
 		ofVec3f nearCell;
+		unitro::data::untMat3 &mat;
 		
-		
-		Drawer(){};
+		Drawer():mat(unitro::data::currentLocalMatrix){};
 		
 		~Drawer(){};
 		void setup(){
