@@ -4,7 +4,7 @@
 #include "data/Cell.hpp"
 #include "graphics/Drawer.hpp"
 #include "boost/multi_array.hpp"
-#include "solver.hpp"
+#include "Solver.hpp"
 #include "Env.h"
 #include "data/Matrix.hpp"
 namespace unitro{
