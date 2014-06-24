@@ -34,14 +34,17 @@ namespace plants{
 		};
 		
 		void update(ofVec3f pos){
-			if(nutP >= nutMax){
-			}else{
-				grow(pos);
-			}
+			// unitro::data::untMat3 &cMat = unitro::data::currentLocalMatrix;
+			// unitro::data::untMat3 &nMat = unitro::data::nextLocalMatrix;
+			// if(cMat[pos.x][pos.y][pos.z].plant->nutP >= cMat[pos.x][pos.y][pos.z].plant->nutMax){
+			// }else{
+			// 	grow(pos);
+			// }
+			cout<<"this is butterbur"<<endl;
 		};
 		void draw(){
 			ofPushMatrix();
-				cout<<"nutP-Plan : "<<nutP<<endl;
+				// cout<<"nutP-Plan : "<<nutP<<endl;
 				ofRotate((size-0.5)*360.0, 0, 1, 0);
 				modelObj.setScale(nutP,nutP,nutP);
 				modelObj.draw();
