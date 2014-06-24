@@ -7,6 +7,8 @@
 #include "boost/multi_array.hpp"
 #include "ofMain.h"
 #include "Env.h"
+#include "data/BaseMatrix.hpp"
+
 namespace unitro{
 	class Solver : public ofThread
 	{
@@ -15,43 +17,35 @@ namespace unitro{
 		bool isSleep;
 		
 		ofVec3f &matrixSize;
-		unitro::data::untMat3 &nMat;
-		unitro::data::untMat3 &cMat;
+		unitro::data::BaseMatrix &mat;
 		
-		Solver():
+		Solver(unitro::data::BaseMatrix &m):
 			a(0),
 			isSleep(false),
-			nMat(unitro::data::nextLocalMatrix),
-			cMat(unitro::data::currentLocalMatrix),
+			mat(m),
 			matrixSize(unitro::env::General::matrixSize)
-		{
-				
-		};
+		{};
 		~Solver(){};
+		
 		void setup(){
-			nMat[5][5][5].soil = 1.0;
-			nMat[5][5][5].nutP = 10.0;
-			nMat[4][5][5].soil = 0.5;
-			nMat[5][5][4].soil = 0.6;
-			nMat[4][5][4].soil = 1.0;
+			mat[5][5][5].soil = 1.0;
+			mat[5][5][5].nutP = 10.0;
+			mat[4][5][5].soil = 0.5;
+			mat[5][5][4].soil = 0.6;
+			mat[4][5][4].soil = 1.0;
 
-			nMat[5][4][5].soil = 0.2*0.5;
-			nMat[4][4][5].soil = 0.5*0.5;
-			nMat[5][4][4].soil = 0.6*0.5;
-			nMat[4][4][4].soil = 1.0*0.5;
+			mat[5][4][5].soil = 0.2*0.5;
+			mat[4][4][5].soil = 0.5*0.5;
+			mat[5][4][4].soil = 0.6*0.5;
+			mat[4][4][4].soil = 1.0*0.5;
 			
-			nMat[6][5][5].soil = 0.2;
-			nMat[5][5][6].soil = 0.1;
-
-			// nMat[5][5][5].plant = new unitro::plants::Butterbur;
-			// nMat[5][5][5].plant->nutP = 5.0;
-			// cMat[5][5][5].plant = new unitro::plants::Butterbur;
+			mat[6][5][5].soil = 0.2;
+			mat[5][5][6].soil = 0.1;
 		};
 		
 		void update(){
-			cMat = nMat;
 			for (int i = 0; i < matrixSize.x; ++i){for (int j = 0; j < matrixSize.y; ++j){for (int k = 0; k < matrixSize.z; ++k){
-				cMat[i][j][k].plant->update(ofVec3f(i,j,k));
+				mat[i][j][k].plant->update(ofVec3f(i,j,k));
 			}}};
 		};
 		
@@ -61,12 +55,6 @@ namespace unitro{
 		}
 		
 		void draw(){
-			// cout<<"solver:"<<a<<endl;
-			
-			// cout<<"nutP-Plan : "<<nMat[5][5][5].plant->nutP<<endl;
-			// cout<< typeid (nMat[5][5][5].plant).name() << endl;
-			// cout<<nMat[5][5][5].plant->nutP<<endl;
-			// cout<<cMat[5][5][5].plant->nutP<<endl;
 		};
 	};
 }

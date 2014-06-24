@@ -15,14 +15,14 @@ namespace unitro{
 		unitro::data::BaseMatrix LocalMatrix;
 		
 		unitro::graphics::Drawer drawer;
-		// unitro::Solver solver();
+		unitro::Solver solver;
 		int counter;
-
 		
 		Core():
 			counter(0),
 			LocalMatrix(10, 10, 10),
-			drawer(LocalMatrix)
+			drawer(LocalMatrix),
+			solver(LocalMatrix)
 		{};
 		
 		~Core(){};
@@ -30,18 +30,18 @@ namespace unitro{
 		void setup(){
 			ofSetFrameRate(unitro::env::General::frameRate);
 			drawer.setup();
-			// solver.setup();
-			// solver.startThread(true,false);
+			solver.setup();
+			solver.startThread(true,false);
 		};
 		void update(){
 			if (counter >= 1*unitro::env::General::frameRate-1)
 			{
-				// if (!solver.isThreadRunning()){
-				// 	cout<<"thread is end"<<endl;
-				// 	solver.stopThread();
-				// 	solver.startThread(true,false);
-				// 	counter = 0;
-				// }
+				if (!solver.isThreadRunning()){
+					cout<<"thread is end"<<endl;
+					solver.stopThread();
+					solver.startThread(true,false);
+					counter = 0;
+				}
 			}else{
 				counter++;
 			}
@@ -49,12 +49,11 @@ namespace unitro{
 		void draw(){
 			ofPushMatrix();
 				drawer.draw();
-				// solver.draw();
 			ofPopMatrix();
 		};
 		
 		void exit(){
-			// solver.stopThread();
+			solver.stopThread();
 		};
 	};
 }
