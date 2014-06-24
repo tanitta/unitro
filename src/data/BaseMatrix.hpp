@@ -1,3 +1,4 @@
+#pragma once
 #include "Cell.hpp"
 namespace unitro{
 namespace data{
@@ -6,16 +7,6 @@ namespace data{
 	public:
 		std::vector< std::vector< std::vector<Cell> > > m;
 		BaseMatrix(int x,int y, int z):m(x, std::vector<std::vector<Cell> >(y,std::vector<Cell>(z))){
-			
-			// for (int i = 0; i < 10; ++i) {
-			// 	for (int j = 0; j < 10; ++j) {
-			// 		for (int k = 0; k < 10; ++k) {
-			// 		m[i][j][k] = i * j * k;
-			// 		}
-			// 	}
-			// }
-			m[2][2][2].soil = 2.0;
-			
 		};
 		virtual ~BaseMatrix(){};
 	

@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "boost/multi_array.hpp"
 #include "data/Matrix.hpp"
-
+#include "data/BaseMatrix.hpp"
 namespace unitro{
 namespace graphics{
 	class Drawer
@@ -13,22 +13,22 @@ namespace graphics{
 		ofRectangle viewport;	
 		ofEasyCam mainCam;
 		ofVec3f nearCell;
-		unitro::data::untMat3 &mat;
+		unitro::data::BaseMatrix &mat;
 		
 		ofVec3f &matrixSize;
-		Drawer():
-			mat(unitro::data::nextLocalMatrix),
+		Drawer(unitro::data::BaseMatrix &m):
+			mat(m),
 			matrixSize(unitro::env::General::matrixSize)
-		{
-			
-		};
+		{};
 		
 		~Drawer(){};
 		void setup(){
+			//GL
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofEnableDepthTest();
 			ofEnableAntiAliasing();
 			
+			//Camera
 			viewport.x = 0;
 			viewport.y = 0;
 			viewport.width = 1024;
@@ -37,6 +37,7 @@ namespace graphics{
 			mainCam.setNearClip(0.01);
 			ofBackground(127);
 			
+			//light
 			light.enable();
 			light.setSpotlight();
 			light.setPosition(10.0, 10.0, 10.0);
