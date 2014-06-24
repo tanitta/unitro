@@ -14,22 +14,22 @@ namespace data{
 			// 		}
 			// 	}
 			// }
+			m[2][2][2].soil = 2.0;
 			
 		};
 		virtual ~BaseMatrix(){};
 	
-		std::vector<std::vector<Cell> > operator[](int i){
+		void SetSoil(int i, int j, int k, double m){
+			// m[i][j][k].soil = m;
+		}
+	
+		std::vector<std::vector<Cell> >& operator[](int i){
 			return m[i];
 		}
 		
-		// Matrix3D& operator=(const Matrix3D& A){
-		// 	for(int i=0;i<ROW;i++){
-		// 		for(int j=0;j<COL;j++){
-		// 		 this->val[i][j]=A.val[i][j];
-		// 		}
-		// 	}
-		// 	return *this;
-		// }
+		BaseMatrix& operator=(std::vector<std::vector<std::vector<Cell> > >& A){
+			return *this;
+		}
 	};
 }
 }

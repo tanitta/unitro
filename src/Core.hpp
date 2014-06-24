@@ -31,7 +31,7 @@ namespace unitro{
 		~Core(){};
 		
 		void setup(){
-			testMatrix[2][2][2].soil = 2.0;
+			testMatrix[2][2][2].soil = 3.0;
 			cout<<"testMatrix : " << testMatrix[2][2][2].soil << endl;
 			
 			ofSetFrameRate(unitro::env::General::frameRate);
