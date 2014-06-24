@@ -2,8 +2,6 @@
 
 #include "ofMain.h"
 #include "../plants/BasePlant.hpp"
-#include "../plants/VoidPlant.hpp"
-
 #include "../items/BaseItem.hpp"
 
 
