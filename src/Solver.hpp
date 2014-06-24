@@ -43,7 +43,7 @@ namespace unitro{
 			nMat[6][5][5].soil = 0.2;
 			nMat[5][5][6].soil = 0.1;
 
-			nMat[5][5][5].plant = new unitro::plants::Butterbur;
+			// nMat[5][5][5].plant = new unitro::plants::Butterbur;
 			// nMat[5][5][5].plant->nutP = 5.0;
 			// cMat[5][5][5].plant = new unitro::plants::Butterbur;
 		};

@@ -16,6 +16,11 @@ namespace unitro{
 		int counter;
 		// data::untMat3 data::currentLocalMatrix;
 		// data::untMat3 data::nextLocalMatrix;
+		std::unique_ptr<unitro::plants::BasePlant> plant;
+		
+		// std::unique_ptr<int> test;
+		boost::multi_array<std::shared_ptr<int>, 3> test;
+		
 		Core():counter(0){
 			unitro::data::currentLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 			unitro::data::nextLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
