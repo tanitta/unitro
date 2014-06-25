@@ -4,7 +4,6 @@
 #include "data/Matrix.hpp"
 #include "plants/Wheat.hpp"
 #include "plants/Butterbur.hpp"
-#include "boost/multi_array.hpp"
 #include "ofMain.h"
 #include "Env.h"
 #include "data/BaseMatrix.hpp"
