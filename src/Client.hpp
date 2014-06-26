@@ -5,10 +5,13 @@
 #include "Solver.hpp"
 #include "data/BaseMatrix.hpp"
 #include "avatar/UserPlayer.hpp"
+
+#include "LocalMatrixView.hpp"
+#include "LocalMatrixControler.hpp"
 class Client : public ofBaseApp{
 
 	public:
-		unitro::data::BaseMatrix LocalMatrix;
+		unitro::data::BaseMatrix localMatrix;
 		unitro::avatar::UserPlayer userPlayer;
 		
 		// unitro::graphics::Drawer drawer();
@@ -18,8 +21,8 @@ class Client : public ofBaseApp{
 		//unitro::avator::OtherPlayers
 		
 		//unitro::interface
-		//	unitro::LocalMatrixView(unitro::data::BaseMatrix matrix)
-		//	unitro::LocalMatrixControl(unitro::data::BaseMatrix matrix)
+		unitro::LocalMatrixView localMatrixView;
+		unitro::LocalMatrixControler localMatrixControler;
 		
 		//network
 		//unitro::avator::OtherPlayers
@@ -33,9 +36,11 @@ class Client : public ofBaseApp{
 		
 		Client():
 			counter(0),
-			LocalMatrix(10, 10, 10),
+			localMatrix(10, 10, 10),
+			localMatrixView(localMatrix),
+			localMatrixControler(localMatrix),
 			// drawer(LocalMatrix),
-			solver(LocalMatrix)
+			solver(localMatrix)
 		{};
 		
 		~Client(){};
