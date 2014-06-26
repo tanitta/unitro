@@ -5,14 +5,15 @@
 namespace unitro{
 namespace plants{
 	class Butterbur : public unitro::plants::BasePlant{
-	public:
+	private:
 		static ofx3DModelLoader modelObj;
+	public:
 		double nutP;
 		double nutMax;
 		double size;
 		
 		Butterbur():
-			nutP(0.1),
+			nutP(2),
 			nutMax(2.5)
 		{
 			modelObj.loadModel("Butterbur/Body.3ds", 1 );

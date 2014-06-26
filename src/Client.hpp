@@ -6,7 +6,7 @@
 #include "data/BaseMatrix.hpp"
 #include "avatar/UserPlayer.hpp"
 
-#include "LocalMatrixView.hpp"
+#include "LocalWorldView.hpp"
 #include "LocalMatrixControler.hpp"
 class Client : public ofBaseApp{
 
@@ -21,7 +21,7 @@ class Client : public ofBaseApp{
 		//unitro::avator::OtherPlayers
 		
 		//unitro::interface
-		unitro::LocalMatrixView localMatrixView;
+		unitro::LocalWorldView localWorldView;
 		unitro::LocalMatrixControler localMatrixControler;
 		
 		//network
@@ -37,7 +37,7 @@ class Client : public ofBaseApp{
 		Client():
 			counter(0),
 			localMatrix(10, 10, 10),
-			localMatrixView(localMatrix),
+			localWorldView(localMatrix, userPlayer),
 			localMatrixControler(localMatrix),
 			// drawer(LocalMatrix),
 			solver(localMatrix)
@@ -46,10 +46,14 @@ class Client : public ofBaseApp{
 		~Client(){};
 		
 		void setup(){
+			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofSetFrameRate(unitro::env::General::frameRate);
 			// drawer.setup();
 			solver.setup();
 			solver.startThread(true,false);
+			
+			localWorldView.setup();
+			
 		};
 		
 		void update(){
@@ -69,6 +73,8 @@ class Client : public ofBaseApp{
 		void draw(){
 			ofPushMatrix();
 				// drawer.draw();
+				localWorldView.draw();
+			
 			ofPopMatrix();
 		};
 

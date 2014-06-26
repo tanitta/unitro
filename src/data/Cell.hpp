@@ -17,10 +17,10 @@ namespace data{
 		double nutP;
 		double nutN;
 		double brightness;
-		// unitro::plants::BasePlant *plant;
-		// unitro::items::BaseItem *item;
-		std::shared_ptr<unitro::plants::BasePlant> plant;
-		std::shared_ptr<unitro::items::BaseItem> item;
+		unitro::plants::BasePlant *plant;
+		unitro::items::BaseItem *item;
+		// std::shared_ptr<unitro::plants::BasePlant> plant;
+		// std::shared_ptr<unitro::items::BaseItem> item;
 		
 		
 		Cell():

@@ -40,6 +40,8 @@ namespace unitro{
 			
 			mat[6][5][5].soil = 0.2;
 			mat[5][5][6].soil = 0.1;
+			
+			mat[4][5][4].plant = new unitro::plants::Butterbur;
 		};
 		
 		void update(){

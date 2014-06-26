@@ -16,6 +16,7 @@ namespace graphics{
 		unitro::data::BaseMatrix &mat;
 		
 		ofVec3f &matrixSize;
+		
 		Drawer(unitro::data::BaseMatrix &m):
 			mat(m),
 			matrixSize(unitro::env::General::matrixSize)
@@ -28,11 +29,13 @@ namespace graphics{
 			ofEnableDepthTest();
 			ofEnableAntiAliasing();
 			
-			//Camera
+			//Rectangle
 			viewport.x = 0;
 			viewport.y = 0;
 			viewport.width = 1024;
 			viewport.height = 600;
+			
+			//Camera
 			mainCam.setDistance(10);
 			mainCam.setNearClip(0.01);
 			ofBackground(127);
