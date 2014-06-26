@@ -13,7 +13,7 @@ namespace plants{
 		double size;
 		
 		Butterbur():
-			nutP(2),
+			nutP(5),
 			nutMax(2.5)
 		{
 			modelObj.loadModel("Butterbur/Body.3ds", 1 );

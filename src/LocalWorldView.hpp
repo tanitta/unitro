@@ -13,7 +13,7 @@ namespace unitro{
 		
 		ofLight light;		
 		ofRectangle viewport;	
-		ofEasyCam mainCam;
+		// ofEasyCam mainCam;
 		
 		
 	public:
@@ -35,9 +35,7 @@ namespace unitro{
 			viewport.width = 1024;
 			viewport.height = 600;
 			
-			//Camera
-			mainCam.setDistance(10);
-			mainCam.setNearClip(0.01);
+			
 			ofBackground(127);
 			
 			//Light
@@ -54,11 +52,11 @@ namespace unitro{
 		void draw(){
 			ofViewport(viewport);
 			ofSetupScreen();
-			mainCam.begin();
-				ofDrawGrid(10.0f,10.0f,true,true,true,true); 
+			player.mainCam.begin();
+				// ofDrawGrid(10.0f,10.0f,true,true,true,true); 
 				localMatrixView.draw();
 				player.draw();
-			mainCam.end();
+			player.mainCam.end();
 		};
 	};
 }

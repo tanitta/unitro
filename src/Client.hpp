@@ -24,8 +24,8 @@ class Client : public ofBaseApp{
 		//unitro::interface
 		unitro::LocalWorldView localWorldView;
 		unitro::LocalWorldControler localWorldControler;
-		
 		unitro::LocalMatrixControler localMatrixControler;
+		
 		
 		//network
 		//unitro::avator::OtherPlayers
