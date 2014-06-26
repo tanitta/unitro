@@ -1,7 +1,8 @@
 trunk/
 
-/bin
+
 obj/
+
 
 /.gitattributes
 *.log

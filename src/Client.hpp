@@ -4,15 +4,16 @@
 #include "graphics/Drawer.hpp"
 #include "Solver.hpp"
 #include "data/BaseMatrix.hpp"
-
+#include "avatar/UserPlayer.hpp"
 class Client : public ofBaseApp{
 
 	public:
 		unitro::data::BaseMatrix LocalMatrix;
-		unitro::graphics::Drawer drawer;
+		unitro::avatar::UserPlayer userPlayer;
 		
 		// unitro::graphics::Drawer drawer();
 		
+		//****************************************
 		//unitro::avator::Player
 		//unitro::avator::OtherPlayers
 		
@@ -33,7 +34,7 @@ class Client : public ofBaseApp{
 		Client():
 			counter(0),
 			LocalMatrix(10, 10, 10),
-			drawer(LocalMatrix),
+			// drawer(LocalMatrix),
 			solver(LocalMatrix)
 		{};
 		
@@ -41,7 +42,7 @@ class Client : public ofBaseApp{
 		
 		void setup(){
 			ofSetFrameRate(unitro::env::General::frameRate);
-			drawer.setup();
+			// drawer.setup();
 			solver.setup();
 			solver.startThread(true,false);
 		};
@@ -62,7 +63,7 @@ class Client : public ofBaseApp{
 		
 		void draw(){
 			ofPushMatrix();
-				drawer.draw();
+				// drawer.draw();
 			ofPopMatrix();
 		};
 
