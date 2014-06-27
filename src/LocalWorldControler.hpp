@@ -4,8 +4,8 @@
 namespace unitro{
 	class LocalWorldControler{
 	private:
-		unitro::data::BaseMatrix localMatrix;
-		unitro::entity::UserPlayer player;
+		unitro::data::BaseMatrix& localMatrix;
+		unitro::entity::UserPlayer& player;
 	public:
 		LocalWorldControler(unitro::data::BaseMatrix& m,unitro::entity::UserPlayer& p):
 			localMatrix(m),
@@ -15,6 +15,8 @@ namespace unitro{
 		
 		void setup(){};
 		
-		void update(){};
+		void update(){
+			player.update();
+		};
 	};
 }
