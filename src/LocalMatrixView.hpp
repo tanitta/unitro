@@ -12,7 +12,7 @@ namespace unitro{
 		LocalMatrixView(unitro::data::BaseMatrix& m):
 			mat(m),
 			matrixSize(unitro::env::General::matrixSize)
-		{};
+		{}
 		
 		~LocalMatrixView(){};
 
