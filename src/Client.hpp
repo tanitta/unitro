@@ -8,7 +8,6 @@
 
 #include "LocalWorldView.hpp"
 #include "LocalWorldControler.hpp"
-#include "LocalMatrixControler.hpp"
 class Client : public ofBaseApp{
 
 	public:
@@ -24,7 +23,7 @@ class Client : public ofBaseApp{
 		//unitro::interface
 		unitro::LocalWorldView localWorldView;
 		unitro::LocalWorldControler localWorldControler;
-		unitro::LocalMatrixControler localMatrixControler;
+// 		unitro::LocalMatrixControler localMatrixControler;
 		
 		
 		//network
@@ -42,7 +41,7 @@ class Client : public ofBaseApp{
 			localMatrix(10, 10, 10),
 			localWorldView(localMatrix, userPlayer),
 			localWorldControler(localMatrix, userPlayer),
-			localMatrixControler(localMatrix),
+// 			localMatrixControler(localMatrix),
 			// drawer(LocalMatrix),
 			solver(localMatrix)
 		{};
