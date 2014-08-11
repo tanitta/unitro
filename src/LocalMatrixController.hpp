@@ -2,13 +2,13 @@
 #include "data/BaseMatrix.hpp"
 namespace unitro
 {
-	class LocalMatrixControler
+	class LocalMatrixController
 	{
 	private:
 		unitro::data::BaseMatrix& mat;
 	public:
-		LocalMatrixControler(unitro::data::BaseMatrix& m):mat(m){};
-		~LocalMatrixControler(){};
+		LocalMatrixController(unitro::data::BaseMatrix& m):mat(m){};
+		~LocalMatrixController(){};
 	
 		/* data */
 	};
