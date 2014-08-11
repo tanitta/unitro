@@ -7,7 +7,7 @@
 #include "entity/UserPlayer.hpp"
 
 #include "LocalWorldView.hpp"
-#include "LocalWorldControler.hpp"
+#include "LocalWorldController.hpp"
 class Client : public ofBaseApp{
 
 	public:
@@ -22,8 +22,8 @@ class Client : public ofBaseApp{
 		
 		//unitro::interface
 		unitro::LocalWorldView localWorldView;
-		unitro::LocalWorldControler localWorldControler;
-// 		unitro::LocalMatrixControler localMatrixControler;
+		unitro::LocalWorldController localWorldController;
+// 		unitro::LocalMatrixController localMatrixControler;
 		
 		
 		//network
@@ -40,8 +40,8 @@ class Client : public ofBaseApp{
 			counter(0),
 			localMatrix(10, 10, 10),
 			localWorldView(localMatrix, userPlayer),
-			localWorldControler(localMatrix, userPlayer),
-// 			localMatrixControler(localMatrix),
+			localWorldController(localMatrix, userPlayer),
+// 			localMatrixController(localMatrix),
 			// drawer(LocalMatrix),
 			solver(localMatrix)
 		{};
@@ -61,7 +61,7 @@ class Client : public ofBaseApp{
 		
 		void update(){
 			//Interface
-			localWorldControler.update();
+			localWorldController.update();
 			
 			//Solver
 			if (counter >= 1*unitro::env::General::frameRate-1)
