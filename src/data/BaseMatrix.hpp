@@ -6,6 +6,7 @@ namespace data{
 	{
 	public:
 		std::vector< std::vector< std::vector<Cell> > > m;
+
 		BaseMatrix(int x,int y, int z):m(x, std::vector<std::vector<Cell> >(y,std::vector<Cell>(z))){
 		};
 		virtual ~BaseMatrix(){};
