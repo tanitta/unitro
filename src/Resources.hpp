@@ -9,12 +9,12 @@ namespace unitro {
 			virtual ~Resources(){};
 
 			shared_ptr<ofxAssimpModelLoader> operator[](string fileName){
-				cout<<"Resources is Loading"<<endl;
 				if (resouces.find(fileName) == resouces.end()) {
 // 					// Not Find
 					resouces[fileName] = shared_ptr<ofxAssimpModelLoader>(new ofxAssimpModelLoader());
 					if (!resouces[fileName]->loadModel(fileName)) {
 						cout<<"LoadErrorDayo"<<endl;
+						// Load a model for error
 					}
 				}
 				return resouces[fileName];
