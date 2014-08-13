@@ -1,6 +1,7 @@
 trunk/
 
-
+bin/*
+!/bin/data/*
 obj/
 
 
@@ -9,3 +10,4 @@ obj/
 *.sublime-workspace
 *.sublime-project
 *.dmp
+*.swp
