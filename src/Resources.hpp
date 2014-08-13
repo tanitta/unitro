@@ -1,19 +1,21 @@
 #pragma once
-#include "ofMain.h"
-#include "ofx3DModelLoader.h"
+#include "ofxAssimpModelLoader.h"
 namespace unitro {
 	class Resources {
 		private:
-			map <string, shared_ptr<ofx3DModelLoader> > resouces;
+			map <string, shared_ptr<ofxAssimpModelLoader> > resouces;
 		public:
 			Resources(){};
 			virtual ~Resources(){};
 
-			shared_ptr<ofx3DModelLoader> operator[](string fileName){
+			shared_ptr<ofxAssimpModelLoader> operator[](string fileName){
+				cout<<"Resources is Loading"<<endl;
 				if (resouces.find(fileName) == resouces.end()) {
 // 					// Not Find
-					resouces[fileName] = shared_ptr<ofx3DModelLoader>(new ofx3DModelLoader());
-					resouces[fileName]->loadModel(fileName);
+					resouces[fileName] = shared_ptr<ofxAssimpModelLoader>(new ofxAssimpModelLoader());
+					if (!resouces[fileName]->loadModel(fileName)) {
+						cout<<"LoadErrorDayo"<<endl;
+					}
 				}
 				return resouces[fileName];
 			}
