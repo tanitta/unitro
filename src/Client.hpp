@@ -5,38 +5,40 @@
 #include "Solver.hpp"
 #include "data/BaseMatrix.hpp"
 #include "entity/Player.hpp"
-
+#include "Resources.hpp"
 #include "LocalWorldView.hpp"
 #include "LocalWorldController.hpp"
 class Client : public ofBaseApp{
 
 	public:
+		unitro::Resources resouces;
 		unitro::data::BaseMatrix localMatrix;
 		unitro::entity::Player player;
-		
+
 		// unitro::graphics::Drawer drawer();
-		
+
 		//****************************************
 		//unitro::avator::Player
 		//unitro::avator::OtherPlayers
-		
+
 		//unitro::interface
 		unitro::LocalWorldView localWorldView;
 		unitro::LocalWorldController localWorldController;
 // 		unitro::LocalMatrixController localMatrixControler;
-		
-		
+
+
 		//network
 		//unitro::avator::OtherPlayers
 		//unitro::network::Input
 		//unitro::network::OutPut
-		
+
 		//tmp
 		unitro::Solver solver;
-		
+
 		int counter;
-		
+
 		Client():
+			resouces(),
 			counter(0),
 			localMatrix(10, 10, 10),
 			localWorldView(localMatrix, player),
@@ -45,24 +47,24 @@ class Client : public ofBaseApp{
 			// drawer(LocalMatrix),
 			solver(localMatrix)
 		{};
-		
+
 		~Client(){};
-		
+
 		void setup(){
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofSetFrameRate(unitro::env::General::frameRate);
 			// drawer.setup();
 			solver.setup();
 			solver.startThread(true,false);
-			
+
 			localWorldView.setup();
-			
+
 		};
-		
+
 		void update(){
 			//Interface
 			localWorldController.update();
-			
+
 			//Solver
 			if (counter >= 1*unitro::env::General::frameRate-1)
 			{
@@ -76,12 +78,12 @@ class Client : public ofBaseApp{
 				counter++;
 			}
 		};
-		
+
 		void draw(){
 			ofPushMatrix();
 				// drawer.draw();
 				localWorldView.draw();
-			
+
 			ofPopMatrix();
 		};
 
