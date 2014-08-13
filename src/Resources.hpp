@@ -4,19 +4,18 @@
 namespace unitro {
 	class Resources {
 		private:
-			map <string, unique_ptr<ofx3DModelLoader> > resouces;
+			map <string, shared_ptr<ofx3DModelLoader> > resouces;
 		public:
 			Resources(){};
 			virtual ~Resources(){};
 
-// 			unique_ptr<ofx3DModelLoader> operator[](string fileName){
-// 				resouces[fileName] = new unique_ptr<ofx3DModelLoader>
-// 				if (resouces.find(fileName) == resouces.end()) {
-// // 					// Not Find
-// // 					resouces[fileName] =
-// // 				}else{
-// // 					// Find
-// 				}
-// 			}
+			shared_ptr<ofx3DModelLoader> operator[](string fileName){
+				if (resouces.find(fileName) == resouces.end()) {
+// 					// Not Find
+					resouces[fileName] = shared_ptr<ofx3DModelLoader>(new ofx3DModelLoader());
+					resouces[fileName]->loadModel(fileName);
+				}
+				return resouces[fileName];
+			}
 	};
 } // namespace unitro

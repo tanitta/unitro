@@ -51,6 +51,7 @@ class Client : public ofBaseApp{
 		~Client(){};
 
 		void setup(){
+			resouces["Butterbur/Body.3ds"]->setScale(0,0,0);
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofSetFrameRate(unitro::env::General::frameRate);
 			// drawer.setup();
