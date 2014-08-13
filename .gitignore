@@ -1,7 +1,5 @@
-trunk/
-
-bin/*
-!/bin/data/*
+bin/
+!bin/data
 obj/
 
 
