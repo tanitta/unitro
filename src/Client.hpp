@@ -4,7 +4,7 @@
 #include "graphics/Drawer.hpp"
 #include "Solver.hpp"
 #include "data/BaseMatrix.hpp"
-#include "entity/UserPlayer.hpp"
+#include "entity/Player.hpp"
 
 #include "LocalWorldView.hpp"
 #include "LocalWorldController.hpp"
@@ -12,7 +12,7 @@ class Client : public ofBaseApp{
 
 	public:
 		unitro::data::BaseMatrix localMatrix;
-		unitro::entity::UserPlayer userPlayer;
+		unitro::entity::Player player;
 		
 		// unitro::graphics::Drawer drawer();
 		
@@ -39,8 +39,8 @@ class Client : public ofBaseApp{
 		Client():
 			counter(0),
 			localMatrix(10, 10, 10),
-			localWorldView(localMatrix, userPlayer),
-			localWorldController(localMatrix, userPlayer),
+			localWorldView(localMatrix, player),
+			localWorldController(localMatrix, player),
 // 			localMatrixController(localMatrix),
 			// drawer(LocalMatrix),
 			solver(localMatrix)
