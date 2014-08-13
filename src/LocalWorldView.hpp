@@ -1,13 +1,13 @@
 #pragma once
 #include "data/BaseMatrix.hpp"
-#include "entity/UserPlayer.hpp"
+#include "entity/Player.hpp"
 #include "LocalMatrixView.hpp"
 namespace unitro{
 	class LocalWorldView
 	{
 	private:
 		unitro::data::BaseMatrix& mat;
-		unitro::entity::UserPlayer& player;
+		unitro::entity::Player& player;
 		
 		unitro::LocalMatrixView localMatrixView;
 		
@@ -17,7 +17,7 @@ namespace unitro{
 		
 		
 	public:
-		LocalWorldView(unitro::data::BaseMatrix& m, unitro::entity::UserPlayer& p):
+		LocalWorldView(unitro::data::BaseMatrix& m, unitro::entity::Player& p):
 			mat(m),
 			localMatrixView(m),
 			player(p)
