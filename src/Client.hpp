@@ -11,7 +11,7 @@
 class Client : public ofBaseApp{
 
 	public:
-		unitro::Resources resouces;
+		unitro::Resources resources;
 		unitro::data::BaseMatrix localMatrix;
 		unitro::entity::Player player;
 
@@ -24,7 +24,7 @@ class Client : public ofBaseApp{
 		//unitro::interface
 		unitro::LocalWorldView localWorldView;
 		unitro::LocalWorldController localWorldController;
-// 		unitro::LocalMatrixController localMatrixControler;
+		// 		unitro::LocalMatrixController localMatrixControler;
 
 
 		//network
@@ -38,20 +38,21 @@ class Client : public ofBaseApp{
 		int counter;
 
 		Client():
-			resouces(),
+			resources(),
 			counter(0),
 			localMatrix(10, 10, 10),
 			localWorldView(localMatrix, player),
 			localWorldController(localMatrix, player),
-// 			localMatrixController(localMatrix),
+			// 			localMatrixController(localMatrix),
 			// drawer(LocalMatrix),
 			solver(localMatrix)
-		{};
+	{};
 
 		~Client(){};
 
 		void setup(){
-			resouces["Butterbur/Body.3ds"]->setScale(0,0,0);
+// 			resources["Butterbur/Body.3ds"]->setScale(0,0,0);
+			resources["Butterbur/Body.3ds"]->enableTextures();
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofSetFrameRate(unitro::env::General::frameRate);
 			// drawer.setup();
@@ -82,8 +83,9 @@ class Client : public ofBaseApp{
 
 		void draw(){
 			ofPushMatrix();
-				// drawer.draw();
-				localWorldView.draw();
+			// drawer.draw();
+			localWorldView.draw();
+			resources["Butterbur/Body.3ds"]->draw(OF_MESH_FILL);
 
 			ofPopMatrix();
 		};
