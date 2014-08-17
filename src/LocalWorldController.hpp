@@ -2,6 +2,7 @@
 #include "entity/Player.hpp"
 #include "data/BaseMatrix.hpp"
 #include "LocalMatrixController.hpp"
+#include "Resources.hpp"
 namespace unitro{
 	class LocalWorldController{
 		private:
@@ -11,9 +12,9 @@ namespace unitro{
 
 		public:
 			LocalWorldController(unitro::data::BaseMatrix& m,unitro::entity::Player& p):
+				localMatrixController(m),
 				localMatrix(m),
-				player(p),
-				localMatrixController(localMatrix)
+				player(p)
 			{};
 			virtual ~LocalWorldController(){};
 
