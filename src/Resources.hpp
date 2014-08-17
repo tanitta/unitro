@@ -15,8 +15,10 @@ namespace unitro {
 					if (!resources[fileName]->loadModel(fileName)) {
 						cout<<"LoadErrorDayo"<<endl;
 						// Load a model for error
+						resources[fileName]->loadModel("NoData/Body.x");
 					}
 				}
+				resources[fileName]->setScaleNomalization(false);
 				return resources[fileName];
 			}
 	};
