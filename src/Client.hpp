@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ofMain.h"
-#include "graphics/Drawer.hpp"
 #include "Solver.hpp"
 #include "data/BaseMatrix.hpp"
 #include "entity/Player.hpp"
@@ -41,7 +40,7 @@ class Client : public ofBaseApp{
 			resources(),
 			counter(0),
 			localMatrix(10, 10, 10),
-			localWorldView(localMatrix, player),
+			localWorldView(localMatrix, player, resources),
 			localWorldController(localMatrix, player),
 			// 			localMatrixController(localMatrix),
 			// drawer(LocalMatrix),
@@ -51,8 +50,6 @@ class Client : public ofBaseApp{
 		~Client(){};
 
 		void setup(){
-// 			resources["Butterbur/Body.3ds"]->setScale(0,0,0);
-			resources["Butterbur/Body.3ds"]->enableTextures();
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
 			ofSetFrameRate(unitro::env::General::frameRate);
 			// drawer.setup();
@@ -85,7 +82,6 @@ class Client : public ofBaseApp{
 			ofPushMatrix();
 			// drawer.draw();
 			localWorldView.draw();
-			resources["Butterbur/Body.3ds"]->draw(OF_MESH_FILL);
 
 			ofPopMatrix();
 		};
