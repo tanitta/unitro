@@ -17,8 +17,8 @@ namespace unitro {
 						// Load a model for error
 						resources[fileName]->loadModel("NoData/Body.x");
 					}
+					resources[fileName]->setScaleNomalization(false);
 				}
-				resources[fileName]->setScaleNomalization(false);
 				return resources[fileName];
 			}
 	};
