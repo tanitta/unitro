@@ -9,7 +9,8 @@ namespace unitro
 		public:
 			LocalMatrixController(unitro::data::BaseMatrix& m):mat(m){};
 			~LocalMatrixController(){};
-
+			void setup(){};
+			void update(){};
 			void keyPressed(int key){};
 			void keyReleased(int key){};
 			void mouseMoved(int x, int y ){};
