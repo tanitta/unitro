@@ -86,16 +86,35 @@ class Client : public ofBaseApp{
 			ofPopMatrix();
 		};
 
-		void keyPressed(int key){};
-		void keyReleased(int key){};
-		void mouseMoved(int x, int y ){};
-		void mouseDragged(int x, int y, int button){};
-		void mousePressed(int x, int y, int button){};
-		void mouseReleased(int x, int y, int button){};
-		void windowResized(int w, int h){};
-		void dragEvent(ofDragInfo dragInfo){};
-		void gotMessage(ofMessage msg){};
+		void keyPressed(int key){
+			localWorldController.keyPressed(key);
+		};
+		void keyReleased(int key){
+			localWorldController.keyReleased(key);
+		};
+		void mouseMoved(int x, int y ){
+			localWorldController.mouseMoved(x, y);
+		};
+		void mouseDragged(int x, int y, int button){
+			localWorldController.mouseDragged(x, y, button);
+		};
+		void mousePressed(int x, int y, int button){
+			localWorldController.mousePressed(x, y, button);
+		};
+		void mouseReleased(int x, int y, int button){
+			localWorldController.mouseReleased(x, y, button);
+		};
+		void windowResized(int w, int h){
+			localWorldController.windowResized(w, h);
+		};
+		void dragEvent(ofDragInfo dragInfo){
+			localWorldController.dragEvent(dragInfo);
+		};
+		void gotMessage(ofMessage msg){
+			localWorldController.gotMessage(msg);
+		};
 		void exit(){
+			localWorldController.exit();
 			solver.stopThread();
 		};
 };

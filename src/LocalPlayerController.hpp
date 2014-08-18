@@ -1,14 +1,19 @@
 #pragma once
-#include "data/BaseMatrix.hpp"
-namespace unitro
-{
-	class LocalMatrixController
-	{
+#include "entity/Player.hpp"
+namespace unitro {
+	class LocalPlayerController {
 		private:
-			unitro::data::BaseMatrix& mat;
+			unitro::entity::Player& player;
 		public:
-			LocalMatrixController(unitro::data::BaseMatrix& m):mat(m){};
-			~LocalMatrixController(){};
+			LocalPlayerController(unitro::entity::Player& p):
+				player(p)
+			{};
+			virtual ~LocalPlayerController(){};
+
+			void setup(){};
+			void update(){
+				player.update();
+			};
 
 			void keyPressed(int key){};
 			void keyReleased(int key){};
@@ -21,4 +26,4 @@ namespace unitro
 			void gotMessage(ofMessage msg){};
 			void exit(){};
 	};
-}
+} // namespace unitro
