@@ -3,7 +3,6 @@
 #include "data/BaseMatrix.hpp"
 #include "LocalMatrixController.hpp"
 #include "LocalPlayerController.hpp"
-#include "Resources.hpp"
 namespace unitro{
 	class LocalWorldController{
 		private:
