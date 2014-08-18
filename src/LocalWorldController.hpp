@@ -20,12 +20,13 @@ namespace unitro{
 			virtual ~LocalWorldController(){};
 
 			void setup(){
+				localMatrixController.setup();
 				localPlayerController.setup();
 			};
 
 			void update(){
+				localMatrixController.update();
 				localPlayerController.update();
-// 				player.update();
 			};
 
 			void keyPressed(int key){
