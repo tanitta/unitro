@@ -9,11 +9,20 @@ namespace unitro {
 		public:
 			LocalPlayerController(unitro::entity::Player& p):
 				player(p)
-			{};
+			{
+				player.kineticModel.viscosity = 40;
+			};
 			virtual ~LocalPlayerController(){};
 
 			void setup(){};
 			void update(){
+				ofVec3f force = ofVec3f(
+						(keyboard.isKey['a']-keyboard.isKey['d'])*100,
+						0,
+						(keyboard.isKey['w']-keyboard.isKey['s'])*100
+				);
+				cout<<keyboard.isKey['w']<<endl;
+				player.kineticModel.AddForce(force);
 				player.update();
 			};
 

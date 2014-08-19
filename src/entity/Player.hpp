@@ -11,12 +11,14 @@ namespace entity{
 			Player(){};
 			virtual ~Player(){};
 			void draw(unitro::Resources& resources){
-				resources["Player/text.x"]->setPosition(kineticModel.pos.x, kineticModel.pos.y, kineticModel.pos.z);
+				ofPushMatrix();
+				ofTranslate(kineticModel.pos);
 				resources["Player/test.x"]->draw(OF_MESH_FILL);
+				ofPopMatrix();
 			};
 
 			void update(){
-				kineticModel.ResetForce();
+				kineticModel.update();
 			};
 
 	};
