@@ -1,9 +1,11 @@
 #pragma once
 #include "entity/Player.hpp"
+#include "interface/Keyboard.hpp"
 namespace unitro {
 	class LocalPlayerController {
 		private:
 			unitro::entity::Player& player;
+			unitro::interface::Keyboard keyboard;
 		public:
 			LocalPlayerController(unitro::entity::Player& p):
 				player(p)

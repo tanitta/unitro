@@ -7,6 +7,7 @@
 #include "Resources.hpp"
 #include "LocalWorldView.hpp"
 #include "LocalWorldController.hpp"
+#include "interface/KeyboardController.hpp"
 class Client : public ofBaseApp{
 
 	public:
@@ -33,7 +34,8 @@ class Client : public ofBaseApp{
 
 		//tmp
 		unitro::Solver solver;
-
+		unitro::interface::Keyboard keyboard;
+		unitro::interface::KeyboardController keyboardController;
 		int counter;
 
 		Client():
@@ -44,8 +46,9 @@ class Client : public ofBaseApp{
 			localWorldController(localMatrix, player),
 			// 			localMatrixController(localMatrix),
 			// drawer(LocalMatrix),
+			keyboardController(),
 			solver(localMatrix)
-	{};
+		{};
 
 		~Client(){};
 
@@ -76,20 +79,22 @@ class Client : public ofBaseApp{
 			}else{
 				counter++;
 			}
+			keyboardController.update();
 		};
 
 		void draw(){
 			ofPushMatrix();
 			// drawer.draw();
 			localWorldView.draw();
-
 			ofPopMatrix();
 		};
 
 		void keyPressed(int key){
+			keyboardController.SetKeyPressed(key);
 			localWorldController.keyPressed(key);
 		};
 		void keyReleased(int key){
+			keyboardController.SetKeyReleased(key);
 			localWorldController.keyReleased(key);
 		};
 		void mouseMoved(int x, int y ){
