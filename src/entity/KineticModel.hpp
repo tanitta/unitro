@@ -32,7 +32,7 @@ namespace entity {
 			}
 
 			void update(){
-				AddForce(ver*viscosity);
+				AddForce(ver*-viscosity);
 				ver += acc*differenceTime;
 				pos += ver*differenceTime;
 

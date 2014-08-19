@@ -3,9 +3,8 @@
 namespace unitro {
 	namespace entity {
 		class BaseEntity {
-			protected:
-				unitro::entity::KineticModel kineticModel;
 			public:
+				unitro::entity::KineticModel kineticModel;
 				BaseEntity():kineticModel(){};
 				virtual ~BaseEntity(){};
 		};
