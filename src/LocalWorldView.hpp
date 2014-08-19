@@ -2,6 +2,7 @@
 #include "data/BaseMatrix.hpp"
 #include "entity/Player.hpp"
 #include "LocalMatrixView.hpp"
+#include "LocalPlayerView.hpp"
 #include "Resources.hpp"
 
 namespace unitro{
@@ -13,7 +14,7 @@ namespace unitro{
 		unitro::Resources& resources;
 
 		unitro::LocalMatrixView localMatrixView;
-
+		unitro::LocalPlayerView localPlayerView;
 		ofLight light;
 		ofRectangle viewport;
 		// ofEasyCam mainCam;
@@ -23,6 +24,7 @@ namespace unitro{
 		LocalWorldView(unitro::data::BaseMatrix& m, unitro::entity::Player& p, unitro::Resources& r):
 			mat(m),
 			localMatrixView(m,r),
+			localPlayerView(p,r),
 			player(p),
 			resources(r)
 		{};
@@ -59,7 +61,7 @@ namespace unitro{
 			player.mainCam.begin();
 				// ofDrawGrid(10.0f,10.0f,true,true,true,true);
 				localMatrixView.draw();
-				player.draw();
+				player.draw(resources);
 			player.mainCam.end();
 		};
 	};
