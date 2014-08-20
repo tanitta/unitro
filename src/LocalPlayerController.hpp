@@ -18,7 +18,7 @@ namespace unitro {
 			void update(){
 				ofVec3f force = ofVec3f(
 						(keyboard.isKey['a']-keyboard.isKey['d'])*100,
-						0,
+						(keyboard.isKey[32])*100,
 						(keyboard.isKey['w']-keyboard.isKey['s'])*100
 				);
 				cout<<keyboard.isKey['w']<<endl;
