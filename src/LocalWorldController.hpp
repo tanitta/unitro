@@ -10,12 +10,14 @@ namespace unitro{
 			unitro::entity::Player& player;
 			unitro::LocalMatrixController localMatrixController;
 			unitro::LocalPlayerController localPlayerController;
+			unitro::interface::Keyboard keyboard;
 		public:
 			LocalWorldController(unitro::data::BaseMatrix& m,unitro::entity::Player& p):
 				localMatrix(m),
 				player(p),
 				localMatrixController(m),
-				localPlayerController(p)
+				localPlayerController(p),
+				keyboard()
 			{};
 			virtual ~LocalWorldController(){};
 
@@ -28,8 +30,51 @@ namespace unitro{
 				localMatrixController.update();
 
 				localPlayerController.keyInput();
-// 				if(player.getAdressInMatrix().x >= 0 && player.getAdressInMatrix().x <= 0
-				cout<<player.getAdressInMatrix().x<<endl;
+				if(player.getAdressInMatrix().x >= 1 && player.getAdressInMatrix().x < localMatrix.getSize().x-1){
+				if(player.getAdressInMatrix().y >= 1 && player.getAdressInMatrix().y < localMatrix.getSize().y-1){
+				if(player.getAdressInMatrix().z >= 1 && player.getAdressInMatrix().z < localMatrix.getSize().z-1){
+					localMatrix(player.getAdressInMatrix()).soil += keyboard.isKey['q']*0.01;
+					localMatrix(player.getAdressInMatrix()).soil -= keyboard.isKey['e']*0.01;
+					ofVec3f nearCell = localMatrix.getNearCells(player.getAdressInMatrix());
+
+					ofVec3f boxPos;
+					ofVec3f boxSize;
+					localMatrix(player.getAdressInMatrix()).getBoxInfo(nearCell,boxPos,boxSize);
+
+					bool isContacting = (
+							player.getAdressInMatrix().x+boxPos.x-boxSize.x*0.6 < player.kineticModel.pos.x &&
+							player.getAdressInMatrix().x+boxPos.x+boxSize.x*0.6 > player.kineticModel.pos.x &&
+							player.getAdressInMatrix().y+boxPos.y-boxSize.y*0.6 < player.kineticModel.pos.y &&
+							player.getAdressInMatrix().y+boxPos.y+boxSize.y*0.6 > player.kineticModel.pos.y &&
+							player.getAdressInMatrix().z+boxPos.z-boxSize.z*0.6 < player.kineticModel.pos.z &&
+							player.getAdressInMatrix().z+boxPos.z+boxSize.z*0.6 > player.kineticModel.pos.z
+					);
+					if(isContacting){
+						cout<<boxSize<<endl;
+// 						if(player.getAdressInMatrix().x+boxPos.x > player.kineticModel.pos.x){
+// 							player.kineticModel.pos.x = player.getAdressInMatrix().x+boxPos.x-boxSize.x*0.5;
+// 						}else{
+// 							player.kineticModel.pos.x = player.getAdressInMatrix().x+boxPos.x+boxSize.x*0.5;
+// 						}
+
+						if(player.getAdressInMatrix().y+boxPos.y > player.kineticModel.pos.y){
+							player.kineticModel.pos.y = player.getAdressInMatrix().y+boxPos.y-boxSize.y*0.5;
+						}else{
+							player.kineticModel.pos.y = player.getAdressInMatrix().y+boxPos.y+boxSize.y*0.5;
+						}
+
+// 						if(player.getAdressInMatrix().z+boxPos.z > player.kineticModel.pos.z){
+// 							player.kineticModel.pos.z = player.getAdressInMatrix().z+boxPos.z-boxSize.z*0.5;
+// 						}else{
+// 							player.kineticModel.pos.z = player.getAdressInMatrix().z+boxPos.z+boxSize.z*0.5;
+// 						}
+// 						player.kineticModel.ver = player.kineticModel.ver * -1;
+// 						player.kineticModel.pos = player.kineticModel.pos - player.kineticModel.ver*0.1;
+// 						player.kineticModel.ver *= 0;
+					}
+				}
+				}
+				}
 				localPlayerController.update();
 			};
 

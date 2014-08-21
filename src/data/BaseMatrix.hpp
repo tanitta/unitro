@@ -30,6 +30,10 @@ namespace data{
 				return *this;
 			}
 
+			Cell& operator()(ofVec3f v){
+				return m[v.x][v.y][v.z];
+			};
+
 			ofVec3f getNearCells(int i, int j, int k){
 				ofVec3f nearCell;
 				nearCell.x = 0;
@@ -56,6 +60,10 @@ namespace data{
 					if(m[i][j][k+1].soil>0)nearCell.z += 1;
 				}
 				return nearCell;
+			}
+
+			ofVec3f getNearCells(ofVec3f v){
+				return getNearCells(v.x,v.y,v.z);
 			}
 	};
 }

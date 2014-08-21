@@ -114,6 +114,10 @@ namespace data{
 					break;
 				}
 			}
+			if(soil > 1.0){
+			pos = ofVec3f(0,0,0);
+			size = ofVec3f(1, 1, 1);
+			}
 		};
 
 		void draw(ofVec3f& nearCell, unitro::Resources& resources){
