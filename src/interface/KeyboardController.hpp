@@ -19,13 +19,17 @@ namespace unitro {
 				}
 
 				void SetKeyPressed(int key){
+					if(!keyboard.isKey[key]){
+						keyboard.isKeyDown[key] = true;
+					};
 					keyboard.isKey[key] = true;
-					keyboard.isKeyDown[key] = true;
 				};
 
 				void SetKeyReleased(int key){
+					if(keyboard.isKey[key]){
+						keyboard.isKeyUp[key] = true;
+					};
 					keyboard.isKey[key] = false;
-					keyboard.isKeyUp[key] = true;
 				};
 		};
 	} // namespace interfa
