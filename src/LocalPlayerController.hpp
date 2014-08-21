@@ -18,11 +18,15 @@ namespace unitro {
 			void update(){
 				ofVec3f force = ofVec3f(
 						(keyboard.isKey['a']-keyboard.isKey['d'])*100,
-						(keyboard.isKey[32])*100,
+						(keyboard.isKeyDown[32])*5000,
 						(keyboard.isKey['w']-keyboard.isKey['s'])*100
 				);
-				cout<<keyboard.isKey['w']<<endl;
+				cout<<keyboard.isKeyUp[32]<<endl;
 				player.kineticModel.AddForce(force);
+
+				if(player.kineticModel.pos.y > 0){
+					player.kineticModel.AddForce(ofVec3f(0,-100,0));
+				};
 				player.update();
 			};
 
