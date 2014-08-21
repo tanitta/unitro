@@ -54,7 +54,7 @@ class Client : public ofBaseApp{
 
 		void setup(){
 			ofSetWindowTitle("unitro ver.alpha 0.0.1");
-			ofSetFrameRate(unitro::env::General::frameRate);
+			ofSetFrameRate(60);
 			// drawer.setup();
 			solver.setup();
 			solver.startThread(true,false);
@@ -68,7 +68,7 @@ class Client : public ofBaseApp{
 			localWorldController.update();
 
 			//Solver
-			if (counter >= 1*unitro::env::General::frameRate-1)
+			if (counter >= 1*60-1)
 			{
 				if (!solver.isThreadRunning()){
 					cout<<"thread is end"<<endl;

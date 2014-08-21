@@ -7,12 +7,10 @@ namespace unitro{
 	private:
 		unitro::data::BaseMatrix& mat;
 		ofVec3f nearCell;
-		ofVec3f &matrixSize;
 		unitro::Resources& resources;
 	public:
 		LocalMatrixView(unitro::data::BaseMatrix& m, unitro::Resources& r):
 			mat(m),
-			matrixSize(unitro::env::General::matrixSize),
 			resources(r)
 		{}
 
@@ -24,7 +22,7 @@ namespace unitro{
 
 		};
 		void draw(){
-			for (int i = 1; i < matrixSize.x-1; ++i){for (int j = 1; j < matrixSize.y-1; ++j){for (int k = 1; k < matrixSize.z-1; ++k){
+			for (int i = 1; i < mat.getSize().x-1; ++i){for (int j = 1; j < mat.getSize().y-1; ++j){for (int k = 1; k < mat.getSize().z-1; ++k){
 				if(mat[i][j][k].soil>0){
 					nearCell = mat.getNearCells(i,j,k);
 				}

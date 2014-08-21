@@ -18,6 +18,9 @@ namespace data{
 			}
 
 			// 		void setup(){};
+			ofVec3f getSize(){
+				return ofVec3f(m.size(), m[0].size(), m[0][0].size());
+			}
 
 			std::vector<std::vector<Cell> >& operator[](int i){
 				return m[i];

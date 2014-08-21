@@ -15,18 +15,19 @@ namespace unitro{
 		int a;
 		bool isSleep;
 
-		ofVec3f &matrixSize;
+		ofVec3f matrixSize;
 		unitro::data::BaseMatrix &mat;
 
 		Solver(unitro::data::BaseMatrix &m):
 			a(0),
 			isSleep(false),
-			mat(m),
-			matrixSize(unitro::env::General::matrixSize)
-		{};
+			mat(m)
+		{
+		};
 		~Solver(){};
 
 		void setup(){
+			matrixSize = mat.getSize();
 			mat[5][5][5].soil = 1.0;
 			mat[5][5][5].nutP = 10.0;
 			mat[4][5][5].soil = 0.5;
