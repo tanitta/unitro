@@ -26,6 +26,9 @@ namespace unitro{
 
 			void update(){
 				localMatrixController.update();
+
+				localPlayerController.keyInput();
+				cout<<player.getAdressInMatrix().x<<endl;
 				localPlayerController.update();
 			};
 

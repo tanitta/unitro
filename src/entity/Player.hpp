@@ -6,6 +6,17 @@
 namespace unitro{
 namespace entity{
 	class Player: public unitro::entity::BaseEntity {
+		private:
+			double round(double r){
+				double z = r;
+				if(r > 0){
+					z = floor(r + 0.5);
+				}else if(r < 0){
+					z = ceil(r - 0.5);
+				}
+
+				return z;
+			}
 		public:
 			ofEasyCam mainCam;
 			Player(){};
@@ -19,6 +30,14 @@ namespace entity{
 
 			void update(){
 				kineticModel.update();
+			};
+
+			ofVec3f getAdressInMatrix(){
+				return ofVec3f(
+						round(kineticModel.pos.x),
+						round(kineticModel.pos.y),
+						round(kineticModel.pos.z)
+				);
 			};
 
 	};
