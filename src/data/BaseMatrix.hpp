@@ -1,4 +1,5 @@
 #pragma once
+#include "ofMain.h"
 #include "Cell.hpp"
 namespace unitro{
 namespace data{
@@ -24,6 +25,34 @@ namespace data{
 
 			BaseMatrix& operator=(std::vector<std::vector<std::vector<Cell> > >& A){
 				return *this;
+			}
+
+			ofVec3f getNearCells(int i, int j, int k){
+				ofVec3f nearCell;
+				nearCell.x = 0;
+				nearCell.y = 0;
+				nearCell.z = 0;
+				if(m[i-1][j][k].soil>0 && m[i+1][j][k].soil>0){
+					nearCell.x = 2;
+				}else{
+					if(m[i-1][j][k].soil>0)nearCell.x -= 1;
+					if(m[i+1][j][k].soil>0)nearCell.x += 1;
+				}
+
+				if(m[i][j-1][k].soil>0 && m[i][j+1][k].soil>0){
+					nearCell.y = 2;
+				}else{
+					if(m[i][j-1][k].soil>0)nearCell.y -= 1;
+					if(m[i][j+1][k].soil>0)nearCell.y += 1;
+				}
+
+				if(m[i][j][k-1].soil>0 && m[i][j][k+1].soil>0){
+					nearCell.z = 2;
+				}else{
+					if(m[i][j][k-1].soil>0)nearCell.z -= 1;
+					if(m[i][j][k+1].soil>0)nearCell.z += 1;
+				}
+				return nearCell;
 			}
 	};
 }

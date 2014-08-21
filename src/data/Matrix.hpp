@@ -9,6 +9,6 @@ namespace data{
 	extern untMat3 nextLocalMatrix;
 	// currentLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
 	// nextLocalMatrix.resize(boost::extents[unitro::env::General::matrixSize.x][unitro::env::General::matrixSize.y][unitro::env::General::matrixSize.z]);
-	
+
 }
 }

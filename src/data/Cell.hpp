@@ -53,7 +53,7 @@ namespace data{
 			ofPopMatrix();
 		};
 
-		void draw(ofVec3f& nearCell, unitro::Resources& resources){
+		void getBoxInfo(ofVec3f& nearCell, ofVec3f& pos, ofVec3f& size){
 			ofColor c;
 			c.setHsb(0,0,255);
 			ofSetColor(c);
@@ -69,42 +69,25 @@ namespace data{
 				case 0:{
 					l = (float)pow(soil, 1.0/3.0);
 					d = 0.5f - l*0.5f;
-					//translate
-					ofPushMatrix();
-						ofTranslate(nearCell.x*d,nearCell.y*d,nearCell.z*d);
-						ofDrawBox(l, l, l);
-						drawPlant(l*0.5, resources);
-					ofPopMatrix();
+						pos = ofVec3f(nearCell.x*d,nearCell.y*d,nearCell.z*d);
+						size = ofVec3f(l, l, l);
 
 				}
 				case 1:{
 					l = (float)pow(soil, 1.0/2.0);
 					d = 0.5f - l*0.5f;
 					if (nearCell.x == 2){
-						//translate
-						ofPushMatrix();
-							ofTranslate(0,nearCell.y*d,nearCell.z*d);
-							ofDrawBox(1, l, l);
-							drawPlant(l*0.5, resources);
-						ofPopMatrix();
-
+							pos = ofVec3f(0,nearCell.y*d,nearCell.z*d);
+							size = ofVec3f(1, l, l);
 					}
 					if (nearCell.y == 2){
-						//translate
-						ofPushMatrix();
-							ofTranslate(nearCell.x*d,0,nearCell.z*d);
-							ofDrawBox(l, 1, l);
-							drawPlant(0.5, resources);
-						ofPopMatrix();
+							pos = ofVec3f(nearCell.x*d,0,nearCell.z*d);
+							size = ofVec3f(l, 1, l);
 
 					}
 					if (nearCell.z == 2){
-						//translate
-						ofPushMatrix();
-							ofTranslate(nearCell.x*d,nearCell.y*d,0);
-							ofDrawBox(l, l, 1);
-							drawPlant(l*0.5, resources);
-						ofPopMatrix();
+							pos = ofVec3f(nearCell.x*d,nearCell.y*d,0);
+							size = ofVec3f(l, l, 1);
 
 					}
 					break;
@@ -114,29 +97,18 @@ namespace data{
 					d = 0.5f - l*0.5f;
 					if (nearCell.x == 2){
 						if(nearCell.y == 2){
-							ofPushMatrix();
-								ofTranslate(0,0,nearCell.z*d);
-								ofBox(1, 1, l);
-								drawPlant(0.5, resources);
-							ofPopMatrix();
-
+								pos = ofVec3f(0,0,nearCell.z*d);
+								size = ofVec3f(1, 1, l);
 						}
 						if(nearCell.z == 2){
-							ofPushMatrix();
-								ofTranslate(0,nearCell.y*d,0);
-								ofBox(1, l, 1);
-								drawPlant(l*0.5, resources);
-							ofPopMatrix();
-
+								pos = ofVec3f(0,nearCell.y*d,0);
+								size = ofVec3f(1, l, 1);
 						}
 
 					}
 					if(nearCell.y == 2 && nearCell.z == 2){
-						ofPushMatrix();
-							ofTranslate(nearCell.x*d,0,0);
-							ofBox(l, 1, 1);
-							drawPlant(0.5, resources);
-						ofPopMatrix();
+							pos = ofVec3f(nearCell.x*d,0,0);
+							size = ofVec3f(l, 1, 1);
 
 					}
 					break;
@@ -144,6 +116,17 @@ namespace data{
 			}
 		};
 
+		void draw(ofVec3f& nearCell, unitro::Resources& resources){
+			ofVec3f pos;
+			ofVec3f size;
+			getBoxInfo(nearCell, pos, size);
+
+			ofPushMatrix();
+				ofTranslate(pos);
+				ofBox(size.x, size.y, size.z);
+				drawPlant(size.y*0.5, resources);
+			ofPopMatrix();
+		};
 
 	};
 }

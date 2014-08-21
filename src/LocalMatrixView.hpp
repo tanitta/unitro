@@ -25,36 +25,14 @@ namespace unitro{
 		};
 		void draw(){
 			for (int i = 1; i < matrixSize.x-1; ++i){for (int j = 1; j < matrixSize.y-1; ++j){for (int k = 1; k < matrixSize.z-1; ++k){
-					if(mat[i][j][k].soil>0){
-						nearCell.x = 0;
-						nearCell.y = 0;
-						nearCell.z = 0;
-						if(mat[i-1][j][k].soil>0 && mat[i+1][j][k].soil>0){
-							nearCell.x = 2;
-						}else{
-							if(mat[i-1][j][k].soil>0)nearCell.x -= 1;
-							if(mat[i+1][j][k].soil>0)nearCell.x += 1;
-						}
-
-						if(mat[i][j-1][k].soil>0 && mat[i][j+1][k].soil>0){
-							nearCell.y = 2;
-						}else{
-							if(mat[i][j-1][k].soil>0)nearCell.y -= 1;
-							if(mat[i][j+1][k].soil>0)nearCell.y += 1;
-						}
-
-						if(mat[i][j][k-1].soil>0 && mat[i][j][k+1].soil>0){
-							nearCell.z = 2;
-						}else{
-							if(mat[i][j][k-1].soil>0)nearCell.z -= 1;
-							if(mat[i][j][k+1].soil>0)nearCell.z += 1;
-						}
-					}
-					ofPushMatrix();
-						ofTranslate(i,j,k);
-						mat[i][j][k].draw(nearCell, resources);
-					ofPopMatrix();
-				}}};
+				if(mat[i][j][k].soil>0){
+					nearCell = mat.getNearCells(i,j,k);
+				}
+				ofPushMatrix();
+				ofTranslate(i,j,k);
+				mat[i][j][k].draw(nearCell, resources);
+				ofPopMatrix();
+			}}};
 		};
 	};
 }
