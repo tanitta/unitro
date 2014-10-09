@@ -4,9 +4,9 @@ namespace unitro {
 	namespace interface {
 		class Keyboard {
 			public:
-				static vector<bool> isKey;
-				static vector<bool> isKeyDown;
-				static vector<bool> isKeyUp;
+				static vector<bool> is_key_;
+				static vector<bool> is_key_down_;
+				static vector<bool> is_key_up_;
 
 				Keyboard(){};
 				virtual ~Keyboard(){};
