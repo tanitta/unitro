@@ -3,6 +3,7 @@
 #include "entity/player.hpp"
 // #include "LocalMatrixView.hpp"
 #include "local_matrix_view.hpp"
+#include "local_player_view.hpp"
 // #include "LocalPlayerView.hpp"
 #include "resources.hpp"
 
@@ -15,7 +16,7 @@ namespace unitro{
 		unitro::Resources& resources_ref_;
 
 		unitro::LocalMatrixView local_matrix_view_;
-		// unitro::LocalPlayerView local_player_ref_view_;
+		unitro::LocalPlayerView local_player_view_;
 		ofLight light_;
 		ofRectangle viewport_;
 		// ofEasyCam main_cam_;
@@ -25,7 +26,7 @@ namespace unitro{
 		LocalWorldView(unitro::data::Matrix& m, unitro::entity::Player& p, unitro::Resources& r):
 			matrix_ref_(m),
 			local_matrix_view_(m,r),
-			// local_player_ref_view_(p,r),
+			local_player_view_(p,r),
 			player_ref_(p),
 			resources_ref_(r)
 		{};
@@ -61,7 +62,6 @@ namespace unitro{
 			ofSetupScreen();
 			player_ref_.main_cam_.begin();
 				ofDrawGrid(10.0f,10.0f,true,true,true,true);
-				// localMatrixView.draw();
 				local_matrix_view_.Draw();
 				player_ref_.Draw(resources_ref_);
 			player_ref_.main_cam_.end();
