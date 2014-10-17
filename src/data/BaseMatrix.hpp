@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-#include "Cell.hpp"
+#include "cell.hpp"
 namespace unitro{
 namespace data{
 	class BaseMatrix

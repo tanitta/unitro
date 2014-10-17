@@ -11,7 +11,7 @@ namespace unitro {
 
 				virtual ~KeyboardController(){};
 
-				void update(){
+				void Update(){
 					for (int i = 0; i < 128; i++) {
 						keyboard_.is_key_down_[i] = false;
 						keyboard_.is_key_up_[i] = false;

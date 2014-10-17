@@ -3,23 +3,22 @@
 #include "ofMain.h"
 // #include "solver.hpp"
 // #include "data/BaseMatrix.hpp"
-// #include "entity/Player.hpp"
+#include "entity/player.hpp"
 #include "resources.hpp"
-// #include "LocalWorldView.hpp"
+#include "local_world_view.hpp"
 // #include "LocalWorldController.hpp"
 #include <data/matrix.hpp>
 #include "interface/keyboard_controller.hpp"
 #include "interface/keyboard.hpp"
 namespace unitro {
 	class Client : public ofBaseApp{
-
-		public:
+		private:
 			unitro::Resources resources_;
 			unitro::data::Matrix local_matrix_;
-			// unitro::entity::Player player_;
+			unitro::entity::Player player_;
 
 			//unitro::interface
-			// unitro::LocalWorldView local_world_view_;
+			unitro::LocalWorldView local_world_view_;
 			// unitro::LocalWorldController local_world_controller_;
 			// 		unitro::LocalMatrixController localMatrixControler;
 
@@ -35,11 +34,13 @@ namespace unitro {
 			unitro::interface::Keyboard keyboard_;
 			unitro::interface::KeyboardController keyboard_controller_;
 
+		public:
+
 			Client():
 				local_matrix_(10,10,10),
 				// resources_(),
 				// local_matrix_(10, 10, 10),
-				// local_world_view_(local_matrix_, player_, resources_),
+				local_world_view_(local_matrix_, player_, resources_),
 				// local_world_controller_(local_matrix_, player_),
 				// 			localMatrixController(localMatrix),
 				// drawer(LocalMatrix),

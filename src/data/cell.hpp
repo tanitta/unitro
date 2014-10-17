@@ -10,30 +10,30 @@ namespace data{
 	class Cell
 	{
 	public:
-		double soil;
-		double water;
-		double temp;
-		double air;
-		double nutP;
-		double nutN;
-		double brightness;
-		unitro::plants::BasePlant *plant;
-		unitro::items::BaseItem *item;
-		// std::shared_ptr<unitro::plants::BasePlant> plant;
-		// std::shared_ptr<unitro::items::BaseItem> item;
+		double soil_;
+		double water_;
+		double temp_;
+		double air_;
+		double nut_p_;
+		double nut_n_;
+		double brightness_;
+		unitro::plants::BasePlant *plant_;
+		unitro::items::BaseItem *item_;
+		// std::shared_ptr<unitro::plant_s::BasePlant> plant;
+		// std::shared_ptr<unitro::item_s::BaseItem> item;
 		Cell():
-			soil(0.0),
-			water(0.0),
-			temp( 0.0),
-			air(0.0),
-			nutP(0.0),
-			nutN(0.0),
-			brightness(0.0),
-			plant(new unitro::plants::BasePlant),
-			item(new unitro::items::BaseItem)
+			soil_(0.0),
+			water_(0.0),
+			temp_( 0.0),
+			air_(0.0),
+			nut_p_(0.0),
+			nut_n_(0.0),
+			brightness_(0.0),
+			plant_(new unitro::plants::BasePlant),
+			item_(new unitro::items::BaseItem)
 		{
-			// plant = new unitro::plants::BasePlant;
-			// item = new unitro::items::BaseItem;
+			// plant_ = new unitro::plants::BasePlant;
+			// item_ = new unitro::items::BaseItem;
 		};
 
 		~Cell(){};
@@ -42,14 +42,14 @@ namespace data{
 		void setup(){};
 
 		void update(){
-			// plant->draw();
+			// plant_->draw();
 		};
 
 		void drawPlant(double shift, unitro::Resources& resources){
 
 			ofPushMatrix();
 				ofTranslate(0,shift,0);
-				plant->draw(resources);
+				plant_->draw(resources);
 			ofPopMatrix();
 		};
 
@@ -67,14 +67,14 @@ namespace data{
 
 			switch(lockedAxis){
 				case 0:{
-					l = (float)pow(soil, 1.0/3.0);
+					l = (float)pow(soil_, 1.0/3.0);
 					d = 0.5f - l*0.5f;
 						pos = ofVec3f(nearCell.x*d,nearCell.y*d,nearCell.z*d);
 						size = ofVec3f(l, l, l);
 
 				}
 				case 1:{
-					l = (float)pow(soil, 1.0/2.0);
+					l = (float)pow(soil_, 1.0/2.0);
 					d = 0.5f - l*0.5f;
 					if (nearCell.x == 2){
 							pos = ofVec3f(0,nearCell.y*d,nearCell.z*d);
@@ -93,7 +93,7 @@ namespace data{
 					break;
 				}
 				case 2:{
-					l = (float)soil;
+					l = (float)soil_;
 					d = 0.5f - l*0.5f;
 					if (nearCell.x == 2){
 						if(nearCell.y == 2){
@@ -114,7 +114,7 @@ namespace data{
 					break;
 				}
 			}
-			if(soil > 1.0){
+			if(soil_ > 1.0){
 			pos = ofVec3f(0,0,0);
 			size = ofVec3f(1, 1, 1);
 			}
