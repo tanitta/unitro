@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "../plants/BasePlant.hpp"
 #include "../items/BaseItem.hpp"
-#include "../Resources.hpp"
+#include "../resources.hpp"
 
 namespace unitro{
 namespace data{

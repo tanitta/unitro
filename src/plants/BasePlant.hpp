@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "boost/array.hpp"
-#include "../Resources.hpp"
+#include "../resources.hpp"
 namespace unitro{
 namespace plants{
 	class BasePlant{

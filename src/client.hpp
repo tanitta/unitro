@@ -4,7 +4,7 @@
 // #include "solver.hpp"
 // #include "data/BaseMatrix.hpp"
 // #include "entity/Player.hpp"
-// #include "Resources.hpp"
+#include "resources.hpp"
 // #include "LocalWorldView.hpp"
 // #include "LocalWorldController.hpp"
 #include <data/matrix.hpp>
@@ -14,7 +14,7 @@ namespace unitro {
 	class Client : public ofBaseApp{
 
 		public:
-			// unitro::Resources resources_;
+			unitro::Resources resources_;
 			unitro::data::Matrix local_matrix_;
 			// unitro::entity::Player player_;
 
