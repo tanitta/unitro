@@ -58,7 +58,7 @@ namespace unitro {
 				// solver_.setup();
 				// solver_.startThread(true,false);
 				//
-				// local_world_view_.setup();
+				local_world_view_.Setup();
 
 			};
 
@@ -82,10 +82,10 @@ namespace unitro {
 			};
 
 			void draw(){
-				// ofPushMatrix();
+				ofPushMatrix();
 				// // drawer.draw();
-				// local_world_view_.draw();
-				// ofPopMatrix();
+				local_world_view_.Draw();
+				ofPopMatrix();
 			};
 
 			void keyPressed(int key){

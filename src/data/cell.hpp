@@ -1,5 +1,6 @@
 #pragma once
 
+#include <boost/numeric/ublas/vector.hpp>
 #include "ofMain.h"
 #include "../plants/BasePlant.hpp"
 #include "../items/BaseItem.hpp"
@@ -120,10 +121,11 @@ namespace data{
 			}
 		};
 
-		void draw(ofVec3f& nearCell, unitro::Resources& resources){
+		void Draw(boost::numeric::ublas::vector<int>& near_cell, unitro::Resources& resources){
 			ofVec3f pos;
 			ofVec3f size;
-			getBoxInfo(nearCell, pos, size);
+			ofVec3f near_cell_of = ofVec3f(near_cell[0],near_cell[1],near_cell[2]);
+			getBoxInfo(near_cell_of, pos, size);
 
 			ofPushMatrix();
 				ofTranslate(pos);

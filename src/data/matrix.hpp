@@ -8,6 +8,23 @@ namespace data{
 	class Matrix {
 		private:
 			std::vector< std::vector<std::vector<unitro::data::Cell>>> matrix_;
+
+			int CountCellsByAxialDirection(int axis, int i, int j, int k){
+				int cells = 0;
+
+				int x = ((axis == 0)? 1:0);
+				int y = ((axis == 1)? 1:0);
+				int z = ((axis == 2)? 1:0);
+
+				if (matrix_[i-x][j-y][k-z].soil_>0 && matrix_[i+x][j+y][k+z].soil_>0) {
+					cells = 2;
+				}else{
+					if(matrix_[i-x][j-y][k-z].soil_>0) cells -= 1;
+					if(matrix_[i+x][j-y][k-z].soil_>0) cells += 1;
+				}
+				return cells;
+			}
+
 		public:
 			Matrix(int x, int y, int z):
 				matrix_(x,std::vector<std::vector<Cell>>(y,std::vector<Cell>(z))){};
@@ -32,6 +49,23 @@ namespace data{
 			unitro::data::Cell& operator()(boost::numeric::ublas::vector<int> v){
 				return matrix_[v[0]][v[1]][v[2]];
 			}
+
+
+			boost::numeric::ublas::vector<int> GetNearCells(int i, int j, int k){
+				boost::numeric::ublas::vector<int> near_cell;
+				near_cell[0] = CountCellsByAxialDirection(0,i,j,k);
+				near_cell[1] = CountCellsByAxialDirection(1,i,j,k);
+				near_cell[2] = CountCellsByAxialDirection(2,i,j,k);
+				// if (matrix_[i-1][j][k].soil_>0 && matrix_[i+1][j][k].soil_>0) {
+				// 	near_cell[0] = 2;
+				// }else{
+				// 	if(matrix_[i-1][j][k].soil_>0) near_cell[0] -= 1;
+				// 	if(matrix_[i+1][j][k].soil_>0) near_cell[0] += 1;
+				// }
+				return near_cell;
+
+			}
+
 	};
 }
 }
