@@ -5,8 +5,10 @@
 // #include "data/BaseMatrix.hpp"
 #include "entity/player.hpp"
 #include "resources.hpp"
+
 #include "local_world_view.hpp"
-// #include "LocalWorldController.hpp"
+#include "local_world_controller.hpp"
+
 #include <data/matrix.hpp>
 #include "interface/keyboard_controller.hpp"
 #include "interface/keyboard.hpp"
@@ -19,7 +21,7 @@ namespace unitro {
 
 			//unitro::interface
 			unitro::LocalWorldView local_world_view_;
-			// unitro::LocalWorldController local_world_controller_;
+			unitro::LocalWorldController local_world_controller_;
 			// 		unitro::LocalMatrixController localMatrixControler;
 
 
@@ -40,12 +42,13 @@ namespace unitro {
 				local_matrix_(10,10,10),
 				// resources_(),
 				// local_matrix_(10, 10, 10),
+				keyboard_(),
+				keyboard_controller_(keyboard_),
 				local_world_view_(local_matrix_, player_, resources_),
-				// local_world_controller_(local_matrix_, player_),
+				local_world_controller_(keyboard_,local_matrix_, player_)
 				// 			localMatrixController(localMatrix),
 				// drawer(LocalMatrix),
-				keyboard_(),
-				keyboard_controller_(keyboard_)
+
 				// solver_(local_matrix_)
 		{};
 

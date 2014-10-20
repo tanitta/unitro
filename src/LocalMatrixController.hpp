@@ -1,13 +1,13 @@
 #pragma once
-#include "data/BaseMatrix.hpp"
+#include "data/matrix.hpp"
 namespace unitro
 {
 	class LocalMatrixController
 	{
 		private:
-			unitro::data::BaseMatrix& mat;
+			unitro::data::Matrix& mat;
 		public:
-			LocalMatrixController(unitro::data::BaseMatrix& m):mat(m){};
+			LocalMatrixController(unitro::data::Matrix& m):mat(m){};
 			~LocalMatrixController(){};
 			void setup(){};
 			void update(){};

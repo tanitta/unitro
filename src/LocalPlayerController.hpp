@@ -1,16 +1,17 @@
 #pragma once
-#include "entity/Player.hpp"
-#include "interface/Keyboard.hpp"
+#include "entity/player.hpp"
+#include "interface/keyboard.hpp"
 namespace unitro {
 	class LocalPlayerController {
 		private:
-			unitro::entity::Player& player;
-			unitro::interface::Keyboard keyboard;
+			unitro::entity::Player& player_ref_;
+			unitro::interface::Keyboard& keyboard_ref_;
 		public:
-			LocalPlayerController(unitro::entity::Player& p):
-				player(p)
+			LocalPlayerController(unitro::interface::Keyboard& keyboard, unitro::entity::Player& p):
+				keyboard_ref_(keyboard),
+				player_ref_(p)
 			{
-				player.kineticModel.viscosity = 40;
+				player_ref_.kinetic_model_.viscosity_ = 40;
 			};
 			virtual ~LocalPlayerController(){};
 
@@ -18,30 +19,19 @@ namespace unitro {
 
 			void keyInput(){
 				ofVec3f force = ofVec3f(
-						(keyboard.isKey['a']-keyboard.isKey['d'])*100,
-						(keyboard.isKeyDown[32])*5000,
-						(keyboard.isKey['w']-keyboard.isKey['s'])*100
+						(keyboard_ref_.is_key_['a']-keyboard_ref_.is_key_['d'])*100,
+						(keyboard_ref_.is_key_down_[32])*5000,
+						(keyboard_ref_.is_key_['w']-keyboard_ref_.is_key_['s'])*100
 				);
-				player.kineticModel.AddForce(force);
+				player_ref_.kinetic_model_.AddForce(force);
 			};
 
 
-			void update(){
-				if(player.kineticModel.pos.y > 0){
-					player.kineticModel.AddForce(ofVec3f(0,-100,0));
+			void Update(){
+				if(player_ref_.kinetic_model_.pos_.y > 0){
+					player_ref_.kinetic_model_.AddForce(ofVec3f(0,-100,0));
 				};
-				player.update();
+				player_ref_.Update();
 			};
-
-			void keyPressed(int key){};
-			void keyReleased(int key){};
-			void mouseMoved(int x, int y ){};
-			void mouseDragged(int x, int y, int button){};
-			void mousePressed(int x, int y, int button){};
-			void mouseReleased(int x, int y, int button){};
-			void windowResized(int w, int h){};
-			void dragEvent(ofDragInfo dragInfo){};
-			void gotMessage(ofMessage msg){};
-			void exit(){};
 	};
 } // namespace unitro
