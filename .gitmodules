@@ -1,0 +1,4 @@
+[submodule "docs"]
+	path = docs
+	url = git@github.com:tanitta/unitro.git
+	branch = gh-pages
