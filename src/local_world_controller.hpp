@@ -3,8 +3,8 @@
 
 #include <data/matrix.hpp>
 
-#include "LocalMatrixController.hpp"
-#include "LocalPlayerController.hpp"
+#include "local_matrix_controller.hpp"
+#include "local_player_controller.hpp"
 namespace unitro{
 	class LocalWorldController{
 		private:
@@ -25,15 +25,15 @@ namespace unitro{
 			{};
 			virtual ~LocalWorldController(){};
 
-			void setup(){
-				local_matrix_controller_.setup();
-				local_player_controller_.setup();
+			void Setup(){
+				local_matrix_controller_.Setup();
+				local_player_controller_.Setup();
 			};
 
-			void update(){
-// 				local_matrix_controller_.update();
+			void Update(){
+				local_matrix_controller_.Update();
 //
-// 				local_player_controller_.keyInput();
+				local_player_controller_.KeyInput();
 // 				if(player.getAdressInMatrix().x >= 1 && player.getAdressInMatrix().x < localMatrix.getSize().x-1){
 // 				if(player.getAdressInMatrix().y >= 1 && player.getAdressInMatrix().y < localMatrix.getSize().y-1){
 // 				if(player.getAdressInMatrix().z >= 1 && player.getAdressInMatrix().z < localMatrix.getSize().z-1){

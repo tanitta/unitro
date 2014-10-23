@@ -22,8 +22,6 @@ namespace unitro {
 			//unitro::interface
 			unitro::LocalWorldView local_world_view_;
 			unitro::LocalWorldController local_world_controller_;
-			// 		unitro::LocalMatrixController localMatrixControler;
-
 
 			//network
 			//unitro::avator::OtherPlayers
@@ -32,7 +30,6 @@ namespace unitro {
 
 			//tmp
 			// unitro::Solver solver_;
-			// unitro::interface::Keyboard keyboard_;
 			unitro::interface::Keyboard keyboard_;
 			unitro::interface::KeyboardController keyboard_controller_;
 
@@ -40,8 +37,7 @@ namespace unitro {
 
 			Client():
 				local_matrix_(10,10,10),
-				// resources_(),
-				// local_matrix_(10, 10, 10),
+				resources_(),
 				keyboard_(),
 				keyboard_controller_(keyboard_),
 				local_world_view_(local_matrix_, player_, resources_),
@@ -61,13 +57,14 @@ namespace unitro {
 				// solver_.setup();
 				// solver_.startThread(true,false);
 				//
+				local_world_controller_.Setup();
 				local_world_view_.Setup();
 
 			};
 
 			void update(){
 				//Interface
-				// local_world_controller_.update();
+				local_world_controller_.Update();
 
 				//Solver
 				// if (counter_ >= 1*60-1)
