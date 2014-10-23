@@ -1,0 +1,4 @@
+[submodule "git@github.com:tanitta/unitro.git"]
+	path = git@github.com:tanitta/unitro.git
+	url = git@github.com:tanitta/unitro.git
+	branch = gh-pages

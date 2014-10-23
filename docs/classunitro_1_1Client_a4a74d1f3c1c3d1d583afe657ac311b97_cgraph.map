@@ -1,0 +1,6 @@
+<map id="unitro::Client::setup" name="unitro::Client::setup">
+<area shape="rect" id="node2" href="$classunitro_1_1LocalWorldController.html#a1577d9434a5a2e0b5a4707cc9bdd40bc" title="unitro::LocalWorldController\l::Setup" alt="" coords="190,37,373,78"/>
+<area shape="rect" id="node5" href="$classunitro_1_1LocalWorldView.html#a979f5466a00729f921dc3d7729e25951" title="unitro::LocalWorldView\l::Setup" alt="" coords="203,102,359,143"/>
+<area shape="rect" id="node3" href="$classunitro_1_1LocalMatrixController.html#aa97d598ef56abf70fb0bcb6ef08eb75e" title="unitro::LocalMatrixController\l::Setup" alt="" coords="422,5,607,46"/>
+<area shape="rect" id="node4" href="$classunitro_1_1LocalPlayerController.html#a0472d68eb38835a4c5098ac299478076" title="unitro::LocalPlayerController\l::Setup" alt="" coords="421,70,608,111"/>
+</map>

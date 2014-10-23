@@ -1,0 +1,6 @@
+<map id="unitro::Client::update" name="unitro::Client::update">
+<area shape="rect" id="node2" href="$classunitro_1_1LocalWorldController.html#ada47c51cc360d6badacbc1c6f0a5fbb7" title="unitro::LocalWorldController\l::Update" alt="" coords="198,38,381,79"/>
+<area shape="rect" id="node3" href="$classunitro_1_1LocalMatrixController.html#aeb4055ff96f7ffb3ced687f4dcadef44" title="unitro::LocalMatrixController\l::Update" alt="" coords="430,5,615,46"/>
+<area shape="rect" id="node4" href="$classunitro_1_1LocalPlayerController.html#a0c9e079ceb14e3acd9a64fb5d6d23e57" title="unitro::LocalPlayerController\l::KeyInput" alt="" coords="429,70,616,111"/>
+<area shape="rect" id="node5" href="$classunitro_1_1entity_1_1KineticModel.html#a0daa190617f5b547d54d4193a9618c69" title="unitro::entity::KineticModel\l::AddForce" alt="" coords="665,70,842,111"/>
+</map>
