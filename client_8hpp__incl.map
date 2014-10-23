@@ -1,0 +1,14 @@
+<map id="src/client.hpp" name="src/client.hpp">
+<area shape="rect" id="node3" href="$player_8hpp.html" title="entity/player.hpp" alt="" coords="327,245,445,272"/>
+<area shape="rect" id="node6" href="$resources_8hpp.html" title="../resources.hpp" alt="" coords="818,485,933,512"/>
+<area shape="rect" id="node8" href="$local__world__view_8hpp.html" title="local_world_view.hpp" alt="" coords="672,88,819,115"/>
+<area shape="rect" id="node9" href="$matrix_8hpp.html" title="data/matrix.hpp" alt="" coords="615,245,725,272"/>
+<area shape="rect" id="node19" href="$keyboard__controller_8hpp.html" title="interface/keyboard\l_controller.hpp" alt="" coords="219,81,348,122"/>
+<area shape="rect" id="node20" href="$keyboard_8hpp.html" title="keyboard.hpp" alt="" coords="131,171,231,197"/>
+<area shape="rect" id="node4" href="$base__entity_8hpp.html" title="base_entity.hpp" alt="" coords="240,320,355,347"/>
+<area shape="rect" id="node5" href="$kinetic__model_8hpp.html" title="kinetic_model.hpp" alt="" coords="145,403,271,429"/>
+<area shape="rect" id="node16" href="$local__matrix__view_8hpp.html" title="local_matrix_view.hpp" alt="" coords="670,171,820,197"/>
+<area shape="rect" id="node12" href="$cell_8hpp.html" title="cell.hpp" alt="" coords="587,320,653,347"/>
+<area shape="rect" id="node13" href="$BasePlant_8hpp.html" title="../plants/BasePlant.hpp" alt="" coords="522,403,680,429"/>
+<area shape="rect" id="node15" href="$BaseItem_8hpp.html" title="../items/BaseItem.hpp" alt="" coords="347,403,497,429"/>
+</map>

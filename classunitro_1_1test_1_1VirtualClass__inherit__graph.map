@@ -1,0 +1,4 @@
+<map id="unitro::test::VirtualClass" name="unitro::test::VirtualClass">
+<area shape="rect" id="node2" href="$classunitro_1_1test_1_1HogeClass1.html" title="{unitro::test::HogeClass1\n||+ HogeClass1()\l+ ~HogeClass1()\l+ test()\l+ test1()\l}" alt="" coords="5,161,168,282"/>
+<area shape="rect" id="node3" href="$classunitro_1_1test_1_1HogeClass2.html" title="{unitro::test::HogeClass2\n||+ test()\l+ test2()\l}" alt="" coords="193,175,356,267"/>
+</map>

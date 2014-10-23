@@ -1,0 +1,8 @@
+<map id="unitro::LocalWorldView" name="unitro::LocalWorldView">
+<area shape="rect" id="node2" href="$classunitro_1_1Resources.html" title="{unitro::Resources\n|&#45; resources_\l|+ Resources()\l+ ~Resources()\l+ operator[]()\l}" alt="" coords="5,331,131,437"/>
+<area shape="rect" id="node3" href="$classunitro_1_1LocalMatrixView.html" title="{unitro::LocalMatrixView\n|&#45; near_cell_\l|+ LocalMatrixView()\l+ ~LocalMatrixView()\l+ Setup()\l+ Update()\l+ Draw()\l}" alt="" coords="151,547,309,683"/>
+<area shape="rect" id="node4" href="$classunitro_1_1data_1_1Matrix.html" title="{unitro::data::Matrix\n||+ Matrix()\l+ ~Matrix()\l+ GetSize()\l+ operator[]()\l+ operator=()\l+ operator()()\l+ GetNearCells()\l&#45; CountCellsByAxialDirection()\l}" alt="" coords="191,294,389,474"/>
+<area shape="rect" id="node6" href="$classunitro_1_1entity_1_1Player.html" title="{unitro::entity::Player\n|+ main_cam_\l|+ Player()\l+ ~Player()\l+ Draw()\l+ Update()\l+ GetAdressInMatrix()\l&#45; Round()\l}" alt="" coords="457,539,607,690"/>
+<area shape="rect" id="node7" href="$classunitro_1_1entity_1_1BaseEntity.html" title="{unitro::entity::BaseEntity\n||+ BaseEntity()\l+ ~BaseEntity()\l}" alt="" coords="449,338,615,430"/>
+<area shape="rect" id="node8" href="$classunitro_1_1entity_1_1KineticModel.html" title="{unitro::entity::KineticModel\n|+ difference_time_\l+ mass_\l+ viscosity_\l+ ver_\l+ acc_\l+ pos_\l|+ KineticModel()\l+ ~KineticModel()\l+ AddForce()\l+ ResetForce()\l+ Update()\l+ Draw()\l}" alt="" coords="443,5,620,229"/>
+</map>

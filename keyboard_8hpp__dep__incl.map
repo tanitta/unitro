@@ -1,0 +1,9 @@
+<map id="src/interface/keyboard.hpp" name="src/interface/keyboard.hpp">
+<area shape="rect" id="node2" href="$keyboard__controller_8hpp.html" title="src/interface/keyboard\l_controller.hpp" alt="" coords="5,81,155,122"/>
+<area shape="rect" id="node3" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="86,171,185,197"/>
+<area shape="rect" id="node5" href="$keyboard_8cpp.html" title="src/interface/keyboard.cpp" alt="" coords="231,88,407,115"/>
+<area shape="rect" id="node6" href="$KeyboardWrapper_8hpp.html" title="src/interface/KeyboardWrapper.hpp" alt="" coords="431,88,657,115"/>
+<area shape="rect" id="node8" href="$LocalPlayerController_8hpp.html" title="src/LocalPlayerController.hpp" alt="" coords="682,88,875,115"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="87,245,184,272"/>
+<area shape="rect" id="node7" href="$KeyboardWrapper_8cpp.html" title="src/interface/KeyboardWrapper.cpp" alt="" coords="431,171,657,197"/>
+</map>
