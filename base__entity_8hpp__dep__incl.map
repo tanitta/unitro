@@ -1,7 +1,9 @@
 <map id="src/entity/base_entity.hpp" name="src/entity/base_entity.hpp">
-<area shape="rect" id="node2" href="$player_8hpp.html" title="src/entity/player.hpp" alt="" coords="46,80,185,107"/>
-<area shape="rect" id="node3" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="5,229,104,256"/>
-<area shape="rect" id="node5" href="$local__world__view_8hpp.html" title="src/local_world_view.hpp" alt="" coords="32,155,200,181"/>
-<area shape="rect" id="node6" href="$LocalPlayerController_8hpp.html" title="src/LocalPlayerController.hpp" alt="" coords="225,155,417,181"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="6,304,103,331"/>
+<area shape="rect" id="node2" href="$player_8hpp.html" title="src/entity/player.hpp" alt="" coords="88,80,228,107"/>
+<area shape="rect" id="node3" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="55,304,154,331"/>
+<area shape="rect" id="node5" href="$local__world__view_8hpp.html" title="src/local_world_view.hpp" alt="" coords="21,229,189,256"/>
+<area shape="rect" id="node6" href="$local__player__view_8hpp.html" title="src/local_player_view.hpp" alt="" coords="72,155,244,181"/>
+<area shape="rect" id="node7" href="$local__world__controller_8hpp.html" title="src/local_world_controller.hpp" alt="" coords="213,229,408,256"/>
+<area shape="rect" id="node8" href="$local__player__controller_8hpp.html" title="src/local_player_controller.hpp" alt="" coords="319,155,517,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="56,379,153,405"/>
 </map>

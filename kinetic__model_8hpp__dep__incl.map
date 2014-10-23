@@ -1,8 +1,10 @@
 <map id="src/entity/kinetic_model.hpp" name="src/entity/kinetic_model.hpp">
-<area shape="rect" id="node2" href="$base__entity_8hpp.html" title="src/entity/base_entity.hpp" alt="" coords="30,96,201,123"/>
-<area shape="rect" id="node3" href="$player_8hpp.html" title="src/entity/player.hpp" alt="" coords="46,171,185,197"/>
-<area shape="rect" id="node4" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="5,320,104,347"/>
-<area shape="rect" id="node6" href="$local__world__view_8hpp.html" title="src/local_world_view.hpp" alt="" coords="32,245,200,272"/>
-<area shape="rect" id="node7" href="$LocalPlayerController_8hpp.html" title="src/LocalPlayerController.hpp" alt="" coords="225,245,417,272"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="6,395,103,421"/>
+<area shape="rect" id="node2" href="$base__entity_8hpp.html" title="src/entity/base_entity.hpp" alt="" coords="72,96,244,123"/>
+<area shape="rect" id="node3" href="$player_8hpp.html" title="src/entity/player.hpp" alt="" coords="88,171,228,197"/>
+<area shape="rect" id="node4" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="55,395,154,421"/>
+<area shape="rect" id="node6" href="$local__world__view_8hpp.html" title="src/local_world_view.hpp" alt="" coords="21,320,189,347"/>
+<area shape="rect" id="node7" href="$local__player__view_8hpp.html" title="src/local_player_view.hpp" alt="" coords="72,245,244,272"/>
+<area shape="rect" id="node8" href="$local__world__controller_8hpp.html" title="src/local_world_controller.hpp" alt="" coords="213,320,408,347"/>
+<area shape="rect" id="node9" href="$local__player__controller_8hpp.html" title="src/local_player_controller.hpp" alt="" coords="319,245,517,272"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="56,469,153,496"/>
 </map>

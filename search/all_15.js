@@ -15,6 +15,8 @@ var searchData=
   ['_7elocalmatrixcontroller',['~LocalMatrixController',['../classunitro_1_1LocalMatrixController.html#a2bdaa54a6587a30ac29d891c7845a109',1,'unitro::LocalMatrixController']]],
   ['_7elocalmatrixview',['~LocalMatrixView',['../classunitro_1_1LocalMatrixView.html#a68e2ec07726e05d0d6214a71f549140c',1,'unitro::LocalMatrixView']]],
   ['_7elocalplayercontroller',['~LocalPlayerController',['../classunitro_1_1LocalPlayerController.html#aa7e3e98a3613187262eb7540b0341ae3',1,'unitro::LocalPlayerController']]],
+  ['_7elocalplayerview',['~LocalPlayerView',['../classunitro_1_1LocalPlayerView.html#aa765d8c8174fd3f07000b16945ddb53b',1,'unitro::LocalPlayerView']]],
+  ['_7elocalworldcontroller',['~LocalWorldController',['../classunitro_1_1LocalWorldController.html#a5997190ca96c37b214bef5f853c9637d',1,'unitro::LocalWorldController']]],
   ['_7elocalworldview',['~LocalWorldView',['../classunitro_1_1LocalWorldView.html#a4a48a20453af7f9f27a14ce9159bd91a',1,'unitro::LocalWorldView']]],
   ['_7ematrix',['~Matrix',['../classunitro_1_1data_1_1Matrix.html#ae54256420bd046c814ccd1878d6c242b',1,'unitro::data::Matrix']]],
   ['_7eplayer',['~Player',['../classunitro_1_1entity_1_1Player.html#a8af0ecd881877b13fb574a2202cfa9f8',1,'unitro::entity::Player']]],

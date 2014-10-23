@@ -174,7 +174,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>dragEvent()
 : <a class="el" href="classunitro_1_1Client.html#a42756451525e27534c585463b77cbc18">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a5e5fa6f39d4a722eae3a246c2ad12459">unitro::LocalMatrixController</a>
 </li>
 <li>draw()
 : <a class="el" href="classunitro_1_1Client.html#ab63f29fd04dedc5c3092f1213d85c4f1">unitro::Client</a>
@@ -189,6 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>Draw()
 : <a class="el" href="classunitro_1_1LocalMatrixView.html#a3c1c69ec5580add52cfefbe297a3aba7">unitro::LocalMatrixView</a>
+, <a class="el" href="classunitro_1_1LocalPlayerView.html#a2a371e1eebead29775a8267610b0f5a7">unitro::LocalPlayerView</a>
 , <a class="el" href="classunitro_1_1LocalWorldView.html#a1bbe09c7aae70be6690346f15bf570ff">unitro::LocalWorldView</a>
 </li>
 <li>draw()
@@ -206,7 +206,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>exit()
 : <a class="el" href="classunitro_1_1Client.html#aa9d1af105031d9b85580b0e0c696fd6d">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a46ecfb9cc1bb9771f52dbc1ee27abd53">unitro::LocalMatrixController</a>
 </li>
 </ul>
 
@@ -242,7 +241,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>gotMessage()
 : <a class="el" href="classunitro_1_1Client.html#a38695e8223feae3b8559fc0ea12624f9">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#ad1dc191a74f0d51f5e5a3a4e4e6155c2">unitro::LocalMatrixController</a>
 </li>
 <li>grow()
 : <a class="el" href="classunitro_1_1plants_1_1Butterbur.html#ab9c58740990d4bdd334105430601eed5">unitro::plants::Butterbur</a>
@@ -289,20 +287,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>keyboard_ref_
 : <a class="el" href="classunitro_1_1interface_1_1KeyboardController.html#a4b22686b32b5c6a9b68c520de3cd0839">unitro::interface::KeyboardController</a>
 , <a class="el" href="classunitro_1_1LocalPlayerController.html#a0cb6e6b030cb9bab3abc19283cb98ce6">unitro::LocalPlayerController</a>
+, <a class="el" href="classunitro_1_1LocalWorldController.html#a3b7aba5083ab15d33964074fc3027405">unitro::LocalWorldController</a>
 </li>
 <li>KeyboardController()
 : <a class="el" href="classunitro_1_1interface_1_1KeyboardController.html#a8e3e7b36668aea45b109c4618cd4ef8b">unitro::interface::KeyboardController</a>
 </li>
-<li>keyInput()
-: <a class="el" href="classunitro_1_1LocalPlayerController.html#a431b062b8a7c1c1f2d61ec143f13a2f9">unitro::LocalPlayerController</a>
+<li>KeyInput()
+: <a class="el" href="classunitro_1_1LocalPlayerController.html#a0c9e079ceb14e3acd9a64fb5d6d23e57">unitro::LocalPlayerController</a>
 </li>
 <li>keyPressed()
 : <a class="el" href="classunitro_1_1Client.html#a2e5af70d8cb294429956d6050784f051">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a73d16419c028a773474570c5d3b4ac35">unitro::LocalMatrixController</a>
 </li>
 <li>keyReleased()
 : <a class="el" href="classunitro_1_1Client.html#a8459a866d1a4c7fa0015f40172a78a84">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a567ef061a205c349cf130af993941f1a">unitro::LocalMatrixController</a>
 </li>
 <li>kinetic_model_
 : <a class="el" href="classunitro_1_1entity_1_1BaseEntity.html#a2e326862847734375ea3e8927839947a">unitro::entity::BaseEntity</a>
@@ -320,8 +317,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>local_matrix_
 : <a class="el" href="classunitro_1_1Client.html#ac87725ed7a871fdd57e62936f16ee4fd">unitro::Client</a>
 </li>
+<li>local_matrix_controller_
+: <a class="el" href="classunitro_1_1LocalWorldController.html#a633a80dca7192f68a67a3f0838a5f843">unitro::LocalWorldController</a>
+</li>
 <li>local_matrix_view_
 : <a class="el" href="classunitro_1_1LocalWorldView.html#ab3b25f557a3cf68d15f2b84fdf36571b">unitro::LocalWorldView</a>
+</li>
+<li>local_player_controller_
+: <a class="el" href="classunitro_1_1LocalWorldController.html#a3f69fb0b70e07d958d3eebbfe804bfb9">unitro::LocalWorldController</a>
 </li>
 <li>local_player_view_
 : <a class="el" href="classunitro_1_1LocalWorldView.html#a80d2ad758ae04d734e4dc6b06028c4bd">unitro::LocalWorldView</a>
@@ -333,13 +336,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classunitro_1_1Client.html#aff621a0f348274b3c16009735a27fe19">unitro::Client</a>
 </li>
 <li>LocalMatrixController()
-: <a class="el" href="classunitro_1_1LocalMatrixController.html#aebbff18b1ae2d2049f89ae1f21fa5c55">unitro::LocalMatrixController</a>
+: <a class="el" href="classunitro_1_1LocalMatrixController.html#ace6465d466bf05ee57eac08305440c21">unitro::LocalMatrixController</a>
 </li>
 <li>LocalMatrixView()
 : <a class="el" href="classunitro_1_1LocalMatrixView.html#ac631d20017782d8dd629b96b7cfb5113">unitro::LocalMatrixView</a>
 </li>
 <li>LocalPlayerController()
 : <a class="el" href="classunitro_1_1LocalPlayerController.html#a41ad33e7cde39b0ff609689590586d5d">unitro::LocalPlayerController</a>
+</li>
+<li>LocalPlayerView()
+: <a class="el" href="classunitro_1_1LocalPlayerView.html#a25478c6df1617d973fe13c3b56b4a969">unitro::LocalPlayerView</a>
+</li>
+<li>LocalWorldController()
+: <a class="el" href="classunitro_1_1LocalWorldController.html#aca6c7dedee36abd0946f2d2dc598540c">unitro::LocalWorldController</a>
 </li>
 <li>LocalWorldView()
 : <a class="el" href="classunitro_1_1LocalWorldView.html#a58b2ca73caf397187d854a10ae17d071">unitro::LocalWorldView</a>
@@ -357,9 +366,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>mass_
 : <a class="el" href="classunitro_1_1entity_1_1KineticModel.html#a7775c8665d3b38345bc10aa93394ce03">unitro::entity::KineticModel</a>
 </li>
-<li>mat
-: <a class="el" href="classunitro_1_1LocalMatrixController.html#aa5edd3ba868c8e93d6acee730bce8dad">unitro::LocalMatrixController</a>
-</li>
 <li>mat_
 : <a class="el" href="classunitro_1_1Solver.html#a534b52d5715a2bb5db1d05be53d12fea">unitro::Solver</a>
 </li>
@@ -370,7 +376,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classunitro_1_1data_1_1Matrix.html#a61a2ae1bd9fecbfe6fb202b0e8eba46b">unitro::data::Matrix</a>
 </li>
 <li>matrix_ref_
-: <a class="el" href="classunitro_1_1LocalMatrixView.html#ac7819f00c10f1d3404c634c2049e003d">unitro::LocalMatrixView</a>
+: <a class="el" href="classunitro_1_1LocalMatrixController.html#a4ea6a704882aca79ba2b1abe6b6fb181">unitro::LocalMatrixController</a>
+, <a class="el" href="classunitro_1_1LocalMatrixView.html#ac7819f00c10f1d3404c634c2049e003d">unitro::LocalMatrixView</a>
+, <a class="el" href="classunitro_1_1LocalWorldController.html#a1a7a7967312c38da242e75112814051f">unitro::LocalWorldController</a>
 , <a class="el" href="classunitro_1_1LocalWorldView.html#a27d52b15537b4829de07c7dcc9647bb4">unitro::LocalWorldView</a>
 </li>
 <li>matrix_size_
@@ -384,19 +392,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>mouseDragged()
 : <a class="el" href="classunitro_1_1Client.html#a2d9aede2cfafbcbcd7413f6106670411">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a2f6591be39eb3ecde1212f515bb01fb1">unitro::LocalMatrixController</a>
 </li>
 <li>mouseMoved()
 : <a class="el" href="classunitro_1_1Client.html#a89cea81da66b923ab0cb44c0697a52e8">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#ad474f476b1f2d778f05810a649ce0e76">unitro::LocalMatrixController</a>
 </li>
 <li>mousePressed()
 : <a class="el" href="classunitro_1_1Client.html#a125e38e6851eee6b85fc8a02b65420e3">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a464ad7100e1830c8c186d30b5880a926">unitro::LocalMatrixController</a>
 </li>
 <li>mouseReleased()
 : <a class="el" href="classunitro_1_1Client.html#a3c07ff43d85945999783e1f6004b70a0">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a117fd4a359b5b6a75adb4c60ce73ca05">unitro::LocalMatrixController</a>
 </li>
 </ul>
 
@@ -450,6 +454,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>player_ref_
 : <a class="el" href="classunitro_1_1LocalPlayerController.html#ab1a78da41bc18935b729e8ce3f4aaf04">unitro::LocalPlayerController</a>
+, <a class="el" href="classunitro_1_1LocalPlayerView.html#a984e9746c39bbcfd0c94ee031bf34a70">unitro::LocalPlayerView</a>
+, <a class="el" href="classunitro_1_1LocalWorldController.html#a054436927398a0c2415997e252c30f6f">unitro::LocalWorldController</a>
 , <a class="el" href="classunitro_1_1LocalWorldView.html#a6951f1947afdc201d31c18fc5e7d13cf">unitro::LocalWorldView</a>
 </li>
 <li>pos_
@@ -471,6 +477,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>resources_ref_
 : <a class="el" href="classunitro_1_1LocalMatrixView.html#a52034f55bf5d11c1a16120df1599ed18">unitro::LocalMatrixView</a>
+, <a class="el" href="classunitro_1_1LocalPlayerView.html#a3ace15603cad278e14c88263dd54a950">unitro::LocalPlayerView</a>
 , <a class="el" href="classunitro_1_1LocalWorldView.html#a9b53868371b1e0dd1f160d0a124ec28d">unitro::LocalWorldView</a>
 </li>
 <li>Round()
@@ -496,16 +503,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classunitro_1_1Client.html#a4a74d1f3c1c3d1d583afe657ac311b97">unitro::Client</a>
 , <a class="el" href="classunitro_1_1data_1_1Cell.html#a21854e2bcc99fc1e9d0826de276215a2">unitro::data::Cell</a>
 , <a class="el" href="classunitro_1_1items_1_1BaseItem.html#a8778742906f767272e586fa35fa536f7">unitro::items::BaseItem</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#ae3dc3c6efbbb2a32b34ad22e312380ac">unitro::LocalMatrixController</a>
 </li>
 <li>Setup()
-: <a class="el" href="classunitro_1_1LocalMatrixView.html#a0c2030687396e81f692756f298e9cceb">unitro::LocalMatrixView</a>
-</li>
-<li>setup()
-: <a class="el" href="classunitro_1_1LocalPlayerController.html#aae27b03ae903d158794f7a1a049ebbd3">unitro::LocalPlayerController</a>
-</li>
-<li>Setup()
-: <a class="el" href="classunitro_1_1LocalWorldView.html#a979f5466a00729f921dc3d7729e25951">unitro::LocalWorldView</a>
+: <a class="el" href="classunitro_1_1LocalMatrixController.html#aa97d598ef56abf70fb0bcb6ef08eb75e">unitro::LocalMatrixController</a>
+, <a class="el" href="classunitro_1_1LocalMatrixView.html#a0c2030687396e81f692756f298e9cceb">unitro::LocalMatrixView</a>
+, <a class="el" href="classunitro_1_1LocalPlayerController.html#a0472d68eb38835a4c5098ac299478076">unitro::LocalPlayerController</a>
+, <a class="el" href="classunitro_1_1LocalWorldController.html#a1577d9434a5a2e0b5a4707cc9bdd40bc">unitro::LocalWorldController</a>
+, <a class="el" href="classunitro_1_1LocalWorldView.html#a979f5466a00729f921dc3d7729e25951">unitro::LocalWorldView</a>
 </li>
 <li>setup()
 : <a class="el" href="classunitro_1_1plants_1_1BasePlant.html#a890b5fba95b3b1193c7e303c14511ee8">unitro::plants::BasePlant</a>
@@ -558,11 +562,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>update()
 : <a class="el" href="classunitro_1_1items_1_1BaseItem.html#a82050b15af3f23d1fc8b567991b1de93">unitro::items::BaseItem</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#aef9ade506b0b5aba4bf9199c47111a97">unitro::LocalMatrixController</a>
 </li>
 <li>Update()
-: <a class="el" href="classunitro_1_1LocalMatrixView.html#abc8d15c56da96af87d8fb1b3785d73d1">unitro::LocalMatrixView</a>
+: <a class="el" href="classunitro_1_1LocalMatrixController.html#aeb4055ff96f7ffb3ced687f4dcadef44">unitro::LocalMatrixController</a>
+, <a class="el" href="classunitro_1_1LocalMatrixView.html#abc8d15c56da96af87d8fb1b3785d73d1">unitro::LocalMatrixView</a>
 , <a class="el" href="classunitro_1_1LocalPlayerController.html#afafd1dc2824305f01c0cd6a239699708">unitro::LocalPlayerController</a>
+, <a class="el" href="classunitro_1_1LocalWorldController.html#ada47c51cc360d6badacbc1c6f0a5fbb7">unitro::LocalWorldController</a>
 , <a class="el" href="classunitro_1_1LocalWorldView.html#a3dc9c4890ebb662b5299a144b35a23cd">unitro::LocalWorldView</a>
 </li>
 <li>update()
@@ -599,7 +604,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>windowResized()
 : <a class="el" href="classunitro_1_1Client.html#a2830e35e438728442a769c1ebc036862">unitro::Client</a>
-, <a class="el" href="classunitro_1_1LocalMatrixController.html#a683cf0b9b1b2e2c0ae4a5b2bf2ade363">unitro::LocalMatrixController</a>
 </li>
 </ul>
 
@@ -650,6 +654,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~LocalPlayerController()
 : <a class="el" href="classunitro_1_1LocalPlayerController.html#aa7e3e98a3613187262eb7540b0341ae3">unitro::LocalPlayerController</a>
 </li>
+<li>~LocalPlayerView()
+: <a class="el" href="classunitro_1_1LocalPlayerView.html#aa765d8c8174fd3f07000b16945ddb53b">unitro::LocalPlayerView</a>
+</li>
+<li>~LocalWorldController()
+: <a class="el" href="classunitro_1_1LocalWorldController.html#a5997190ca96c37b214bef5f853c9637d">unitro::LocalWorldController</a>
+</li>
 <li>~LocalWorldView()
 : <a class="el" href="classunitro_1_1LocalWorldView.html#a4a48a20453af7f9f27a14ce9159bd91a">unitro::LocalWorldView</a>
 </li>
@@ -675,7 +685,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 23 2014 17:31:26 for unitro by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Oct 23 2014 20:08:54 for unitro by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
