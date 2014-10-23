@@ -18,7 +18,6 @@ namespace unitro {
 			unitro::Resources resources_;
 			unitro::data::Matrix local_matrix_;
 			unitro::entity::Player player_;
-			unitro::entity::Player player2_;
 
 			//unitro::interface
 			unitro::LocalWorldView local_world_view_;
