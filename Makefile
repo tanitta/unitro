@@ -12,5 +12,7 @@ endif
 # call the project makefile!
 include $(OF_ROOT)/libs/openFrameworksCompiled/project/makefileCommon/compile.project.mk
 
-docs: src/*.cpp src/*.hpp src/*.h Doxyfile
-	doxygen && cd docs/ && git add . && git commit -m 'updated docs' && git push origin gh-pages && cd .. && git commit -m 'updated docs' docs/
+doxy:
+	@echo Running doxygen to create documentation
+	doxygen && cd docs/ && git add . && git commit -m 'updated docs' && git push origin gh-pages && cd ..
+	# && git commit -m 'updated docs' docs/
