@@ -12,6 +12,8 @@
 #include <data/matrix.hpp>
 #include "interface/keyboard_controller.hpp"
 #include "interface/keyboard.hpp"
+
+#include "plants/Butterbur.hpp"
 namespace unitro {
 	class Client : public ofBaseApp{
 		private:
@@ -59,12 +61,52 @@ namespace unitro {
 				//
 				local_matrix_[5][5][5].soil_ = 0.5;
 				local_matrix_[5][5][6].soil_ = 0.7;
+				local_matrix_[6][5][5].soil_ = 0.6;
+				local_matrix_[6][5][6].soil_ = 0.4;
+
+				local_matrix_[5][6][5].soil_ = 0.5*0.5;
+				local_matrix_[5][6][6].soil_ = 0.7*0.5;
+				local_matrix_[6][6][5].soil_ = 0.6*0.5;
+				local_matrix_[6][6][6].soil_ = 0.4*0.5;
+
+				local_matrix_[4][4][5].soil_ = 0.5*0.3;
+				local_matrix_[4][4][6].soil_ = 0.7*0.3;
+				local_matrix_[5][4][5].soil_ = 0.6*0.3;
+				local_matrix_[5][4][6].soil_ = 0.4*0.3;
+
+				local_matrix_[6][5][6].soil_ = 0.4*0.2;
+
+				local_matrix_[5][5][5].nut_p_ = 0.5;
+				local_matrix_[5][5][6].nut_p_ = 0.7;
+				local_matrix_[6][5][5].nut_p_ = 0.6;
+				local_matrix_[6][5][6].nut_p_ = 0.4;
+
+				local_matrix_[5][6][5].nut_p_ = 0.5*0.5;
+				local_matrix_[5][6][6].nut_p_ = 0.7*0.5;
+				local_matrix_[6][6][5].nut_p_ = 0.6*0.5;
+				local_matrix_[6][6][6].nut_p_ = 0.4*0.5;
+
+				local_matrix_[4][4][5].nut_p_ = 0.5*0.3;
+				local_matrix_[4][4][6].nut_p_ = 0.7*0.3;
+				local_matrix_[5][4][5].nut_p_ = 0.6*0.3;
+				local_matrix_[5][4][6].nut_p_ = 0.4*0.3;
+
+				local_matrix_[6][5][6].nut_p_ = 0.4*0.2;
+
+				local_matrix_[5][6][6].plant_ = new unitro::plants::Butterbur(2.0);
+				local_matrix_[4][4][5].plant_ = new unitro::plants::Butterbur(1.0);
+				local_matrix_[6][6][5].plant_ = new unitro::plants::Butterbur(1.5);
+
+
 				local_world_controller_.Setup();
 				local_world_view_.Setup();
 
 			};
 
 			void update(){
+				local_matrix_[5][6][6].plant_->nutP = 2.0;
+				local_matrix_[4][4][5].plant_->nutP = 1.0;
+				local_matrix_[6][6][5].plant_->nutP = 1.5;
 				//Interface
 				local_world_controller_.Update();
 

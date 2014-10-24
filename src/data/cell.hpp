@@ -54,14 +54,11 @@ namespace data{
 			ofPopMatrix();
 		};
 
-		void getBoxInfo(ofVec3f& nearCell, ofVec3f& pos, ofVec3f& size){
-			ofColor c;
-			c.setHsb(0,0,255);
-			ofSetColor(c);
+		void getBoxInfo(ofVec3f& near_cell, ofVec3f& pos, ofVec3f& size){
 			int lockedAxis = 0;
-			if (nearCell.x == 2)lockedAxis += 1;
-			if (nearCell.y == 2)lockedAxis += 1;
-			if (nearCell.z == 2)lockedAxis += 1;
+			if (near_cell.x == 2)lockedAxis += 1;
+			if (near_cell.y == 2)lockedAxis += 1;
+			if (near_cell.z == 2)lockedAxis += 1;
 
 			float l;
 			float d;
@@ -70,24 +67,24 @@ namespace data{
 				case 0:{
 					l = (float)pow(soil_, 1.0/3.0);
 					d = 0.5f - l*0.5f;
-						pos = ofVec3f(nearCell.x*d,nearCell.y*d,nearCell.z*d);
+						pos = ofVec3f(near_cell.x*d,near_cell.y*d,near_cell.z*d);
 						size = ofVec3f(l, l, l);
 
 				}
 				case 1:{
 					l = (float)pow(soil_, 1.0/2.0);
 					d = 0.5f - l*0.5f;
-					if (nearCell.x == 2){
-							pos = ofVec3f(0,nearCell.y*d,nearCell.z*d);
+					if (near_cell.x == 2){
+							pos = ofVec3f(0,near_cell.y*d,near_cell.z*d);
 							size = ofVec3f(1, l, l);
 					}
-					if (nearCell.y == 2){
-							pos = ofVec3f(nearCell.x*d,0,nearCell.z*d);
+					if (near_cell.y == 2){
+							pos = ofVec3f(near_cell.x*d,0,near_cell.z*d);
 							size = ofVec3f(l, 1, l);
 
 					}
-					if (nearCell.z == 2){
-							pos = ofVec3f(nearCell.x*d,nearCell.y*d,0);
+					if (near_cell.z == 2){
+							pos = ofVec3f(near_cell.x*d,near_cell.y*d,0);
 							size = ofVec3f(l, l, 1);
 
 					}
@@ -96,19 +93,19 @@ namespace data{
 				case 2:{
 					l = (float)soil_;
 					d = 0.5f - l*0.5f;
-					if (nearCell.x == 2){
-						if(nearCell.y == 2){
-								pos = ofVec3f(0,0,nearCell.z*d);
+					if (near_cell.x == 2){
+						if(near_cell.y == 2){
+								pos = ofVec3f(0,0,near_cell.z*d);
 								size = ofVec3f(1, 1, l);
 						}
-						if(nearCell.z == 2){
-								pos = ofVec3f(0,nearCell.y*d,0);
+						if(near_cell.z == 2){
+								pos = ofVec3f(0,near_cell.y*d,0);
 								size = ofVec3f(1, l, 1);
 						}
 
 					}
-					if(nearCell.y == 2 && nearCell.z == 2){
-							pos = ofVec3f(nearCell.x*d,0,0);
+					if(near_cell.y == 2 && near_cell.z == 2){
+							pos = ofVec3f(near_cell.x*d,0,0);
 							size = ofVec3f(l, 1, 1);
 
 					}
@@ -126,6 +123,10 @@ namespace data{
 			ofVec3f size;
 			ofVec3f near_cell_of = ofVec3f(near_cell[0],near_cell[1],near_cell[2]);
 			getBoxInfo(near_cell_of, pos, size);
+
+			ofColor c;
+			c.setHsb(40+40*nut_p_,255,128);
+			ofSetColor(c);
 
 			ofPushMatrix();
 				ofTranslate(pos);
