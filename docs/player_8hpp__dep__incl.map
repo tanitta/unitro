@@ -1,8 +1,0 @@
-<map id="src/entity/player.hpp" name="src/entity/player.hpp">
-<area shape="rect" id="node2" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="55,229,154,256"/>
-<area shape="rect" id="node4" href="$local__world__view_8hpp.html" title="src/local_world_view.hpp" alt="" coords="21,155,189,181"/>
-<area shape="rect" id="node5" href="$local__player__view_8hpp.html" title="src/local_player_view.hpp" alt="" coords="72,80,244,107"/>
-<area shape="rect" id="node6" href="$local__world__controller_8hpp.html" title="src/local_world_controller.hpp" alt="" coords="213,155,408,181"/>
-<area shape="rect" id="node7" href="$local__player__controller_8hpp.html" title="src/local_player_controller.hpp" alt="" coords="319,80,517,107"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="56,304,153,331"/>
-</map>

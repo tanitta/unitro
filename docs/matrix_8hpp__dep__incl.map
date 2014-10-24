@@ -1,9 +1,0 @@
-<map id="src/data/matrix.hpp" name="src/data/matrix.hpp">
-<area shape="rect" id="node2" href="$local__world__view_8hpp.html" title="src/local_world_view.hpp" alt="" coords="26,155,194,181"/>
-<area shape="rect" id="node3" href="$client_8hpp.html" title="src/client.hpp" alt="" coords="184,229,284,256"/>
-<area shape="rect" id="node5" href="$local__matrix__view_8hpp.html" title="src/local_matrix_view.hpp" alt="" coords="24,80,197,107"/>
-<area shape="rect" id="node6" href="$local__world__controller_8hpp.html" title="src/local_world_controller.hpp" alt="" coords="272,155,466,181"/>
-<area shape="rect" id="node7" href="$local__matrix__controller_8hpp.html" title="src/local_matrix_controller.hpp" alt="" coords="322,80,520,107"/>
-<area shape="rect" id="node8" href="$matrix_8cpp.html" title="src/data/matrix.cpp" alt="" coords="544,80,678,107"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="186,304,282,331"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="unitro::LocalMatrixView" name="unitro::LocalMatrixView">
-<area shape="rect" id="node2" href="$classunitro_1_1Resources.html" title="{unitro::Resources\n|&#45; resources_\l|+ Resources()\l+ ~Resources()\l+ operator[]()\l}" alt="" coords="5,213,131,320"/>
-<area shape="rect" id="node3" href="$classunitro_1_1data_1_1Matrix.html" title="{unitro::data::Matrix\n||+ Matrix()\l+ ~Matrix()\l+ GetSize()\l+ operator[]()\l+ operator=()\l+ operator()()\l+ GetNearCells()\l&#45; CountCellsByAxialDirection()\l}" alt="" coords="155,177,353,357"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="unitro::data::Matrix::CountCellsByAxialDirection" name="unitro::data::Matrix::CountCellsByAxialDirection">
-<area shape="rect" id="node2" href="$classunitro_1_1data_1_1Matrix.html#ab6c6d66e736430c9fd81541b2b7691a3" title="unitro::data::Matrix\l::GetNearCells" alt="" coords="245,5,376,46"/>
-<area shape="rect" id="node3" href="$classunitro_1_1LocalMatrixView.html#a3c1c69ec5580add52cfefbe297a3aba7" title="unitro::LocalMatrixView\l::Draw" alt="" coords="425,5,583,46"/>
-<area shape="rect" id="node4" href="$classunitro_1_1LocalWorldView.html#a1bbe09c7aae70be6690346f15bf570ff" title="unitro::LocalWorldView\l::Draw" alt="" coords="633,5,789,46"/>
-<area shape="rect" id="node5" href="$classunitro_1_1Client.html#ab63f29fd04dedc5c3092f1213d85c4f1" title="unitro::Client::draw" alt="" coords="838,12,970,39"/>
-</map>

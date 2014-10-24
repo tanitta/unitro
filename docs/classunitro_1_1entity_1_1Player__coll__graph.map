@@ -1,4 +1,0 @@
-<map id="unitro::entity::Player" name="unitro::entity::Player">
-<area shape="rect" id="node2" href="$classunitro_1_1entity_1_1BaseEntity.html" title="{unitro::entity::BaseEntity\n||+ BaseEntity()\l+ ~BaseEntity()\l}" alt="" coords="10,294,176,386"/>
-<area shape="rect" id="node3" href="$classunitro_1_1entity_1_1KineticModel.html" title="{unitro::entity::KineticModel\n|+ difference_time_\l+ mass_\l+ viscosity_\l+ ver_\l+ acc_\l+ pos_\l|+ KineticModel()\l+ ~KineticModel()\l+ AddForce()\l+ ResetForce()\l+ Update()\l+ Draw()\l}" alt="" coords="5,5,181,229"/>
-</map>

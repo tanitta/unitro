@@ -1,6 +1,0 @@
-<map id="unitro::LocalPlayerView" name="unitro::LocalPlayerView">
-<area shape="rect" id="node2" href="$classunitro_1_1Resources.html" title="{unitro::Resources\n|&#45; resources_\l|+ Resources()\l+ ~Resources()\l+ operator[]()\l}" alt="" coords="5,460,131,567"/>
-<area shape="rect" id="node3" href="$classunitro_1_1entity_1_1Player.html" title="{unitro::entity::Player\n|+ main_cam_\l|+ Player()\l+ ~Player()\l+ Draw()\l+ Update()\l+ GetAdressInMatrix()\l&#45; Round()\l}" alt="" coords="155,438,305,589"/>
-<area shape="rect" id="node4" href="$classunitro_1_1entity_1_1BaseEntity.html" title="{unitro::entity::BaseEntity\n||+ BaseEntity()\l+ ~BaseEntity()\l}" alt="" coords="147,294,313,386"/>
-<area shape="rect" id="node5" href="$classunitro_1_1entity_1_1KineticModel.html" title="{unitro::entity::KineticModel\n|+ difference_time_\l+ mass_\l+ viscosity_\l+ ver_\l+ acc_\l+ pos_\l|+ KineticModel()\l+ ~KineticModel()\l+ AddForce()\l+ ResetForce()\l+ Update()\l+ Draw()\l}" alt="" coords="142,5,319,229"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="unitro::data::Cell::Draw" name="unitro::data::Cell::Draw">
-<area shape="rect" id="node2" href="$classunitro_1_1data_1_1Cell.html#afa73ba3544e83f2eb7cf4088367f29f4" title="unitro::data::Cell\l::getBoxInfo" alt="" coords="174,5,293,46"/>
-<area shape="rect" id="node3" href="$classunitro_1_1data_1_1Cell.html#a9b9042871c3fd66e33d28dadcd4cfa65" title="unitro::data::Cell\l::drawPlant" alt="" coords="174,70,293,111"/>
-<area shape="rect" id="node4" href="$classunitro_1_1plants_1_1BasePlant.html#ad493190720e6aad105c7b67054de5d7e" title="unitro::plants::BasePlant\l::draw" alt="" coords="341,70,507,111"/>
-</map>

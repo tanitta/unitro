@@ -1,6 +1,0 @@
-<map id="unitro::LocalPlayerController::Update" name="unitro::LocalPlayerController::Update">
-<area shape="rect" id="node2" href="$classunitro_1_1entity_1_1KineticModel.html#a0daa190617f5b547d54d4193a9618c69" title="unitro::entity::KineticModel\l::AddForce" alt="" coords="654,5,831,46"/>
-<area shape="rect" id="node3" href="$classunitro_1_1entity_1_1Player.html#a283d6f80b6e476b9a536751487b39bf0" title="unitro::entity::Player\l::Update" alt="" coords="240,63,379,105"/>
-<area shape="rect" id="node4" href="$classunitro_1_1entity_1_1KineticModel.html#ab5e568fd1df3560f11f05c38aac8994b" title="unitro::entity::KineticModel\l::Update" alt="" coords="427,63,605,105"/>
-<area shape="rect" id="node5" href="$classunitro_1_1entity_1_1KineticModel.html#a4cb43df63d471755f8d4e533bef415d9" title="unitro::entity::KineticModel\l::ResetForce" alt="" coords="654,70,831,111"/>
-</map>

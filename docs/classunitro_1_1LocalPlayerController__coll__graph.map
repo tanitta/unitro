@@ -1,6 +1,0 @@
-<map id="unitro::LocalPlayerController" name="unitro::LocalPlayerController">
-<area shape="rect" id="node2" href="$classunitro_1_1interface_1_1Keyboard.html" title="{unitro::interface::\lKeyboard\n|+ is_key_\l+ is_key_down_\l+ is_key_up_\l|+ Keyboard()\l+ ~Keyboard()\l}" alt="" coords="5,445,125,581"/>
-<area shape="rect" id="node3" href="$classunitro_1_1entity_1_1Player.html" title="{unitro::entity::Player\n|+ main_cam_\l|+ Player()\l+ ~Player()\l+ Draw()\l+ Update()\l+ GetAdressInMatrix()\l&#45; Round()\l}" alt="" coords="150,438,300,589"/>
-<area shape="rect" id="node4" href="$classunitro_1_1entity_1_1BaseEntity.html" title="{unitro::entity::BaseEntity\n||+ BaseEntity()\l+ ~BaseEntity()\l}" alt="" coords="142,294,308,386"/>
-<area shape="rect" id="node5" href="$classunitro_1_1entity_1_1KineticModel.html" title="{unitro::entity::KineticModel\n|+ difference_time_\l+ mass_\l+ viscosity_\l+ ver_\l+ acc_\l+ pos_\l|+ KineticModel()\l+ ~KineticModel()\l+ AddForce()\l+ ResetForce()\l+ Update()\l+ Draw()\l}" alt="" coords="137,5,313,229"/>
-</map>
