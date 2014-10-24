@@ -20,7 +20,7 @@ namespace data{
 					cells = 2;
 				}else{
 					if(matrix_[i-x][j-y][k-z].soil_>0) cells -= 1;
-					if(matrix_[i+x][j-y][k-z].soil_>0) cells += 1;
+					if(matrix_[i+x][j+y][k+z].soil_>0) cells += 1;
 				}
 				return cells;
 			}

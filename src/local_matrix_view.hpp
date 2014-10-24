@@ -28,7 +28,6 @@ namespace unitro{
 				if(matrix_ref_[i][j][k].soil_>0){
 					near_cell_ = matrix_ref_.GetNearCells(i,j,k);
 				}
-
 				ofPushMatrix();
 				ofTranslate(i,j,k);
 				matrix_ref_[i][j][k].Draw(near_cell_, resources_ref_);

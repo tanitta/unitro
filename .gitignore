@@ -1,6 +1,7 @@
 bin/libs
 bin/unitro
 obj/
+docs
 
 
 /.gitattributes
