@@ -52,18 +52,12 @@ namespace data{
 
 
 			boost::numeric::ublas::vector<int> GetNearCells(int i, int j, int k){
-				boost::numeric::ublas::vector<int> near_cell;
+				boost::numeric::ublas::vector<int> near_cell(3);
 				near_cell[0] = CountCellsByAxialDirection(0,i,j,k);
 				near_cell[1] = CountCellsByAxialDirection(1,i,j,k);
 				near_cell[2] = CountCellsByAxialDirection(2,i,j,k);
-				// if (matrix_[i-1][j][k].soil_>0 && matrix_[i+1][j][k].soil_>0) {
-				// 	near_cell[0] = 2;
-				// }else{
-				// 	if(matrix_[i-1][j][k].soil_>0) near_cell[0] -= 1;
-				// 	if(matrix_[i+1][j][k].soil_>0) near_cell[0] += 1;
-				// }
-				return near_cell;
 
+				return near_cell;
 			}
 
 	};

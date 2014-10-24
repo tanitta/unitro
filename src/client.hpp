@@ -18,9 +18,6 @@ namespace unitro {
 			unitro::Resources resources_;
 			unitro::data::Matrix local_matrix_;
 			unitro::entity::Player player_;
-			unitro::entity::Player player3_;
-			unitro::entity::Player player4_;
-			unitro::entity::Player player5_;
 
 			//unitro::interface
 			unitro::LocalWorldView local_world_view_;
@@ -60,6 +57,8 @@ namespace unitro {
 				// solver_.setup();
 				// solver_.startThread(true,false);
 				//
+				local_matrix_[5][5][5].soil_ = 0.5;
+				local_matrix_[5][5][6].soil_ = 0.7;
 				local_world_controller_.Setup();
 				local_world_view_.Setup();
 
