@@ -24,7 +24,7 @@ namespace data{
 		// std::shared_ptr<unitro::item_s::BaseItem> item;
 		Cell():
 			soil_(0.0),
-			water_(0.0),
+			water_(1.0),
 			temp_( 0.0),
 			air_(0.0),
 			nut_p_(0.0),
@@ -125,7 +125,9 @@ namespace data{
 			getBoxInfo(near_cell_of, pos, size);
 
 			ofColor c;
-			c.setHsb(40+40*nut_p_,255,128);
+			double l = (0.5-(water_-0.5)*0.5)*255;
+			double s = 255;
+			c.setHsb(40+40*nut_p_,s*(1-std::abs(l-128)/128), l);
 			ofSetColor(c);
 
 			ofPushMatrix();
