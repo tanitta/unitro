@@ -13,6 +13,8 @@ namespace data{
 	public:
 		double soil_;
 		double water_;
+		double water_in_;
+		double water_out_;
 		double temp_;
 		double air_;
 		double nut_p_;
@@ -24,7 +26,9 @@ namespace data{
 		// std::shared_ptr<unitro::item_s::BaseItem> item;
 		Cell():
 			soil_(0.0),
-			water_(1.0),
+			water_(0.0),
+			water_in_(0.0),
+			water_out_(0.0),
 			temp_( 0.0),
 			air_(0.0),
 			nut_p_(0.0),
@@ -46,7 +50,7 @@ namespace data{
 			// plant_->draw();
 		};
 
-		void drawPlant(double shift, unitro::Resources& resources){
+		void DrawPlant(double shift, unitro::Resources& resources){
 
 			ofPushMatrix();
 				ofTranslate(0,shift,0);
@@ -54,7 +58,17 @@ namespace data{
 			ofPopMatrix();
 		};
 
-		void getBoxInfo(ofVec3f& near_cell, ofVec3f& pos, ofVec3f& size){
+		void GetWaterBoxInfo(){};
+
+		void DrawWater(){
+			if (water_out_ > 0.01) {
+				float y = water_out_*0.5;
+				ofSetColor(0, 0, 112, 64);
+				ofBox(0, -0.5+y, 0, 1.0, water_out_, 1.0);
+			}
+		};
+
+		void GetSoilBoxInfo(ofVec3f& near_cell, ofVec3f& pos, ofVec3f& size){
 			int lockedAxis = 0;
 			if (near_cell.x == 2)lockedAxis += 1;
 			if (near_cell.y == 2)lockedAxis += 1;
@@ -122,7 +136,7 @@ namespace data{
 			ofVec3f pos;
 			ofVec3f size;
 			ofVec3f near_cell_of = ofVec3f(near_cell[0],near_cell[1],near_cell[2]);
-			getBoxInfo(near_cell_of, pos, size);
+			GetSoilBoxInfo(near_cell_of, pos, size);
 
 			ofColor c;
 			double l = (0.5-(water_-0.5)*0.5)*255;
@@ -132,8 +146,14 @@ namespace data{
 
 			ofPushMatrix();
 				ofTranslate(pos);
+
 				ofBox(size.x, size.y, size.z);
-				drawPlant(size.y*0.5, resources);
+				DrawPlant(size.y*0.5, resources);
+
+				// ofDisableDepthTest();
+				DrawWater();
+				// ofEnableDepthTest();
+				// ofEnableBlendMode(OF_BLENDMODE_ADD);
 			ofPopMatrix();
 		};
 

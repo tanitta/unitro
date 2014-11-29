@@ -35,8 +35,8 @@ namespace unitro{
 
 		void Setup(){
 			ofEnableDepthTest();
-			ofEnableAntiAliasing();
-
+			// ofEnableAntiAliasing();
+			ofEnableAlphaBlending();
 			//Rectangle
 			viewport_.x = 0;
 			viewport_.y = 0;

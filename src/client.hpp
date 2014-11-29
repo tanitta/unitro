@@ -98,6 +98,10 @@ namespace unitro {
 				local_matrix_[6][6][5].plant_ = new unitro::plants::Butterbur(1.5);
 
 
+				local_matrix_[1][1][1].water_out_ = 0.2;
+
+				local_matrix_[3][1][1].water_out_ = 0.2;
+
 				local_world_controller_.Setup();
 				local_world_view_.Setup();
 
