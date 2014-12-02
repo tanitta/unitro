@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-// #include "solver.hpp"
+#include "solver.hpp"
 // #include "data/BaseMatrix.hpp"
 #include "entity/player.hpp"
 #include "resources.hpp"
@@ -31,7 +31,7 @@ namespace unitro {
 			//unitro::network::OutPut
 
 			//tmp
-			// unitro::Solver solver_;
+			unitro::Solver solver_;
 			unitro::interface::Keyboard keyboard_;
 			unitro::interface::KeyboardController keyboard_controller_;
 
@@ -43,11 +43,11 @@ namespace unitro {
 				keyboard_(),
 				keyboard_controller_(keyboard_),
 				local_world_view_(local_matrix_, player_, resources_),
-				local_world_controller_(keyboard_,local_matrix_, player_)
+				local_world_controller_(keyboard_,local_matrix_, player_),
 				// 			localMatrixController(localMatrix),
 				// drawer(LocalMatrix),
 
-				// solver_(local_matrix_)
+				solver_(local_matrix_)
 		{};
 
 			~Client(){};
