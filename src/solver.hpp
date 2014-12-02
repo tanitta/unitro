@@ -26,12 +26,12 @@ namespace unitro {
 				thread_water.join();
 				thread_plant.join();
 			};
-			void Update(){
+			void Update(int update_rate){
 				if(counter_ == 0){thread_ = std::thread([=]{this->UpdateThread();});}
 
 				counter_ ++;
 
-				if(counter_ >=30){
+				if(counter_ >=update_rate){
 					thread_.join();
 					counter_ = 0;
 				}
