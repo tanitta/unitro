@@ -108,6 +108,7 @@ namespace unitro {
 			};
 
 			void update(){
+				solver_.Update(150);
 				local_matrix_[5][6][6].plant_->nutP = 2.0;
 				local_matrix_[4][4][5].plant_->nutP = 1.0;
 				local_matrix_[6][6][5].plant_->nutP = 1.5;

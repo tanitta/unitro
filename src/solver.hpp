@@ -13,9 +13,16 @@ namespace unitro {
 			Solver(unitro::data::Matrix& matrix_ref):matrix_ref_(matrix_ref),counter_(0){};
 			virtual ~Solver(){};
 
-			void UpdateSoil(){};
-			void UpdateWater(){};
-			void UpdatePlant(){};
+			void UpdateSoil(){
+				std::cout<<"soil"<<std::endl;
+			};
+			void UpdateWater(){
+
+				std::cout<<"water"<<std::endl;
+			};
+			void UpdatePlant(){
+				std::cout<<"plant"<<std::endl;
+			};
 
 			void UpdateThread(){
 
@@ -27,16 +34,18 @@ namespace unitro {
 				thread_plant.join();
 			};
 			void Update(int update_rate){
-				if(counter_ == 0){thread_ = std::thread([=]{this->UpdateThread();});}
+				if(counter_ == 0){thread_ = std::thread([=]{
+						this->UpdateThread();});
+					std::cout<<"StartedSolverThread"<<std::endl;
+				}
 
 				counter_ ++;
-
+				std::cout<<"counter_ : "<<counter_<<std::endl;
 				if(counter_ >=update_rate){
 					thread_.join();
+					std::cout<<"FinishedSolverThread"<<std::endl;
 					counter_ = 0;
 				}
 			};
-			void StartThread(){};
-			void EndThread(){};
 	};
 } // namespace unitro
