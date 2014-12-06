@@ -5,43 +5,43 @@
 #include "../plants/BasePlant.hpp"
 #include "../items/BaseItem.hpp"
 #include "../resources.hpp"
+#include <map>
 
 namespace unitro{
 namespace data{
 	class Cell
 	{
 	public:
-		double soil_;
-		double water_;
-		double water_in_;
-		double water_out_;
-		double temp_;
-		double air_;
-		double nut_p_;
-		double nut_n_;
-		double brightness_;
+		std::map<std::string, double> parameters;
+
 		unitro::plants::BasePlant *plant_;
+
 		unitro::items::BaseItem *item_;
 		// std::shared_ptr<unitro::plant_s::BasePlant> plant;
 		// std::shared_ptr<unitro::item_s::BaseItem> item;
 		Cell():
-			soil_(0.0),
-			water_(0.0),
-			water_in_(0.0),
-			water_out_(0.0),
-			temp_( 0.0),
-			air_(0.0),
-			nut_p_(0.0),
-			nut_n_(0.0),
-			brightness_(0.0),
 			plant_(new unitro::plants::BasePlant),
 			item_(new unitro::items::BaseItem)
 		{
+			parameters["soil"] = 0.0;
+			parameters["water"] = 0.0;
+			parameters["water_in"] = 0.0;
+			parameters["water_out"] = 0.0;
+			parameters["temp"] = 0.0;
+			parameters["air"] = 0.0;
+			parameters["nut_p"] = 0.0;
+			parameters["nut_n"] = 0.0;
+			parameters["brightness"] = 0.0;
 			// plant_ = new unitro::plants::BasePlant;
 			// item_ = new unitro::items::BaseItem;
 		};
 
 		~Cell(){};
+
+		double& operator[](std::string type){
+			return parameters[type];
+		};
+
 		void SetNearCell(){};
 
 		void setup(){};
@@ -61,10 +61,10 @@ namespace data{
 		void GetWaterBoxInfo(){};
 
 		void DrawWater(){
-			if (water_out_ > 0.01) {
-				float y = water_out_*0.5;
+			if (parameters["water_out"] > 0.01) {
+				float y = parameters["water_out"]*0.5;
 				ofSetColor(0, 0, 112, 64);
-				ofBox(0, -0.5+y, 0, 1.0, water_out_, 1.0);
+				ofBox(0, -0.5+y, 0, 1.0, parameters["water_out"], 1.0);
 			}
 		};
 
@@ -79,14 +79,14 @@ namespace data{
 
 			switch(lockedAxis){
 				case 0:{
-					l = (float)pow(soil_, 1.0/3.0);
+					l = (float)pow(parameters["soil"], 1.0/3.0);
 					d = 0.5f - l*0.5f;
 						pos = ofVec3f(near_cell.x*d,near_cell.y*d,near_cell.z*d);
 						size = ofVec3f(l, l, l);
 
 				}
 				case 1:{
-					l = (float)pow(soil_, 1.0/2.0);
+					l = (float)pow(parameters["soil"], 1.0/2.0);
 					d = 0.5f - l*0.5f;
 					if (near_cell.x == 2){
 							pos = ofVec3f(0,near_cell.y*d,near_cell.z*d);
@@ -105,7 +105,7 @@ namespace data{
 					break;
 				}
 				case 2:{
-					l = (float)soil_;
+					l = (float)parameters["soil"];
 					d = 0.5f - l*0.5f;
 					if (near_cell.x == 2){
 						if(near_cell.y == 2){
@@ -126,7 +126,7 @@ namespace data{
 					break;
 				}
 			}
-			if(soil_ > 1.0){
+			if(parameters["soil"]> 1.0){
 			pos = ofVec3f(0,0,0);
 			size = ofVec3f(1, 1, 1);
 			}
@@ -139,9 +139,9 @@ namespace data{
 			GetSoilBoxInfo(near_cell_of, pos, size);
 
 			ofColor c;
-			double l = (0.5-(water_-0.5)*0.5)*255;
+			double l = (0.5-(parameters["water_in"]-0.5)*0.5)*255;
 			double s = 255;
-			c.setHsb(40+40*nut_p_,s*(1-std::abs(l-128)/128), l);
+			c.setHsb(40+40*parameters["nut_p"],s*(1-std::abs(l-128)/128), l);
 			ofSetColor(c);
 
 			ofPushMatrix();

@@ -16,11 +16,11 @@ namespace data{
 				int y = ((axis == 1)? 1:0);
 				int z = ((axis == 2)? 1:0);
 
-				if (matrix_[i-x][j-y][k-z].soil_>0 && matrix_[i+x][j+y][k+z].soil_>0) {
+				if (matrix_[i-x][j-y][k-z].parameters["soil"]>0 && matrix_[i+x][j+y][k+z].parameters["soil"]>0) {
 					cells = 2;
 				}else{
-					if(matrix_[i-x][j-y][k-z].soil_>0) cells -= 1;
-					if(matrix_[i+x][j+y][k+z].soil_>0) cells += 1;
+					if(matrix_[i-x][j-y][k-z].parameters["soil"]>0) cells -= 1;
+					if(matrix_[i+x][j+y][k+z].parameters["soil"]>0) cells += 1;
 				}
 				return cells;
 			}
