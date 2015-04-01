@@ -18,19 +18,19 @@ namespace unitro{
 
 		~LocalMatrixView(){};
 
-		void Setup(){
+		void setup(){
 		};
-		void Update(){
+		void update(){
 
 		};
-		void Draw(){
-			for (int i = 1; i < matrix_ref_.GetSize()[0]-1; ++i){for (int j = 1; j < matrix_ref_.GetSize()[1]-1; ++j){for (int k = 1; k < matrix_ref_.GetSize()[2]-1; ++k){
+		void draw(){
+			for (int i = 1; i < matrix_ref_.get_size()[0]-1; ++i){for (int j = 1; j < matrix_ref_.get_size()[1]-1; ++j){for (int k = 1; k < matrix_ref_.get_size()[2]-1; ++k){
 				if(matrix_ref_[i][j][k].soil_>0){
-					near_cell_ = matrix_ref_.GetNearCells(i,j,k);
+					near_cell_ = matrix_ref_.get_near_cells(i,j,k);
 				}
 				ofPushMatrix();
 				ofTranslate(i,j,k);
-				matrix_ref_[i][j][k].Draw(near_cell_, resources_ref_);
+				matrix_ref_[i][j][k].draw(near_cell_, resources_ref_);
 				ofPopMatrix();
 			}}};
 		};

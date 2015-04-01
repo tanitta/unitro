@@ -9,7 +9,7 @@ namespace data{
 		private:
 			std::vector< std::vector<std::vector<unitro::data::Cell>>> matrix_;
 
-			int CountCellsByAxialDirection(int axis, int i, int j, int k){
+			int count_cells_by_axial_direction(int axis, int i, int j, int k){
 				int cells = 0;
 
 				int x = ((axis == 0)? 1:0);
@@ -30,7 +30,7 @@ namespace data{
 				matrix_(x,std::vector<std::vector<Cell>>(y,std::vector<Cell>(z))){};
 			virtual ~Matrix(){};
 
-			boost::numeric::ublas::vector<int> GetSize(){
+			boost::numeric::ublas::vector<int> get_size(){
 				boost::numeric::ublas::vector<int> sizes(3);
 				sizes[0] = matrix_.size();
 				sizes[1] = matrix_[0].size();
@@ -51,11 +51,11 @@ namespace data{
 			}
 
 
-			boost::numeric::ublas::vector<int> GetNearCells(int i, int j, int k){
+			boost::numeric::ublas::vector<int> get_near_cells(int i, int j, int k){
 				boost::numeric::ublas::vector<int> near_cell(3);
-				near_cell[0] = CountCellsByAxialDirection(0,i,j,k);
-				near_cell[1] = CountCellsByAxialDirection(1,i,j,k);
-				near_cell[2] = CountCellsByAxialDirection(2,i,j,k);
+				near_cell[0] = count_cells_by_axial_direction(0,i,j,k);
+				near_cell[1] = count_cells_by_axial_direction(1,i,j,k);
+				near_cell[2] = count_cells_by_axial_direction(2,i,j,k);
 
 				return near_cell;
 			}

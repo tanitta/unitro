@@ -6,7 +6,7 @@ namespace unitro{
 namespace entity{
 	class Player: public unitro::entity::BaseEntity {
 		private:
-			double Round(double r){
+			double round(double r){
 				double z = r;
 				if(r > 0){
 					z = floor(r + 0.5);
@@ -21,22 +21,22 @@ namespace entity{
 			ofEasyCam main_cam_;
 			Player(){};
 			virtual ~Player(){};
-			void Draw(unitro::Resources& resources){
+			void draw(unitro::Resources& resources){
 				ofPushMatrix();
 				ofTranslate(kinetic_model_.pos_);
 				resources["Player/test.x"]->draw(OF_MESH_FILL);
 				ofPopMatrix();
 			};
 
-			void Update(){
-				kinetic_model_.Update();
+			void update(){
+				kinetic_model_.update();
 			};
 
-			ofVec3f GetAdressInMatrix(){
+			ofVec3f get_adress_in_matrix(){
 				return ofVec3f(
-						Round(kinetic_model_.pos_.x),
-						Round(kinetic_model_.pos_.y),
-						Round(kinetic_model_.pos_.z)
+						round(kinetic_model_.pos_.x),
+						round(kinetic_model_.pos_.y),
+						round(kinetic_model_.pos_.z)
 				);
 			};
 

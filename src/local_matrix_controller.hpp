@@ -9,8 +9,8 @@ namespace unitro
 		public:
 			LocalMatrixController(unitro::data::Matrix& matrix_ref):matrix_ref_(matrix_ref){};
 			~LocalMatrixController(){};
-			void Setup(){};
-			void Update(){};
+			void setup(){};
+			void update(){};
 
 			// void keyPressed(int key){};
 			// void keyReleased(int key){};

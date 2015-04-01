@@ -25,15 +25,15 @@ namespace unitro{
 			{};
 			virtual ~LocalWorldController(){};
 
-			void Setup(){
-				local_matrix_controller_.Setup();
-				local_player_controller_.Setup();
+			void setup(){
+				local_matrix_controller_.setup();
+				local_player_controller_.setup();
 			};
 
-			void Update(){
-				local_matrix_controller_.Update();
+			void update(){
+				local_matrix_controller_.update();
 //
-				local_player_controller_.KeyInput();
+				local_player_controller_.keyInput();
 // 				if(player.getAdressInMatrix().x >= 1 && player.getAdressInMatrix().x < localMatrix.getSize().x-1){
 // 				if(player.getAdressInMatrix().y >= 1 && player.getAdressInMatrix().y < localMatrix.getSize().y-1){
 // 				if(player.getAdressInMatrix().z >= 1 && player.getAdressInMatrix().z < localMatrix.getSize().z-1){

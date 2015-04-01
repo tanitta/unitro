@@ -23,23 +23,23 @@ namespace entity {
 
 			virtual ~KineticModel(){};
 
-			void AddForce(ofVec3f force){
+			void add_force(ofVec3f force){
 				acc_ += force/mass_;
 			}
 
-			void ResetForce(){
+			void reset_force(){
 				acc_ = ofVec3f(0,0,0);
 			}
 
-			void Update(){
-				AddForce(ver_*-viscosity_);
+			void update(){
+				add_force(ver_*-viscosity_);
 				ver_ += acc_*difference_time_;
 				pos_ += ver_*difference_time_;
 
-				ResetForce();
+				reset_force();
 			};
 
-			void Draw(){}
+			void draw(){}
 	};
 } // namespace entity
 } // namespace unitro

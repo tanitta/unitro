@@ -15,23 +15,23 @@ namespace unitro {
 			};
 			virtual ~LocalPlayerController(){};
 
-			void Setup(){};
+			void setup(){};
 
-			void KeyInput(){
+			void keyInput(){
 				ofVec3f force = ofVec3f(
 						(keyboard_ref_.is_key_['a']-keyboard_ref_.is_key_['d'])*100,
 						(keyboard_ref_.is_key_down_[32])*5000,
 						(keyboard_ref_.is_key_['w']-keyboard_ref_.is_key_['s'])*100
 				);
-				player_ref_.kinetic_model_.AddForce(force);
+				player_ref_.kinetic_model_.add_force(force);
 			};
 
 
-			void Update(){
+			void update(){
 				if(player_ref_.kinetic_model_.pos_.y > 0){
-					player_ref_.kinetic_model_.AddForce(ofVec3f(0,-100,0));
+					player_ref_.kinetic_model_.add_force(ofVec3f(0,-100,0));
 				};
-				player_ref_.Update();
+				player_ref_.update();
 			};
 	};
 } // namespace unitro

@@ -33,7 +33,7 @@ namespace unitro{
 
 		~LocalWorldView(){};
 
-		void Setup(){
+		void setup(){
 			ofEnableDepthTest();
 			// ofEnableAntiAliasing();
 			ofEnableAlphaBlending();
@@ -54,16 +54,16 @@ namespace unitro{
 			light_.setDiffuseColor(ofFloatColor(0.5,0.5,0.5));
 			light_.setSpecularColor(ofFloatColor(1.0,1.0,1.0));
 		};
-		void Update(){
+		void update(){
 
 		};
-		void Draw(){
+		void draw(){
 			ofViewport(viewport_);
 			ofSetupScreen();
 			player_ref_.main_cam_.begin();
 				ofDrawGrid(10.0f,10.0f,true,true,true,true);
-				local_matrix_view_.Draw();
-				player_ref_.Draw(resources_ref_);
+				local_matrix_view_.draw();
+				player_ref_.draw(resources_ref_);
 			player_ref_.main_cam_.end();
 		};
 	};

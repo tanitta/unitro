@@ -42,7 +42,7 @@ namespace data{
 		};
 
 		~Cell(){};
-		void SetNearCell(){};
+		void set_near_cell(){};
 
 		void setup(){};
 
@@ -50,7 +50,7 @@ namespace data{
 			// plant_->draw();
 		};
 
-		void DrawPlant(double shift, unitro::Resources& resources){
+		void draw_plant(double shift, unitro::Resources& resources){
 
 			ofPushMatrix();
 				ofTranslate(0,shift,0);
@@ -58,9 +58,9 @@ namespace data{
 			ofPopMatrix();
 		};
 
-		void GetWaterBoxInfo(){};
+		void get_water_box_info(){};
 
-		void DrawWater(){
+		void draw_water(){
 			if (water_out_ > 0.01) {
 				float y = water_out_*0.5;
 				ofSetColor(0, 0, 112, 64);
@@ -68,7 +68,7 @@ namespace data{
 			}
 		};
 
-		void GetSoilBoxInfo(ofVec3f& near_cell, ofVec3f& pos, ofVec3f& size){
+		void get_soil_box_info(ofVec3f& near_cell, ofVec3f& pos, ofVec3f& size){
 			int lockedAxis = 0;
 			if (near_cell.x == 2)lockedAxis += 1;
 			if (near_cell.y == 2)lockedAxis += 1;
@@ -132,11 +132,11 @@ namespace data{
 			}
 		};
 
-		void Draw(boost::numeric::ublas::vector<int>& near_cell, unitro::Resources& resources){
+		void draw(boost::numeric::ublas::vector<int>& near_cell, unitro::Resources& resources){
 			ofVec3f pos;
 			ofVec3f size;
 			ofVec3f near_cell_of = ofVec3f(near_cell[0],near_cell[1],near_cell[2]);
-			GetSoilBoxInfo(near_cell_of, pos, size);
+			get_soil_box_info(near_cell_of, pos, size);
 
 			ofColor c;
 			double l = (0.5-(water_-0.5)*0.5)*255;
@@ -148,10 +148,10 @@ namespace data{
 				ofTranslate(pos);
 
 				ofBox(size.x, size.y, size.z);
-				DrawPlant(size.y*0.5, resources);
+				draw_plant(size.y*0.5, resources);
 
 				// ofDisableDepthTest();
-				DrawWater();
+				draw_water();
 				// ofEnableDepthTest();
 				// ofEnableBlendMode(OF_BLENDMODE_ADD);
 			ofPopMatrix();

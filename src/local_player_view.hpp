@@ -13,8 +13,8 @@ namespace unitro {
 			{};
 			virtual ~LocalPlayerView(){};
 
-			void Draw(){
-				player_ref_.Draw(resources_ref_);
+			void draw(){
+				player_ref_.draw(resources_ref_);
 			}
 	};
 } // namespace unitro

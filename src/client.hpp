@@ -102,8 +102,8 @@ namespace unitro {
 
 				local_matrix_[3][1][1].water_out_ = 0.2;
 
-				local_world_controller_.Setup();
-				local_world_view_.Setup();
+				local_world_controller_.setup();
+				local_world_view_.setup();
 
 			};
 
@@ -112,7 +112,7 @@ namespace unitro {
 				local_matrix_[4][4][5].plant_->nutP = 1.0;
 				local_matrix_[6][6][5].plant_->nutP = 1.5;
 				//Interface
-				local_world_controller_.Update();
+				local_world_controller_.update();
 
 				//Solver
 				// if (counter_ >= 1*60-1)
@@ -132,15 +132,15 @@ namespace unitro {
 			void draw(){
 				ofPushMatrix();
 				// // drawer.draw();
-				local_world_view_.Draw();
+				local_world_view_.draw();
 				ofPopMatrix();
 			};
 
 			void keyPressed(int key){
-				keyboard_controller_.SetKeyPressed(key);
+				keyboard_controller_.set_key_pressed(key);
 			};
 			void keyReleased(int key){
-				keyboard_controller_.SetKeyReleased(key);
+				keyboard_controller_.set_key_released(key);
 				// local_world_controller_.keyReleased(key);
 			};
 			void mouseMoved(int x, int y ){

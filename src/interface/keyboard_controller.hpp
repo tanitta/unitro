@@ -11,21 +11,21 @@ namespace unitro {
 
 				virtual ~KeyboardController(){};
 
-				void Update(){
+				void update(){
 					for (int i = 0; i < 128; i++) {
 						keyboard_ref_.is_key_down_[i] = false;
 						keyboard_ref_.is_key_up_[i] = false;
 					}
 				}
 
-				void SetKeyPressed(int key){
+				void set_key_pressed(int key){
 					if(!keyboard_ref_.is_key_[key]){
 						keyboard_ref_.is_key_down_[key] = true;
 					};
 					keyboard_ref_.is_key_[key] = true;
 				};
 
-				void SetKeyReleased(int key){
+				void set_key_released(int key){
 					if(keyboard_ref_.is_key_[key]){
 						keyboard_ref_.is_key_up_[key] = true;
 					};
