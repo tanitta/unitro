@@ -54,48 +54,48 @@ namespace unitro {
 				ofSetWindowTitle("unitro ver.alpha 0.0.1");
 				ofSetFrameRate(60);
 				
-				local_matrix_[5][5][5].soil_ = 0.5;
-				local_matrix_[5][5][6].soil_ = 0.7;
-				local_matrix_[6][5][5].soil_ = 0.6;
-				local_matrix_[6][5][6].soil_ = 0.4;
-
-				local_matrix_[5][6][5].soil_ = 0.5*0.5;
-				local_matrix_[5][6][6].soil_ = 0.7*0.5;
-				local_matrix_[6][6][5].soil_ = 0.6*0.5;
-				local_matrix_[6][6][6].soil_ = 0.4*0.5;
-
-				local_matrix_[4][4][5].soil_ = 0.5*0.3;
-				local_matrix_[4][4][6].soil_ = 0.7*0.3;
-				local_matrix_[5][4][5].soil_ = 0.6*0.3;
-				local_matrix_[5][4][6].soil_ = 0.4*0.3;
-
-				local_matrix_[6][5][6].soil_ = 0.4*0.2;
-
-				local_matrix_[5][5][5].nut_p_ = 0.5;
-				local_matrix_[5][5][6].nut_p_ = 0.7;
-				local_matrix_[6][5][5].nut_p_ = 0.6;
-				local_matrix_[6][5][6].nut_p_ = 0.4;
-
-				local_matrix_[5][6][5].nut_p_ = 0.5*0.5;
-				local_matrix_[5][6][6].nut_p_ = 0.7*0.5;
-				local_matrix_[6][6][5].nut_p_ = 0.6*0.5;
-				local_matrix_[6][6][6].nut_p_ = 0.4*0.5;
-
-				local_matrix_[4][4][5].nut_p_ = 0.5*0.3;
-				local_matrix_[4][4][6].nut_p_ = 0.7*0.3;
-				local_matrix_[5][4][5].nut_p_ = 0.6*0.3;
-				local_matrix_[5][4][6].nut_p_ = 0.4*0.3;
-
-				local_matrix_[6][5][6].nut_p_ = 0.4*0.2;
-
-				local_matrix_[5][6][6].plant_ = new unitro::plants::Butterbur(2.0);
-				local_matrix_[4][4][5].plant_ = new unitro::plants::Butterbur(1.0);
-				local_matrix_[6][6][5].plant_ = new unitro::plants::Butterbur(1.5);
-
-
-				local_matrix_[1][1][1].water_out_ = 0.2;
-
-				local_matrix_[3][1][1].water_out_ = 0.2;
+				// local_matrix_[5][5][5].soil_ = 0.5;
+				// local_matrix_[5][5][6].soil_ = 0.7;
+				// local_matrix_[6][5][5].soil_ = 0.6;
+				// local_matrix_[6][5][6].soil_ = 0.4;
+				//
+				// local_matrix_[5][6][5].soil_ = 0.5*0.5;
+				// local_matrix_[5][6][6].soil_ = 0.7*0.5;
+				// local_matrix_[6][6][5].soil_ = 0.6*0.5;
+				// local_matrix_[6][6][6].soil_ = 0.4*0.5;
+				//
+				// local_matrix_[4][4][5].soil_ = 0.5*0.3;
+				// local_matrix_[4][4][6].soil_ = 0.7*0.3;
+				// local_matrix_[5][4][5].soil_ = 0.6*0.3;
+				// local_matrix_[5][4][6].soil_ = 0.4*0.3;
+				//
+				// local_matrix_[6][5][6].soil_ = 0.4*0.2;
+				//
+				// local_matrix_[5][5][5].nut_p_ = 0.5;
+				// local_matrix_[5][5][6].nut_p_ = 0.7;
+				// local_matrix_[6][5][5].nut_p_ = 0.6;
+				// local_matrix_[6][5][6].nut_p_ = 0.4;
+				//
+				// local_matrix_[5][6][5].nut_p_ = 0.5*0.5;
+				// local_matrix_[5][6][6].nut_p_ = 0.7*0.5;
+				// local_matrix_[6][6][5].nut_p_ = 0.6*0.5;
+				// local_matrix_[6][6][6].nut_p_ = 0.4*0.5;
+				//
+				// local_matrix_[4][4][5].nut_p_ = 0.5*0.3;
+				// local_matrix_[4][4][6].nut_p_ = 0.7*0.3;
+				// local_matrix_[5][4][5].nut_p_ = 0.6*0.3;
+				// local_matrix_[5][4][6].nut_p_ = 0.4*0.3;
+				//
+				// local_matrix_[6][5][6].nut_p_ = 0.4*0.2;
+				//
+				// local_matrix_[5][6][6].plant_ = new unitro::plants::Butterbur(2.0);
+				// local_matrix_[4][4][5].plant_ = new unitro::plants::Butterbur(1.0);
+				// local_matrix_[6][6][5].plant_ = new unitro::plants::Butterbur(1.5);
+				//
+				//
+				// local_matrix_[1][1][1].water_out_ = 0.2;
+				//
+				// local_matrix_[3][1][1].water_out_ = 0.2;
 
 				local_world_controller_.setup();
 				local_world_view_.setup();
