@@ -44,21 +44,14 @@ namespace unitro {
 				keyboard_controller_(keyboard_),
 				local_world_view_(local_matrix_, player_, resources_),
 				local_world_controller_(keyboard_,local_matrix_, player_)
-				// 			localMatrixController(localMatrix),
-				// drawer(LocalMatrix),
-
-				// solver_(local_matrix_)
-		{};
+			{};
 
 			~Client(){};
 
 			void setup(){
 				ofSetWindowTitle("unitro ver.alpha 0.0.1");
 				ofSetFrameRate(60);
-				// drawer.setup();
-				// solver_.setup();
-				// solver_.startThread(true,false);
-				//
+				
 				local_matrix_[5][5][5].soil_ = 0.5;
 				local_matrix_[5][5][6].soil_ = 0.7;
 				local_matrix_[6][5][5].soil_ = 0.6;
@@ -131,7 +124,6 @@ namespace unitro {
 
 			void draw(){
 				ofPushMatrix();
-				// // drawer.draw();
 				local_world_view_.draw();
 				ofPopMatrix();
 			};
