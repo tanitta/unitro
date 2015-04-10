@@ -54,7 +54,8 @@ namespace plants{
 				ofRotate((size-0.5)*360+(nutP*360), 0, 1, 0);
 				ofScale(nutP,nutP,nutP);
 				// resources["Butterbur/Body.x"]->setScale(nutP,nutP,nutP);
-				resources["Butterbur/Body.x"]->draw(OF_MESH_FILL);
+				// resources["Butterbur/Body.x"]->draw(OF_MESH_FILL);
+				resource_cache_ref_.draw("Butterbur/Body.x");
 			ofPopMatrix();
 
 		};

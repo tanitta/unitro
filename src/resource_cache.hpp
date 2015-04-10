@@ -8,7 +8,7 @@ namespace unitro {
 			ResourceCache(){};
 			virtual ~ResourceCache(){};
 
-			shared_ptr<ofxAssimpModelLoader> operator[](string file_name){
+			void draw(const string& file_name){
 				if (resources_.find(file_name) == resources_.end()) {
 // 					// Not Find
 					resources_[file_name] = shared_ptr<ofxAssimpModelLoader>(new ofxAssimpModelLoader());
@@ -19,7 +19,7 @@ namespace unitro {
 					}
 					resources_[file_name]->setScaleNomalization(false);
 				}
-				return resources_[file_name];
+				resources_[file_name]->draw(OF_MESH_FILL);
 			}
 	};
 } // namespace unitro
