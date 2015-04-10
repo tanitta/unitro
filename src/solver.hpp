@@ -1,16 +1,24 @@
 #pragma once
-#include <data/cell.hpp>
+#include "world.hpp"
 #include <data/matrix.hpp>
+#include <data/cell.hpp>
 #include <thread>
 
 namespace unitro {
 	class Solver {
 		private:
-			unitro::data::Matrix& matrix_ref_;
+			// unitro::data::Matrix& matrix_ref_;
+			unitro::data::World& world_ref_;
+			
 			int counter_;
 			std::thread thread_;
 		public:
-			Solver(unitro::data::Matrix& matrix_ref):matrix_ref_(matrix_ref),counter_(0){};
+			// Solver(unitro::data::Matrix& matrix_ref):matrix_ref_(matrix_ref),counter_(0){};
+			Solver(unitro::data::World& world_ref):
+				world_ref_(world_ref),
+				counter_(0)
+			{};
+			
 			virtual ~Solver(){};
 
 			void UpdateSoil(){

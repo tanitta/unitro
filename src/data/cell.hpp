@@ -2,9 +2,9 @@
 
 #include <boost/numeric/ublas/vector.hpp>
 #include "ofMain.h"
-#include "../plants/BasePlant.hpp"
-#include "../items/BaseItem.hpp"
-#include "../resources.hpp"
+#include "../plants/base_plant.hpp"
+#include "../items/base_item.hpp"
+#include "../resource_cache.hpp"
 #include <map>
 
 namespace unitro{
@@ -49,11 +49,11 @@ namespace data{
 			// plant_->draw();
 		};
 
-		void draw_plant(double shift, unitro::Resources& resources){
+		void draw_plant(double shift, unitro::ResourceCache& resource_cache_ref){
 
 			ofPushMatrix();
 				ofTranslate(0,shift,0);
-				plant_->draw(resources);
+				plant_->draw(resource_cache_ref);
 			ofPopMatrix();
 		};
 
@@ -131,7 +131,7 @@ namespace data{
 			}
 		};
 
-		void draw(boost::numeric::ublas::vector<int>& near_cell, unitro::Resources& resources){
+		void draw(boost::numeric::ublas::vector<int>& near_cell, unitro::ResourceCache& resource_cache_ref){
 			ofVec3f pos;
 			ofVec3f size;
 			ofVec3f near_cell_of = ofVec3f(near_cell[0],near_cell[1],near_cell[2]);
@@ -147,7 +147,7 @@ namespace data{
 				ofTranslate(pos);
 
 				ofBox(size.x, size.y, size.z);
-				draw_plant(size.y*0.5, resources);
+				draw_plant(size.y*0.5, resource_cache_ref);
 
 				// ofDisableDepthTest();
 				draw_water();

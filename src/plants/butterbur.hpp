@@ -1,5 +1,5 @@
 #pragma once
-#include "BasePlant.hpp"
+#include "base_plant.hpp"
 #include "ofx3DModelLoader.h"
 #include "../data/matrix.hpp"
 #include "../resources.hpp"

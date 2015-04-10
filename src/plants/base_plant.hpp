@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "boost/array.hpp"
-#include "../resources.hpp"
+#include "../resource_cache.hpp"
 namespace unitro{
 namespace plants{
 	class BasePlant{
@@ -15,7 +15,7 @@ namespace plants{
 
 		virtual void setup(){};
 		virtual void update(ofVec3f pos){};
-		virtual void draw(unitro::Resources& resources){};
+		virtual void draw(unitro::ResourceCache& resource_cache_ref){};
 	};
 }
 }

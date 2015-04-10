@@ -1,4 +1,4 @@
 #pragma once
-#include "plants/BasePlant.hpp"
-#include "plants/Butterbur.hpp"
-#include "plants/Wheat.hpp"
+#include "plants/base_plant.hpp"
+#include "plants/butterbur.hpp"
+#include "plants/wheat.hpp"
