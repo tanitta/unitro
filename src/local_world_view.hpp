@@ -64,7 +64,6 @@ namespace unitro{
 			// ofSetupScreen();
 			
 			ofDrawGrid(10.0f,10.0f,true,true,true,true);
-			ofDrawBox(0,0,0,10);
 			local_matrix_view_.draw();
 			// local_player_view_.draw();
 			

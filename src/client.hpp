@@ -38,6 +38,9 @@ namespace unitro {
 			void setup(){
 				ofSetWindowTitle("unitro ver.alpha 0.0.1");
 				ofSetFrameRate(60);
+				
+				world_.matrix_[4][4][4]["soil"] = 1;
+				world_.matrix_[5][4][4]["soil"] = 0.8;
 			};
 
 			void update(){
