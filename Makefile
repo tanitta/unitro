@@ -15,5 +15,3 @@ include $(OF_ROOT)/libs/openFrameworksCompiled/project/makefileCommon/compile.pr
 doxy:
 	@echo Running doxygen to create documentation
 	doxygen
-
-# doxygen && cd docs/ && git add . && git commit -m 'updated docs' && git push origin gh-pages && cd .. && git submodule update
