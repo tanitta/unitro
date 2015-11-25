@@ -7,8 +7,37 @@ class Config {
 	armos.math.Vector3i grid_size = armos.math.Vector3i(10, 10, 10);
 }
 
+class Entity{}
+
+class StaticEntity : Entity{}
+
+class DynamicEntity : Entity{
+	double mass = 1.0;
+	armos.math.Vector3f position;
+	armos.math.Vector3f velocity;
+}
+
+class Plant : StaticEntity{}
+
+class Animal : DynamicEntity{}
+
+class StaticItem : StaticEntity{}
+
+class DynamicItem : DynamicEntity{}
+
+struct Nutrient {
+	double positive = 0;
+	double negative = 0;
+}
+
 class Cell{
+	Plant plant;
+	StaticItem item;
+	DynamicEntity[] entities;
+	
 	double soil = 0;
+	double water = 0;
+	Nutrient nutrient;
 }
 
 class Grid{
@@ -114,6 +143,8 @@ unittest{
 class World{
 	Config config;
 	Grid grid;
+	DynamicEntity[] entities;
+	
 	this(Config conf){
 		config = conf;
 		grid = new Grid(config.grid_size); 
@@ -121,12 +152,31 @@ class World{
 }
 
 class Solver{
+	Config config;
+	World world;
+	this(Config confg, World world){
+		this.config = config;
+		this.world = world;
+	}
+	
+	void solveWorld(){}
+	
 	void solveCell(NBHD nbhd){
 	
 	}
 }
 
 class Renderer{
+	Config config;
+	World world;
+	
+
+	this(Config confg, World world){
+		this.config = config;
+		this.world = world;
+	}
+	
+	void drawWorld(){};
 	void drawCell(NBHD nbhd){
 	}
 }
@@ -134,17 +184,25 @@ class Renderer{
 class TestApp : armos.app.BaseApp{
 	Config config;
 	World world;
+	Solver solver;
+	Renderer renderer;
 	
 	this(){
 		config = new Config;
 		world = new World(config);
+		solver = new Solver(config, world);
+		renderer = new Renderer(config, world);
 	}
 	
 	void setup(){}
 	
-	void update(){}
+	void update(){
+		solver.solveWorld;
+	}
 	
-	void draw(){}
+	void draw(){
+		renderer.drawWorld;
+	}
 }
 
 void main(){
