@@ -5,6 +5,7 @@ import armos.app;
 
 class Config {
 	armos.math.Vector3i grid_size = armos.math.Vector3i(10, 10, 10);
+	armos.math.Vector3i renderingRange = armos.math.Vector3i(4, 4, 4);
 }
 
 class Entity{}
@@ -62,6 +63,63 @@ class Grid{
 		}
 	}
 	
+	void each(void delegate(armos.math.Vector3i position, Cell cell) f){
+		for (int i = 0; i < size[0]; i++) {
+			for (int j = 0; j < size[1]; j++) {
+				for (int k = 0; k < size[2]; k++) {
+					f(armos.math.Vector3i(i, j, k)-origin, data[i][j][k]);
+				}
+			}
+		}
+	}
+	
+	void each(void delegate(armos.math.Vector3i) f){
+		each((armos.math.Vector3i position, Cell cell){f(position);});
+	}
+	
+	void each(void delegate(Cell) f){
+		each((armos.math.Vector3i position, Cell c){f(c);});
+	}
+	unittest{
+		auto grid = new Grid(armos.math.Vector3i(10, 10, 10));
+		grid.each(( Cell cell ){ cell.soil = 2.0; } );
+		assert(grid.cell(2, 2, 2).soil == 2.0);
+		assert(grid.cell(7, 7, 7).soil == 2.0);
+	}
+	
+	void eachNBHD(
+		void delegate(NBHD nbhd) f,
+		in armos.math.Vector3i lower_range,
+		in armos.math.Vector3i upper_range 
+	){
+		each((armos.math.Vector3i position){
+			f(this.nbhd(position, lower_range, upper_range));
+		});
+	}
+	
+	void eachNBHD(
+		void delegate(NBHD nbhd) f,
+		in armos.math.Vector3i range,
+	){
+		eachNBHD(f, -range, range);
+	}
+	
+	
+	NBHD nbhd(
+		in armos.math.Vector3i target_cell_position,
+		in armos.math.Vector3i range,
+	){
+		return new NBHD(this, target_cell_position, range);
+	}
+	
+	NBHD nbhd(
+		in armos.math.Vector3i target_cell_position,
+		in armos.math.Vector3i lower_range,
+		in armos.math.Vector3i upper_range 
+	){
+		return new NBHD(this, target_cell_position, lower_range, upper_range);
+	}
+	
 	ref Cell cell(armos.math.Vector3i cell_coordination){
 		int x = cell_coordination[0] + origin[0];
 		int y = cell_coordination[1] + origin[1];
@@ -90,6 +148,14 @@ class NBHD : Grid{
 	this(
 		Grid source_grid,
 		in armos.math.Vector3i target_cell_position,
+		in armos.math.Vector3i range
+	){
+		this(source_grid, target_cell_position, -range, range);
+	}
+		
+	this(
+		Grid source_grid,
+		in armos.math.Vector3i target_cell_position,
 		in armos.math.Vector3i lower_range,
 		in armos.math.Vector3i upper_range 
 	){
@@ -101,14 +167,9 @@ class NBHD : Grid{
 			upper_range_[dim] = cast(int)fmin(upper_range[dim], source_grid.upperRange[dim]-target_cell_position[dim]);
 		}
 		super(armos.math.Vector3i(1, 1, 1) + upper_range_ - lower_range_, -lower_range_);
-		for (int i = lower_range_[0]; i < upper_range_[0]; i++) {
-			for (int j = lower_range_[1]; j < upper_range_[1]; j++) {
-				for (int k = lower_range_[2]; k < upper_range_[2]; k++) {
-					cell(i, j, k) = source_grid.cell(armos.math.Vector3i(i, j, k) + target_cell_position);
-				}
-			}
-			
-		}
+		each((armos.math.Vector3i position){
+			cell(position) = source_grid.cell(position + target_cell_position);
+		});
 	}
 }
 unittest{
@@ -141,7 +202,7 @@ unittest{
 }
 
 class World{
-	Config config;
+	private Config config;
 	Grid grid;
 	DynamicEntity[] entities;
 	
@@ -152,8 +213,8 @@ class World{
 }
 
 class Solver{
-	Config config;
-	World world;
+	private Config config;
+	private World world;
 	this(Config confg, World world){
 		this.config = config;
 		this.world = world;
@@ -161,34 +222,47 @@ class Solver{
 	
 	void solveWorld(){}
 	
-	void solveCell(NBHD nbhd){
-	
-	}
+	private void solveCell(NBHD nbhd){}
 }
 
 class Renderer{
-	Config config;
-	World world;
+	private Config config;
+	private World world;
 	
+	armos.graphics.Camera camera;
 
-	this(Config confg, World world){
+	this(Config config, World world){
 		this.config = config;
 		this.world = world;
+		camera = new armos.graphics.Camera;
 	}
 	
-	void drawWorld(){};
-	void drawCell(NBHD nbhd){
-	}
+	void drawWorld(){
+		camera.start;
+		
+		auto cameraTargetNBHD = world.grid.nbhd(cast(armos.math.Vector3i)camera.target, config.renderingRange);
+		cameraTargetNBHD.eachNBHD(
+			(NBHD nbhd){
+				drawCell(nbhd);
+			},
+			armos.math.Vector3i(1, 1, 1)
+		);
+		
+		camera.end;
+	};
+	
+	private void drawCell(NBHD nbhd){}
 }
 
+
 class TestApp : armos.app.BaseApp{
-	Config config;
-	World world;
-	Solver solver;
-	Renderer renderer;
+	private Config config;
+	private World world;
+	private Solver solver;
+	private Renderer renderer;
 	
 	this(){
-		config = new Config;
+		config = new Config();
 		world = new World(config);
 		solver = new Solver(config, world);
 		renderer = new Renderer(config, world);
