@@ -10,6 +10,9 @@ class Config {
 struct GridRange{
 	ar.Vector3i lowerRange;
 	ar.Vector3i upperRange;
+	this(ar.Vector3i lower, ar.Vector3i upper){
+	
+	};
 }
 
 struct Cell{
@@ -21,6 +24,7 @@ struct Grid{
 	ar.Vector3i origin()const{return _origin;};
 	ar.Vector3i lowerRange()const{return _origin;};
 	ar.Vector3i upperRange()const{return -( _size - _origin - ar.Vector3i(1, 1, 1) );};
+	GridRange gridRange()const{return GridRange(lowerRange, upperRange);}
 	
 	this(ar.Vector3i size)
 	in{
@@ -84,6 +88,9 @@ struct Grid{
 		return grid;
 	}
 	
+	void setNbhd(in Grid sourceGrid, in ar.Vector3i targetPosition, in GridRange range){
+	}
+	
 	private void allocate(){
 		auto length = size[0]*size[1]*size[2];
 		for(int i = 0; i < length; i++){
@@ -96,50 +103,114 @@ struct Grid{
 	private ar.Vector3i _origin;
 }
 
-struct LocalWorld {
-	Grid grid;
-	Grid nbhd(ar.Vector3i target, ar.Vector3i lower, ar.Vector3i upper){return Grid();}
-	void nbhd(in Grid grid, in ar.Vector3i target){};
-	this(GlobalWorld globalWorld, ar.Vector3i targetPosition, GridRange range){
-		grid = globalWorld.nbhd(targetPosition, range.lowerRange, range.lowerRange);
+void each(alias f, G)(G grid){
+	for (int i = 0; i < grid.size[0]; i++) {
+		for (int j = 0; j < grid.size[1]; j++) {
+			for (int k = 0; k < grid.size[2]; k++) {
+				ar.Vector3i local_position = ar.Vector3i(i, j, k)-grid.origin;
+				f(local_position, grid.cell(local_position));
+			}
+		}
+		
 	}
 }
 
+void each(alias f, G)(G grid, GridRange range){
+	each(f, G)(grid, range.lowerRange, range.upperRange);
+}
+
+void each(alias f, G)(G grid, ar.Vector3i lowerRange, ar.Vector3i upperRange){
+	ar.Vector3i min(ar.Vector3i v1, ar.Vector3i v2){
+		auto returnVec = ar.Vector3i(0, 0, 0);
+		for (int i = 0; i < 3; i++) {
+			if(v1[i]>v2[i]){
+				returnVec[i] = v2[i];
+			}else{
+				returnVec[i] = v1[i];
+			}
+		}
+		return returnVec;
+	}
+	ar.Vector3i max(ar.Vector3i v1, ar.Vector3i v2){
+		auto returnVec = ar.Vector3i(0, 0, 0);
+		for (int i = 0; i < 3; i++) {
+			if(v1[i]<v2[i]){
+				returnVec[i] = v2[i];
+			}else{
+				returnVec[i] = v1[i];
+			}
+		}
+		return returnVec;
+	}
+	
+	ar.Vector3i checkedLowerRange = min(lowerRange+grid.origin, ar.Vector3i(0, 0, 0));
+	ar.Vector3i checkedUpperRange = max(upperRange+grid.origin, grid.size()-ar.Vector3i(1, 1, 1));
+	
+	for (int i = checkedLowerRange[0]; i <= checkedUpperRange[0]; i++) {
+		for (int j = checkedLowerRange[1]; j <= checkedUpperRange[1]; j++) {
+			for (int k = checkedLowerRange[2]; k <= checkedUpperRange[2]; k++) {
+				ar.Vector3i local_position = ar.Vector3i(i, j, k)-grid.origin;
+				f(local_position, grid.cell(local_position));
+			}
+		}
+		
+	}
+}
+
+struct LocalWorld {
+	Grid nbhd(ar.Vector3i target, ar.Vector3i lower, ar.Vector3i upper){return Grid();}
+	
+	void nbhd(in Grid grid, in ar.Vector3i target){};
+	this(in GlobalWorld globalWorld, in ar.Vector3i targetPosition, in GridRange range){
+		grid = globalWorld.nbhd(targetPosition, range.lowerRange, range.lowerRange);
+	}
+	
+	private Grid grid;
+}
+
 class GlobalWorld{
-	Grid grid;
+	
 	this(ar.Vector3i size){
 		grid = Grid(size);
 	};
 	
-	Grid nbhd(ar.Vector3i targetPosition, ar.Vector3i lower, ar.Vector3i upper){
+	Grid nbhd(in ar.Vector3i targetPosition, in ar.Vector3i lower, in ar.Vector3i upper)const{
 		auto grid = Grid(-lower + upper + ar.Vector3i(1, 1, 1), -lower);
 		return grid;
 	};
 	
-	void set(in LocalWorld localWorld, in ar.Vector3i targetPosition){
+	void setNbhd(){
 	
 	}
+	
+	void setLocalWorld(in LocalWorld localWorld, in ar.Vector3i targetPosition){
+		
+	}
+	
+	void getLocalWorld(ref LocalWorld localWorld, in ar.Vector3i targetPosition, in GridRange range)const{
+		localWorld = LocalWorld(this, targetPosition, range);
+	}
+	
+	private Grid grid;
 }
 
 struct PlayerEvent{
+	
 }
 
 class Network{
-	private GlobalWorld world;
-	Config config;
-	
 	this(Config config){
 		this.config = config;
 		world = new GlobalWorld(config.worldSize);
 	}
 	
-	void getLocalWorld(ref LocalWorld localWorld, ar.Vector3i targetPosition, GridRange range){
-		localWorld = LocalWorld(world, targetPosition, range);
+	void setLocalWorld(in LocalWorld localWorld, ar.Vector3i targetPosition){
+		world.setLocalWorld(localWorld, targetPosition);
 		sync();
 	}
 	
-	void setLocalWorld(in LocalWorld localWorld, ar.Vector3i targetPosition){
-		world.set(localWorld, targetPosition);
+	void getLocalWorld(ref LocalWorld localWorld, ar.Vector3i targetPosition, GridRange range){
+		world.getLocalWorld(localWorld, targetPosition, range);
 		sync();
 	}
 	
@@ -148,6 +219,9 @@ class Network{
 	};
 	
 	void sync(){}
+	
+	private GlobalWorld world;
+	private Config config;
 }
 
 class Renderer {
@@ -205,5 +279,5 @@ class TestApp : ar.BaseApp{
 }
 
 void main(){
-	ar.run(new TestApp);
+	// ar.run(new TestApp);
 }
