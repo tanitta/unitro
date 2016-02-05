@@ -2,7 +2,7 @@ name "unitro"
 description "A minimal D application."
 copyright "Copyright © 2015, tanitta"
 authors "tanitta"
-dependency "armos" version=">=0.0.1"
+dependency "armos" version=">=0.0.2"
 
 buildType "debug-profile" {
 	buildOptions "debugMode" "debugInfo" "profile"
