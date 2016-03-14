@@ -1,4 +1,6 @@
+import std.stdio;
 import armos;
+import unitro;
 
 /++
 ++/
@@ -8,6 +10,26 @@ class TestApp : ar.BaseApp{
 		}
 
 		void setup(){
+			setupArmos;
+			setupUnitro;
+		}
+
+		void update(){
+		}
+
+		void draw(){
+			( ar.fpsUseRate*100 ).writeln;
+			_gui.draw;
+		}
+	}//public
+
+	private{
+		ar.Gui _gui;
+		unitro.Config _config;
+		unitro.Network _network;
+		// unitro.LocalWorld _world;
+		
+		void setupArmos(){
 			ar.targetFps = 60;
 			ar.enableDepthTest;
 			ar.blendMode(ar.BlendMode.Alpha);
@@ -20,21 +42,11 @@ class TestApp : ar.BaseApp{
 				.add(new ar.Partition())
 			);
 		}
-
-		void update(){
+		
+		void setupUnitro(){
+			_config = new unitro.Config;
+			_network = new unitro.Network(_config);
 		}
-
-		void draw(){
-			import std.stdio;
-			( ar.fpsUseRate*100 ).writeln;
-			
-			
-			_gui.draw;
-		}
-	}//public
-
-	private{
-		ar.Gui _gui;
 	}//private
 }
 
