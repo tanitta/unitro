@@ -39,7 +39,6 @@ struct Grid{
 			assert(grid.upperRange == ar.Vector3i(1, 1, 1));
 			assert(grid.gridRange == GridRange(ar.Vector3i(-2, -2, -2), ar.Vector3i(1, 1, 1) ));
 		}
-		
 
 		/++
 		++/
@@ -98,8 +97,8 @@ struct Grid{
 		/++
 		++/
 		ref unitro.Cell cell(in ar.Vector3i position){
-			auto localPosition = position + origin;
-			auto index = localPosition[0] + localPosition[1]*size[0] + localPosition[2]*size[0]*size[1];
+			immutable localPosition = position + origin;
+			immutable index = localPosition[0] + localPosition[1]*size[0] + localPosition[2]*size[0]*size[1];
 			return data[index];
 		}
 
@@ -112,8 +111,8 @@ struct Grid{
 		/++
 		++/
 		void setCell(in unitro.Cell c, in ar.Vector3i position){
-			auto localPosition = position + origin;
-			auto index = localPosition[0] + localPosition[1]*size[0] + localPosition[2]*size[0]*size[1];
+			immutable localPosition = position + origin;
+			immutable index = localPosition[0] + localPosition[1]*size[0] + localPosition[2]*size[0]*size[1];
 			data[index] = c;
 		}
 		unittest{
@@ -139,7 +138,7 @@ struct Grid{
 				return (a > b) ? a : b;
 			}
 			
-			auto safeGridRange = GridRange(
+			immutable safeGridRange = GridRange(
 				ar.Vector3i(
 					max(lower[0], this.lowerRange[0]-target[0]),
 					max(lower[1], this.lowerRange[1]-target[1]),
