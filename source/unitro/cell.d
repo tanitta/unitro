@@ -1,5 +1,12 @@
 module unitro.cell;
 
+/++
++/
 struct Cell {
-	double soil = 0.0;
-}
+	public{
+		double soil = 0.0;
+	}//public
+
+	private{
+	}//private
+}//struct Cell
